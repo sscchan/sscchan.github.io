@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+
+
+    <title>CodePen - ARC/INFO ASCII GRID Reader</title>
+    
+    
+    
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+    
+    
+    
+    
+  </head>
+
+  <body translate="no" >
+
+    <div class="container-fluid">
+	<input type="file" id="files" name="files" multiple onchange="handleFileSelect(this.files)">
+	<output id="list"></out>
+</div>
+    
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+<script src='http://stuk.github.io/jszip/dist/jszip.js'></script>
+<script src='http://stuk.github.io/jszip-utils/dist/jszip-utils.js'></script>
+
+        <script>
+      // Check for the various File API support.
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+  // Great success! All the File APIs are supported.
+} else {
+  alert('The File APIs are not fully supported in this browser.');
+}
+
+// ASCII Grid File Object to Store All Values
+var ErsiASCIIGrid = function(inputGridFileAsText)
+{
+	this.ncols = undefined;
+	this.nrows = undefined;
+	this.xllcorner = undefined; // X coordinate of the origin of the by corner of the cell
+  this.yllcorner = undefined; // Y coordinate of the origin of the by corner of the cell
+	this.cellsize = undefined;
+	this.NODATA_value = undefined;
+	
+	this.gridValue = []; // We are storing grid values as gridValue[y][x] and NOT [x][y]
+	this.getValueAt = function(x,y)
+	{
+		var xGridIndex = Math.floor((x - this.xllcorner) / this.cellsize);
+		var yGridIndex = Math.floor((y - this.yllcorner) / this.cellsize);
+		
+		console.log("xGridIndex:" + xGridIndex);
+		console.log("yGridIndex:" + yGridIndex);
+		if ((xGridIndex < 0) || (xGridIndex >= this.ncols) || (yGridIndex < 0) || (yGridIndex >= this.nrows))
+			{
+				return undefined;
+			}
+		else
+			{
+		return this.gridValue[this.nrows - yGridIndex - 1][xGridIndex];
+			}
+	};
+	
+	this.parseASCIIGridFile = function(inputFile)
+	{
+		// Remove all carriage return characters
+		var inputFileProcessed = inputFile.replace(/[\r]/g, "").trim();
+		
+		// Split file by line
+		var inputFileLines = inputFileProcessed.split("\n");
+		
+		// Read the header information
+		// ncols
+		var ncolsLine = inputFileLines[0].split(/\s+/);
+		if (ncolsLine[0] === "ncols")
+			{
+				this.ncols = parseInt(ncolsLine[1]);
+			}
+		else
+			{
+				throw "Invalid input file text, expected 'ncols' on line 1"
+			}
+
+		// nrows
+		var nrowsLine = inputFileLines[1].split(/\s+/);
+		if (nrowsLine[0] === "nrows")
+			{
+				this.nrows = parseInt(nrowsLine[1]);
+			}
+		else
+			{
+				throw "Invalid input file text, expected 'nrows' on line 2";
+			}
+		
+		// cellsize
+		// we are parsing the cellsize out of sequence as we may need it for xllcorner & yllcorner later
+		var cellsizeLine = inputFileLines[4].split(/\s+/);
+		if (cellsizeLine[0] === "cellsize")
+			{
+				this.cellsize = parseFloat(cellsizeLine[1]);
+			}
+		else
+			{
+				throw "Invalid input file text, expected 'cellsize' on line 5";
+			}	
+		
+		// xllcorner (or xllcenter)
+		var xllcornerLine = inputFileLines[2].split(/\s+/);
+		if (xllcornerLine[0] === "xllcorner")
+			{
+				this.xllcorner = parseFloat(xllcornerLine[1]);
+			}
+		else if (xllcornerLine[0] === "xllcenter")
+			{
+				// if the file header has xllcenter, calculate the xllcorner
+				this.xllcorner = parseFloat(xllcornerLine[1]) - (this.cellsize / 2.0);
+			}
+		else {
+				throw "Invalid input file text, expected 'xllcorner' or 'xllcenter' on line 3";
+			}
+		
+		// yllcorner (or yllcenter)
+		var yllcornerLine = inputFileLines[3].split(/\s+/);
+		if (yllcornerLine[0] === "yllcorner")
+			{
+				this.yllcorner = parseFloat(yllcornerLine[1]);
+			}
+		else if (yllcornerLine[0] === "yllcenter")
+			{
+				// if the file header has yllcenter, calculate the yllcorner
+				this.yllcorner = parseFloat(yllcornerLine[1]) - (this.cellsize / 2.0);
+			}
+		else
+			{
+				throw "Invalid input file text, expected 'yllcorner' or 'yllcenter' on line 4";
+			}
+		
+		// NODATA_value
+		var NODATA_valueLine = inputFileLines[5].split(/\s+/);
+		if (NODATA_valueLine[0] === "NODATA_value")
+			{
+				this.NODATA_value = NODATA_valueLine[1];
+			}
+		else
+			{
+				throw "Invalid input file text, expected 'NODATA_Value' on line 6";
+			}	
+		
+		console.log(inputFileLines);
+		// Read grid data
+		for (var i = 6; i < inputFileLines.length; i++)
+			{
+				var currentGridDataLine = inputFileLines[i].trim().split(" ");
+				
+				if (currentGridDataLine.length !== this.ncols)
+					{
+						console.log("Input line " + i + ":" + currentGridDataLine);
+						throw "Input line " + i + " does not have ncols number of data points";
+					}
+				this.gridValue.push(currentGridDataLine);
+			}
+		
+		console.log(inputFileLines);
+	};
+	
+	if(inputGridFileAsText !== undefined)
+		{
+			this.parseASCIIGridFile(inputGridFileAsText);
+		}
+	
+}
+function handleFileSelect(userSelectedFiles)
+{
+
+	for (var i = 0; i < userSelectedFiles.length; i++)
+		{
+			var reader = new FileReader();			
+			reader.onload = function(event)
+			{
+				//console.log(event);
+				//console.log(reader.result);
+				var BOMEvapDataApril = new ErsiASCIIGrid(reader.result);
+				console.log(BOMEvapDataApril);
+				
+				console.log(BOMEvapDataApril.getValueAt(112.1549,-10.1053));
+				console.log(BOMEvapDataApril.getValueAt(153.3987,-28.2687));
+				console.log(BOMEvapDataApril.getValueAt(140.15, -35.956));
+			}
+
+			reader.readAsText(userSelectedFiles[i]);
+		}
+}
+
+// Section to zip and unzip BOM evap grid data
+/*
+JSZipUtils.getBinaryContent('BOMEvapData/ap-dec.zip', function(err, data) {
+  if(err) {
+    throw err; // or handle err
+		console.log(Error);
+  }
+
+  var zip = new JSZip(data);
+	console.log(zip);
+	
+});
+*/
+      //# sourceURL=pen.js
+    </script>
+
+    
+    
+    
+  </body>
+</html>
+ 
+
