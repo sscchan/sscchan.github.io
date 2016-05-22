@@ -208,7 +208,7 @@ JSZipUtils.getBinaryContent('./BOMEvapData/ap-apr.zip', function(err, data) {
   .then(function(resultZip)
   {
 	console.log(resultZip);
-	return resultZip.file("ap-apr.txt").async("string")
+	return resultZip.file("etapapr.txt").async("string")
   })
   .then(function success(text) {
   	console.log(text);
