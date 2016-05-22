@@ -198,7 +198,7 @@ function handleFileSelect(userSelectedFiles)
 
 //./BOMEvapData/ap-apr.zip
 // etapapr.txt
-function loadZippedText(targetZipURL, targetZippedFile)
+function loadZippedText(targetZipURL, targetZippedFile, onSuccessFunction)
 {
 	JSZipUtils.getBinaryContent(targetZipURL, function(err, data) {
 	  // If there are error loading the zip file
@@ -220,7 +220,7 @@ function loadZippedText(targetZipURL, targetZippedFile)
 	  .then(function success(targetZippedFileText) {
 	  	// If successfully retrieved the text, apply the user specified function
 	  	console.log(targetZippedFileText);
-	  	return targetZippedFileText;
+	  	onSuccessFunction(targetZippedFile, targetZippedFileText);
 	  	
 	  }, function error(e) {
 	  	console.log("Error on returning specific zipped file content.");
@@ -231,8 +231,25 @@ function loadZippedText(targetZipURL, targetZippedFile)
 });	
 }
 
+function loadBOMEvapData(dataFileName,dataContent)
+{
+	console.log(datafileName);
+	console.log(dataContent);
+}
+
 $(document).ready(function(){
-	console.log(loadZippedText("./BOMEvapData/ap-apr.zip","etapapr.txt"));
+	loadZippedText("./BOMEvapData/ap-jan.zip","etapjan.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-feb.zip","etapfeb.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-mar.zip","etapmar.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-apr.zip","etapapr.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-may.zip","etapmay.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-jun.zip","etapjun.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-jul.zip","etapjul.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-aug.zip","etapaug.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-sep.zip","etapsep.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-oct.zip","etapoct.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-nov.zip","etapnov.txt", loadBOMEvapData);
+	loadZippedText("./BOMEvapData/ap-dec.zip","etapdec.txt", loadBOMEvapData);
 	
 });
 
