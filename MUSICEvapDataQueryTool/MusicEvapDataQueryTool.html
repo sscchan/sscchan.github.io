@@ -204,9 +204,16 @@ JSZipUtils.getBinaryContent('./BOMEvapData/ap-apr.zip', function(err, data) {
   }
 
   var zip = new JSZip();
-  zip.loadAsync(data).then(function(resultZip)
+  zip.loadAsync(data)
+  .then(function(resultZip)
   {
 	console.log(resultZip);
+	return resultZip.file("ap-apr.txt").async("string")
+  })
+  .then(function success(text) {
+  	console.log(text);
+  }, function error(e) {
+  	//showError
   });
 	
 });
