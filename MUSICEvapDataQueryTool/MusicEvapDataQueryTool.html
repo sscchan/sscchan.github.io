@@ -196,7 +196,7 @@ function handleFileSelect(userSelectedFiles)
 }
 
 // Section to zip and unzip BOM evap grid data
-JSZipUtils.getBinaryContent('/BOMEvapData/ap-apr.zip', function(err, data) {
+JSZipUtils.getBinaryContent('./BOMEvapData/ap-apr.zip', function(err, data) {
   if(err) {
     throw err; // or handle err
 	console.log(Error);
