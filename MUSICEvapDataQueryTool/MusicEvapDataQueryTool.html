@@ -220,6 +220,7 @@ function loadZippedText(targetZipURL, targetZippedFile, onSuccessFunction)
 	  .then(function success(targetZippedFileText) {
 	  	// If successfully retrieved the text, apply the user specified function
 	  	//console.log(targetZippedFileText);
+	  	console.log("zip loading success");
 	  	onSuccessFunction(targetZippedFile, targetZippedFileText);
 	  	
 	  }, function error(e) {
@@ -231,9 +232,9 @@ function loadZippedText(targetZipURL, targetZippedFile, onSuccessFunction)
 });	
 }
 
-function loadBOMEvapData(dataFileName,dataContent)
+var loadBOMEvapData = function (dataFileName,dataContent)
 {
-	console.log("zip loading success: " + datafileName);
+	console.log("zip loading success, passed to onSuccess function: " + datafileName);
 	//console.log(dataContent);
 }
 
