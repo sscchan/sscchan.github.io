@@ -196,27 +196,46 @@ function handleFileSelect(userSelectedFiles)
 		}
 }
 
-// Section to zip and unzip BOM evap grid data
-JSZipUtils.getBinaryContent('./BOMEvapData/ap-apr.zip', function(err, data) {
-  if(err) {
-    throw err; // or handle err
-	console.log(Error);
-  }
+//./BOMEvapData/ap-apr.zip
+// etapapr.txt
+function loadZippedText(targetZipURL, targetZippedFile)
+{
+	JSZipUtils.getBinaryContent(targetZipURL, function(err, data) {
+	  // If there are error loading the zip file
+	  if(err) {
+	    console.log("Error on retriving target zip from specified URL.");
+	    console.log(err);
+	    throw err; // or handle err
+	  }
+	  
+	  // Load and decompress the zip file
+	  var zip = new JSZip();
+	  zip.loadAsync(data)
+	  .then(function(resultZip)
+	  {
+		//console.log(resultZip);
+		// Returns a promise of the content of one of the zipped file as text
+		return resultZip.file(targetZippedFile).async("string")
+	  })
+	  .then(function success(targetZippedFileText) {
+	  	// If successfully retrieved the text, apply the user specified function
+	  	//console.log(targetZippedFileText);
+	  	return targetZippedFileText;
+	  	
+	  }, function error(e) {
+	  	console.log("Error on returning specific zipped file content.");
+	  	console.log(e);
+	  	throw e;
+	  });
 
-  var zip = new JSZip();
-  zip.loadAsync(data)
-  .then(function(resultZip)
-  {
-	console.log(resultZip);
-	return resultZip.file("etapapr.txt").async("string")
-  })
-  .then(function success(text) {
-  	console.log(text);
-  }, function error(e) {
-  	//showError
-  });
+});	
+}
+
+$(document).ready(function(){
+	console.log(loadZippedText("./BOMEvapData/ap-apr.zip","etapapr.txt"));
 	
 });
+
       //# sourceURL=pen.js
     </script>
 
