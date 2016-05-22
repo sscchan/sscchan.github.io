@@ -44,7 +44,7 @@ var ErsiASCIIGrid = function(inputGridFileAsText)
 	this.ncols = undefined;
 	this.nrows = undefined;
 	this.xllcorner = undefined; // X coordinate of the origin of the by corner of the cell
-  this.yllcorner = undefined; // Y coordinate of the origin of the by corner of the cell
+  	this.yllcorner = undefined; // Y coordinate of the origin of the by corner of the cell
 	this.cellsize = undefined;
 	this.NODATA_value = undefined;
 	
@@ -203,8 +203,11 @@ JSZipUtils.getBinaryContent('./BOMEvapData/ap-apr.zip', function(err, data) {
 	console.log(Error);
   }
 
-  var zip = new JSZip(data);
-	console.log(zip);
+  var zip = new JSZip();
+  zip.loadAsync(data).then(function(resultZip)
+  {
+	console.log(resultZip);
+  };
 	
 });
       //# sourceURL=pen.js
