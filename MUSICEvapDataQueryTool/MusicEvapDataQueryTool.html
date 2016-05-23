@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 
 
-    <title>CodePen - ARC/INFO ASCII GRID Reader</title>
+    <title>ARC/INFO ASCII GRID Reader</title>
     
     
     
@@ -31,12 +31,6 @@
 <script src='https://gitcdn.link/repo/Stuk/jszip-utils/master/dist/jszip-utils.js'></script>
 
         <script>
-      // Check for the various File API support.
-if (window.File && window.FileReader && window.FileList && window.Blob) {
-  // Great success! All the File APIs are supported.
-} else {
-  alert('The File APIs are not fully supported in this browser.');
-}
 
 // ASCII Grid File Object to Store All Values
 var ErsiASCIIGrid = function(inputGridFileAsText)
@@ -196,10 +190,77 @@ function handleFileSelect(userSelectedFiles)
 		}
 }
 
+var BOMEvapData = {
+	EvapDataJan: undefined,
+	EvapDataFeb: undefined,
+	EvapDataMar: undefined,
+	EvapDataApr: undefined,
+	EvapDataMay: undefined,
+	EvapDataJun: undefined,
+	EvapDataJul: undefined,
+	EvapDataAug: undefined,
+	EvapDataSep: undefined,
+	EvapDataOct: undefined,
+	EvapDataNov: undefined,
+	EvapDataDec: undefined,
+	no_DataRead: 0
+};
+
+
 function loadBOMEvapData(dataFileName,dataContent)
 {
 	console.log("zip loading success, passed to onSuccess function: " + dataFileName);
 	//console.log(dataContent);
+	switch(dataFileName) {
+	    case "etapjan.txt":
+	        BOMEvapData.EvapDataJan = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;
+	    case "etapfeb.txt":
+	        BOMEvapData.EvapDataFeb = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;
+	    case "etapmar.txt":
+	        BOMEvapData.EvapDataMar = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;
+	    case "etapfapr.txt":
+	        BOMEvapData.EvapDataApr = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;
+	    case "etapmay.txt":
+	        BOMEvapData.EvapDataMay = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;
+	    case "etapjun.txt":
+	        BOMEvapData.EvapDataJun = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;
+	    case "etapjul.txt":
+	        BOMEvapData.EvapDataJul = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;	        
+	    case "etapaug.txt":
+	        BOMEvapData.EvapDataAug = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;
+	    case "etapsep.txt":
+	        BOMEvapData.EvapDataSep = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;	   
+	    case "etapoct.txt":
+	        BOMEvapData.EvapDataOct = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;	
+	    case "etapnov.txt":
+	        BOMEvapData.EvapDataNov = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;	
+	    case "etapdec.txt":
+	        BOMEvapData.EvapDataDec = new ErsiASCIIGrid(dataContent);
+	        BOMEvapData.no_DataRead++;
+	        break;		        
+		}	
 }
 
 // This function loads a zip from a target URL, unzip a specific file within the zipfile,
