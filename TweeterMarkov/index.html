@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Markov Chain Tweet Generator</title>
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+  <link rel='stylesheet prefetch' href='style.css'>
+
+  <body translate="no" >
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+
+    <script src='./resources/markovTransition.js'></script>
+    <script src='./resources/tweetFirstWordsProbability.js'></script>
+    <script src='index.js'></script>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Markov Chain Tweet Generator</h1> 
+        <p>What happens when you take all of president-elect's 2016 tweets and model it as a Markov Chain?</p> 
+      </div>
+
+    </div>
+
+<div class="container">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+
+        <div class="panel-body">
+            <div id="quoteBlock">
+              <sup id="leftQuoteMark"><i class="fa fa-quote-left fa-2x"></i></sup>
+              <span id="quote">qoute</span>
+              <sub id="rightQuoteMark"><i class="fa fa-quote-right fa-2x"></i></sub>
+              <div id="author" style="text-align: right">author
+              </div>
+            </div>
+          
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-xs-6">
+          <a href="javascript: generateTweet();" class="btn btn-default btn-sm" title="Next Quote"><i class="fa fa-refresh"></i></a>
+              
+              
+            </div>
+            <div class = "col-xs-6">
+              <div id="tweet-button-location" style="text-align:right;"> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>
+ 
