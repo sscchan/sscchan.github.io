@@ -1,11 +1,16 @@
+function generateAndRenderTweet() {
+  let newTweet = generateTweet();
+  renderTweetText(newTweet)
+}
+
 function generateTweet() {
+  const tweetSentenceWordLimit = 200;
   let tweetWordArray = [];
   let generatedTweet = '';
 
-  let randomTweetStaringWord = getNextWord(tweetFirstWordsProbability);
-  tweetWordArray.push(randomTweetStaringWord);
+  tweetWordArray.push(getFirstRandomWord());
 
-  for (let i = 1; i < 200; i++)
+  for (let i = 1; i < tweetSentenceWordLimit - 1; i++)
   {
     let lastWord = tweetWordArray[i - 1];
     let nextWord = getNextWord(markovTransition[lastWord]);
@@ -17,12 +22,13 @@ function generateTweet() {
     }
   }
 
-  generatedTweet = tweetWordArray.join(' ');
+   generatedTweet = tweetWordArray.join(' ');
 
+  return generatedTweet;
+}
 
-  $("#quote").html(generatedTweet);
-  $("#author").html('Markov Bot 2016');
-
+function getFirstRandomWord() {
+  return getNextWord(tweetFirstWordsProbability);
 }
 
 function getNextWord(wordTransitionArray) {
@@ -40,8 +46,14 @@ function getNextWord(wordTransitionArray) {
   }
 }
 
-
+function renderTweetText(text, author) {
+  if (author === undefined) {
+    author ='Markov Bot 2016';
+  }
+  $("#quote").html(text);
+  $("#author").html(author);
+}
 
 $(document).ready(function(){
-  generateTweet();
+  generateAndRenderTweet();
 });
