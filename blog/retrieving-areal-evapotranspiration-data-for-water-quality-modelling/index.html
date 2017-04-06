@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Retrieving Areal Evapotranspiration Data for Water Quality Modelling</title>
+    <title>Retrieving Areal Evapotranspiration Data for Water Quality Modeling</title>
     <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
@@ -20,11 +20,11 @@
     
     <meta property="og:site_name" content="Stephen Chan's Blog">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Retrieving Areal Evapotranspiration Data for Water Quality Modelling">
-    <meta property="og:description" content="Project Code on: GitHub |  Live Demo Motivation MUSIC is the de-facto software for modeling performance of stormwater quality management systems.  One of the critical input to the model is the monthly evapotranspiration data, which is dependent upon the location of the project site in question. The evapotranspiration GIS data is">
+    <meta property="og:title" content="Retrieving Areal Evapotranspiration Data for Water Quality Modeling">
+    <meta property="og:description" content="Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.   Project Code on: GitHub |  Live Demo  Motivation MUSIC is the de-facto software for modeling performance of stormwater quality management systems.  One of the critical input to the model is the monthly evapotranspiration data,">
     <meta property="og:url" content="http://sscchan.github.io/blog/retrieving-areal-evapotranspiration-data-for-water-quality-modelling/">
     <meta property="article:published_time" content="2017-01-10T20:13:00.000Z">
-    <meta property="article:modified_time" content="2017-04-06T20:22:29.000Z">
+    <meta property="article:modified_time" content="2017-04-06T20:49:46.000Z">
     <meta property="article:tag" content="GIS">
     <meta property="article:tag" content="Water Quality">
     <meta property="article:tag" content="Stormwater">
@@ -35,8 +35,8 @@
     <meta property="article:tag" content="Google Maps API">
     
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Retrieving Areal Evapotranspiration Data for Water Quality Modelling">
-    <meta name="twitter:description" content="Project Code on: GitHub |  Live Demo Motivation MUSIC is the de-facto software for modeling performance of stormwater quality management systems.  One of the critical input to the model is the monthly evapotranspiration data, which is dependent upon the location of the project site in question. The evapotranspiration GIS data is">
+    <meta name="twitter:title" content="Retrieving Areal Evapotranspiration Data for Water Quality Modeling">
+    <meta name="twitter:description" content="Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.   Project Code on: GitHub |  Live Demo  Motivation MUSIC is the de-facto software for modeling performance of stormwater quality management systems.  One of the critical input to the model is the monthly evapotranspiration data,">
     <meta name="twitter:url" content="http://sscchan.github.io/blog/retrieving-areal-evapotranspiration-data-for-water-quality-modelling/">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Stephen Chan">
@@ -58,12 +58,12 @@
         "url": "http://sscchan.github.io/blog/author/stephen/",
         "sameAs": []
     },
-    "headline": "Retrieving Areal Evapotranspiration Data for Water Quality Modelling",
+    "headline": "Retrieving Areal Evapotranspiration Data for Water Quality Modeling",
     "url": "http://sscchan.github.io/blog/retrieving-areal-evapotranspiration-data-for-water-quality-modelling/",
     "datePublished": "2017-01-10T20:13:00.000Z",
-    "dateModified": "2017-04-06T20:22:29.000Z",
+    "dateModified": "2017-04-06T20:49:46.000Z",
     "keywords": "GIS, Water Quality, Stormwater, nodeJS, Express, Angular, Bootstrap, Google Maps API",
-    "description": "Project Code on: GitHub |  Live Demo Motivation MUSIC is the de-facto software for modeling performance of stormwater quality management systems.  One of the critical input to the model is the monthly evapotranspiration data, which is dependent upon the location of the project site in question. The evapotranspiration GIS data is",
+    "description": "Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.   Project Code on: GitHub |  Live Demo  Motivation MUSIC is the de-facto software for modeling performance of stormwater quality management systems.  One of the critical input to the model is the monthly evapotranspiration data,",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://sscchan.github.io/blog"
@@ -110,16 +110,19 @@
     <article class="post tag-gis tag-water-quality tag-stormwater tag-nodejs tag-express tag-angular tag-bootstrap tag-google-maps-api">
 
         <header class="post-header">
-            <h1 class="post-title">Retrieving Areal Evapotranspiration Data for Water Quality Modelling</h1>
+            <h1 class="post-title">Retrieving Areal Evapotranspiration Data for Water Quality Modeling</h1>
             <section class="post-meta">
                 <time class="post-date" datetime="2017-01-10">10 January 2017</time>  on <a href="../tag/gis/">GIS</a>, <a href="../tag/water-quality/">Water Quality</a>, <a href="../tag/stormwater/">Stormwater</a>, <a href="../tag/nodejs/">nodeJS</a>, <a href="../tag/express/">Express</a>, <a href="../tag/angular/">Angular</a>, <a href="../tag/bootstrap/">Bootstrap</a>, <a href="../tag/google-maps-api/">Google Maps API</a>
             </section>
         </header>
 
         <section class="post-content">
-            <hr>
+            <p>Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.  </p>
 
-<p>Project Code on: <a href="https://github.com/sscchan/Interrogator-for-Australian-Monthly-APET">GitHub</a> |  <a href="https://enigmatic-wave-70998.herokuapp.com/">Live Demo</a></p>
+<hr>
+
+<p>Project Code on: <a href="https://github.com/sscchan/Interrogator-for-Australian-Monthly-APET">GitHub</a> |  <a href="https://enigmatic-wave-70998.herokuapp.com/">Live Demo</a> <br>
+<img src="../content/images/2017/04/APETDataInterrogatorScreenshot-2.png" alt="App Screenshot"></p>
 
 <h4 id="motivation">Motivation</h4>
 
@@ -142,6 +145,10 @@
 <h5 id="backend">Backend</h5>
 
 <p>The backend consists of a nodeJS + Express server acting as both API &amp; Web Server hosted on Heroku Cloud Platform. The server parses evaporation ArcGrid GIS data on startup and expose the data query service with a RESTful API. </p>
+
+<h4 id="whatsnext">What's next?</h4>
+
+<p>As part of the quality assurance process all of the modeling (as well as inputs) must be checked. Right now there's no easy way to do that other than going to compare the values to evaporation contours charts from BOM. The next feature will include positions overlay on these chart so that a PDF report can be generated for QA and filing purposes. </p>
         </section>
 
         <footer class="post-footer">
@@ -161,7 +168,7 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Retrieving%20Areal%20Evapotranspiration%20Data%20for%20Water%20Quality%20Modelling&amp;url=http://sscchan.github.io/blog/retrieving-areal-evapotranspiration-data-for-water-quality-modelling/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Retrieving%20Areal%20Evapotranspiration%20Data%20for%20Water%20Quality%20Modeling&amp;url=http://sscchan.github.io/blog/retrieving-areal-evapotranspiration-data-for-water-quality-modelling/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
                 <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/retrieving-areal-evapotranspiration-data-for-water-quality-modelling/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
@@ -179,6 +186,12 @@
 </main>
 
 <aside class="read-next">
+    <a class="read-next-story no-cover" href="../mapping-electrification-potential-using-remote-sensing-data/">
+        <section class="post">
+            <h2>Mapping Electrification Potential using Remote Sensing Data</h2>
+            <p>Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed…</p>
+        </section>
+    </a>
     <a class="read-next-story prev no-cover" href="../tweetsasmarkovchains/">
         <section class="post">
             <h2>Modelling Tweets as Markov Chains</h2>
