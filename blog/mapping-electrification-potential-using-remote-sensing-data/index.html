@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=a133008df7">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=76923cb666">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
 
     <link rel="canonical" href="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/">
@@ -23,8 +23,9 @@
     <meta property="og:title" content="Mapping Electrification Potential using Remote Sensing Data">
     <meta property="og:description" content="Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department's Clean Energy Data Science Challenge 2017.   Project Code on: GitHub |  Live Demo  The Challenge This application is created as an entry to the State Department's">
     <meta property="og:url" content="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/">
+    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/04/SHRSLAppBlogCover.png">
     <meta property="article:published_time" content="2017-04-03T22:27:00.000Z">
-    <meta property="article:modified_time" content="2017-04-06T22:30:47.000Z">
+    <meta property="article:modified_time" content="2017-04-07T23:26:47.000Z">
     <meta property="article:tag" content="Clean Energy Data Science Challenge">
     <meta property="article:tag" content="GIS">
     <meta property="article:tag" content="Geospatial Data">
@@ -35,10 +36,11 @@
     <meta property="article:tag" content="Solar">
     <meta property="article:tag" content="Microgrids">
     
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mapping Electrification Potential using Remote Sensing Data">
     <meta name="twitter:description" content="Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department's Clean Energy Data Science Challenge 2017.   Project Code on: GitHub |  Live Demo  The Challenge This application is created as an entry to the State Department's">
     <meta name="twitter:url" content="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/">
+    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/04/SHRSLAppBlogCover.png">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Stephen Chan">
     <meta name="twitter:label2" content="Filed under">
@@ -62,7 +64,8 @@
     "headline": "Mapping Electrification Potential using Remote Sensing Data",
     "url": "http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/",
     "datePublished": "2017-04-03T22:27:00.000Z",
-    "dateModified": "2017-04-06T22:30:47.000Z",
+    "dateModified": "2017-04-07T23:26:47.000Z",
+    "image": "http://sscchan.github.io/blog/content/images/2017/04/SHRSLAppBlogCover.png",
     "keywords": "Clean Energy Data Science Challenge, GIS, Geospatial Data, Bootstrap, JavaScript, MapBox, Renewable Energy, Solar, Microgrids",
     "description": "Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department&#x27;s Clean Energy Data Science Challenge 2017.   Project Code on: GitHub |  Live Demo  The Challenge This application is created as an entry to the State Department&#x27;s",
     "mainEntityOfPage": {
@@ -100,8 +103,8 @@
         
 
 
-<header class="main-header post-head no-cover">
-    <nav class="main-nav  clearfix">
+<header class="main-header post-head " style="background-image: url(../content/images/2017/04/SHRSLAppBlogCover.png)">
+    <nav class="main-nav overlay clearfix">
         
             <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
     </nav>
@@ -168,11 +171,23 @@
 
 <h5 id="frontend">Frontend</h5>
 
-<p>The Frontend has a map-based UI utilizing Mapbox GL JS library and the Bootstrap framework. </p>
+<p>The Frontend has a map-based UI utilizing Mapbox GL JS library and the Bootstrap framework. The following data layers are added to the visualization:</p>
+
+<ul>
+<li>HRSL (Settlement Density)</li>
+<li>VIIRS Nighttime Radiance</li>
+<li>Existing HV Electricity Transmission Lines</li>
+<li>Existing Roads</li>
+<li>Potential Viable Electrification Sites</li>
+</ul>
 
 <h5 id="backend">Backend</h5>
 
 <p>The geospatial analysis results are stored within Mapbox's  platform, removing the need for hosting our own geoserver. Raster data transformation was needed to create raster data layers to suit Mapbox's very specific bit-depth, projection and format specifications. </p>
+
+<h4 id="lessons">Lessons</h4>
+
+<p>Mapbox raster data has very specific requirements - 8-bit Geotiff with WGS 84/Pseudo-Mercator (EPSG:3857) with no Alpha. It's likely you'll need to do post-processing from the data analytics pipelines to fit the specification.  </p>
 
 <h4 id="whatsnext">What's next?</h4>
 
@@ -225,6 +240,12 @@
 </main>
 
 <aside class="read-next">
+    <a class="read-next-story " style="background-image: url(../content/images/2017/04/SolarAdoptionDataSystemBanner.jpg)" href="../modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/">
+        <section class="post">
+            <h2>Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)</h2>
+            <p>In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000…</p>
+        </section>
+    </a>
     <a class="read-next-story prev no-cover" href="../retrieving-areal-evapotranspiration-data-for-water-quality-modelling/">
         <section class="post">
             <h2>Retrieving Areal Evapotranspiration Data for Water Quality Modeling</h2>
@@ -244,7 +265,7 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=a133008df7"></script>
-    <script type="text/javascript" src="../assets/js/index.js?v=a133008df7"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=76923cb666"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=76923cb666"></script>
 
 </body>

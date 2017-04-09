@@ -1,0 +1,219 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=76923cb666">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="http://sscchan.github.io/blog/modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http://sscchan.github.io/blog/modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/amp/">
+    
+    <meta property="og:site_name" content="Stephen Chan's Blog">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)">
+    <meta property="og:description" content="In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000 for the typical 6-kilowatt residential rooftop). This project is born out of the 2017 SunCode challenge where our team will try to address the cost of acquisition issue in the US">
+    <meta property="og:url" content="http://sscchan.github.io/blog/modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/">
+    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/04/SolarAdoptionDataSystemBanner.jpg">
+    <meta property="article:published_time" content="2017-04-09T23:17:56.000Z">
+    <meta property="article:modified_time" content="2017-04-09T23:29:48.000Z">
+    <meta property="article:tag" content="Solar">
+    <meta property="article:tag" content="Geospatial Data">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="Visualization">
+    <meta property="article:tag" content="Suncode Hackathon">
+    <meta property="article:tag" content="Predictive Model">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)">
+    <meta name="twitter:description" content="In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000 for the typical 6-kilowatt residential rooftop). This project is born out of the 2017 SunCode challenge where our team will try to address the cost of acquisition issue in the US">
+    <meta name="twitter:url" content="http://sscchan.github.io/blog/modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/">
+    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/04/SolarAdoptionDataSystemBanner.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Stephen Chan">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Solar, Geospatial Data, GIS, Visualization, Suncode Hackathon, Predictive Model">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Stephen Chan&#x27;s Blog",
+        "logo": "http://sscchan.github.io/blog/ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Stephen Chan",
+        "url": "http://sscchan.github.io/blog/author/stephen/",
+        "sameAs": []
+    },
+    "headline": "Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)",
+    "url": "http://sscchan.github.io/blog/modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/",
+    "datePublished": "2017-04-09T23:17:56.000Z",
+    "dateModified": "2017-04-09T23:29:48.000Z",
+    "image": "http://sscchan.github.io/blog/content/images/2017/04/SolarAdoptionDataSystemBanner.jpg",
+    "keywords": "Solar, Geospatial Data, GIS, Visualization, Suncode Hackathon, Predictive Model",
+    "description": "In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000 for the typical 6-kilowatt residential rooftop). This project is born out of the 2017 SunCode challenge where our team will try to address the cost of acquisition issue in the US",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://sscchan.github.io/blog"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Stephen Chan's Blog" href="http://sscchan.github.io/blog/rss/">
+    <style>
+.vertical, .main-header-content {
+    background-color: rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body class="post-template tag-solar tag-geospatial-data tag-gis tag-visualization tag-suncode-hackathon tag-predictive-model nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="index.html#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home" role="presentation"><a href="http://sscchan.github.io/blog/">Home</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http://sscchan.github.io/blog/rss/">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head " style="background-image: url(../content/images/2017/04/SolarAdoptionDataSystemBanner.jpg)">
+    <nav class="main-nav overlay clearfix">
+        
+            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-solar tag-geospatial-data tag-gis tag-visualization tag-suncode-hackathon tag-predictive-model">
+
+        <header class="post-header">
+            <h1 class="post-title">Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-04-09">09 April 2017</time>  on <a href="../tag/solar/">Solar</a>, <a href="../tag/geospatial-data/">Geospatial Data</a>, <a href="../tag/gis/">GIS</a>, <a href="../tag/visualization/">Visualization</a>, <a href="../tag/suncode-hackathon/">Suncode Hackathon</a>, <a href="../tag/predictive-model/">Predictive Model</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000 for the typical 6-kilowatt residential rooftop).</p>
+
+<p>This project is born out of the 2017 SunCode challenge where our team will try to address the cost of acquisition issue in the US solar industry by creating a predictive model for residential solar adoption.</p>
+
+<h4 id="infectiousdiseasemodel">Infectious Disease Model</h4>
+
+<p>The basic premise of using an infectious disease model to predict solar energy adoption is that Americans (middle class Americans in particular) are driven by what their neighbors are doing. Essentially, it is the "<em>keeping up with the jones</em>" that motivates people to adopt solar. </p>
+
+<p>Give that premise, we can model the likelihood of an individual adopting solar by examining who else in the neighborhood has previously adopted solar. We'll be considering other variables such as household income and neighborhood political affiliations.  </p>
+
+<h4 id="datarequirement">Data Requirement</h4>
+
+<p><img src="../content/images/2017/04/SolarAdoptionDataSystemDiagram.png" alt="Logo"></p>
+
+<h6 id="solarinstallations">Solar Installations</h6>
+
+<p>To model the progression of an infectious "solar" disease, we must understand the spatial relationship between an infected individual to the likelihood of another individual becoming infected.</p>
+
+<p>After some significant effort, we have located public domain information on the Oregon's solar uptake from the year 2013 to 2016. This data is then visualized with Google Fusion Table in a web-based interface.</p>
+
+<h6 id="income">Income</h6>
+
+<p>One of the factor that we will be considering is the income level of individual household. Since income data are difficult to obtain at this granularity, we'll be using the house value as proxy (pulled from the Zillow API).</p>
+
+<h6 id="politicalaffiliation">Political Affiliation</h6>
+
+<p>Our hypothesis postulates that residential solar power adoption rates is affected by the individual's political affiliation. We use a simple binary variable to represents whether the district the location is in registered majority democrat or republican between 2013-2016. </p>
+
+<p>Data extract for this portion is difficult, since the data is only available in PDF format with poorly constructed tables.</p>
+
+<p><img src="../content/images/2017/04/SolarAdoptionVoterRegistrationScreenshot.png" alt="Voter Registration Statistics"></p>
+
+<p>The Oregon lower house district boundary data can then be used to classify a particular geographical area's political leaning. </p>
+
+<p><img src="../content/images/2017/04/SolarAdoptionPoliticalAnalysis.png" alt="Oregon State District Boundaries"></p>
+
+<h4 id="whatsnext">What's Next</h4>
+
+<p>In the next blog post I'll describe the predictive disease modeling process.</p>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../author/stephen/">Stephen Chan</a></h4>
+
+                    <p>Read <a href="../author/stephen/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Modeling%20Oregon%20Solar%20Uptake%20with%20Infectious%20Disease%20Model%20Part%201%20(Data%20Discovery%20%26%20Processing)&amp;url=http://sscchan.github.io/blog/modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story prev " style="background-image: url(../content/images/2017/04/SHRSLAppBlogCover.png)" href="../mapping-electrification-potential-using-remote-sensing-data/">
+        <section class="post">
+            <h2>Mapping Electrification Potential using Remote Sensing Data</h2>
+            <p>Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan's Blog</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=76923cb666"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=76923cb666"></script>
+
+</body>
