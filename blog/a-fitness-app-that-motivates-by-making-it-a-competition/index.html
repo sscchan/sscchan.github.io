@@ -1,0 +1,224 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>A Fitness App that Motivates by Making it A Competition</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=76923cb666">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/amp/">
+    
+    <meta property="og:site_name" content="Stephen Chan's Blog">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="A Fitness App that Motivates by Making it A Competition">
+    <meta property="og:description" content="How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously.   Project Code on: GitHub  System Architecture Front End The iOS Frontend is">
+    <meta property="og:url" content="http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/">
+    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/04/RwfBanner.jpg">
+    <meta property="article:published_time" content="2017-03-09T23:17:00.000Z">
+    <meta property="article:modified_time" content="2017-04-10T03:01:05.000Z">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="nodeJS">
+    <meta property="article:tag" content="iOS">
+    <meta property="article:tag" content="React-Native">
+    <meta property="article:tag" content="GPS">
+    <meta property="article:tag" content="Flask">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Microservices">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Containers">
+    <meta property="article:tag" content="Websockets">
+    <meta property="article:tag" content="Real-time">
+    <meta property="article:tag" content="Continuous Integration">
+    <meta property="article:tag" content="CircleCI">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A Fitness App that Motivates by Making it A Competition">
+    <meta name="twitter:description" content="How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously.   Project Code on: GitHub  System Architecture Front End The iOS Frontend is">
+    <meta name="twitter:url" content="http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/">
+    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/04/RwfBanner.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Stephen Chan">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript, nodeJS, iOS, React-Native, GPS, Flask, Python, Microservices, Docker, Containers, Websockets, Real-time, Continuous Integration, CircleCI">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Stephen Chan&#x27;s Blog",
+        "logo": "http://sscchan.github.io/blog/ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Stephen Chan",
+        "url": "http://sscchan.github.io/blog/author/stephen/",
+        "sameAs": []
+    },
+    "headline": "A Fitness App that Motivates by Making it A Competition",
+    "url": "http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/",
+    "datePublished": "2017-03-09T23:17:00.000Z",
+    "dateModified": "2017-04-10T03:01:05.000Z",
+    "image": "http://sscchan.github.io/blog/content/images/2017/04/RwfBanner.jpg",
+    "keywords": "JavaScript, nodeJS, iOS, React-Native, GPS, Flask, Python, Microservices, Docker, Containers, Websockets, Real-time, Continuous Integration, CircleCI",
+    "description": "How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously.   Project Code on: GitHub  System Architecture Front End The iOS Frontend is",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://sscchan.github.io/blog"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Stephen Chan's Blog" href="http://sscchan.github.io/blog/rss/">
+    <style>
+.vertical, .main-header-content {
+    background-color: rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body class="post-template tag-javascript tag-nodejs tag-ios tag-react-native tag-gps tag-flask tag-python tag-microservices tag-docker tag-containers tag-websockets tag-real-time tag-continuous-integration tag-circleci nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="index.html#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home" role="presentation"><a href="http://sscchan.github.io/blog/">Home</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http://sscchan.github.io/blog/rss/">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head " style="background-image: url(../content/images/2017/04/RwfBanner.jpg)">
+    <nav class="main-nav overlay clearfix">
+        
+            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-javascript tag-nodejs tag-ios tag-react-native tag-gps tag-flask tag-python tag-microservices tag-docker tag-containers tag-websockets tag-real-time tag-continuous-integration tag-circleci">
+
+        <header class="post-header">
+            <h1 class="post-title">A Fitness App that Motivates by Making it A Competition</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-03-09">09 March 2017</time>  on <a href="../tag/javascript/">JavaScript</a>, <a href="../tag/nodejs/">nodeJS</a>, <a href="../tag/ios/">iOS</a>, <a href="../tag/react-native/">React-Native</a>, <a href="../tag/gps/">GPS</a>, <a href="../tag/flask/">Flask</a>, <a href="../tag/python/">Python</a>, <a href="../tag/microservices/">Microservices</a>, <a href="../tag/docker/">Docker</a>, <a href="../tag/containers/">Containers</a>, <a href="../tag/websockets/">Websockets</a>, <a href="../tag/real-time/">Real-time</a>, <a href="../tag/continuous-integration/">Continuous Integration</a>, <a href="../tag/circleci/">CircleCI</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously.  </p>
+
+<hr>
+
+<p>Project Code on: <a href="https://github.com/HR-Elves/race-with-friends-server">GitHub</a> <br>
+<img src="../content/images/2017/04/RwfScreenSideBySide.png" alt="App Screenshot"></p>
+
+<h4 id="systemarchitecture">System Architecture</h4>
+
+<p><img src="../content/images/2017/04/RwFSystemsDiagram.png" alt="System Architecture"></p>
+
+<h6 id="frontend">Front End</h6>
+
+<p>The iOS Frontend is built with React-Native following the Google Materials Design guidelines. Authentication is handled with Auth0 with the Facebook (and potentially other) platform. The selection of React-Native as a frontend framework allow us to write mobile application in JavaScript and will facilitate easier porting to Android in the future.  </p>
+
+<h6 id="backend">Back End</h6>
+
+<p>The Backend are a collection of containerized microservices running under a docker-machine. The microservices architecture allow the team members to work on the codebase with minimum amount of overlap, reducing the time needed to resolve code conflicts. </p>
+
+<p>The use of containerized microservices also provided flexibility in how the back-end is implemented. nodeJS + Express is used for the microservices responsible for routing, authentication, users management and websocket live race relays. Python and PostgresSQL are used for runs and challenges services to facilitate future manipulation work on geospatial data.  </p>
+
+<h4 id="continuousintegrationcideployment">Continuous Integration (CI) &amp; Deployment</h4>
+
+<p><img src="../content/images/2017/04/RwfCIDiagram.png" alt="Continuous Integration Diagram">
+The development process of this application utilizes Continuous Testing, Integration &amp; Deployment workflow. Merges to the master branch are tested, and if the tests passes, docker images for each microservices are rebuilt and pushed to Docker Hub. <br>
+The EC2 instances then pull newly built docker images from the Docker Hub. Since we're using docker containers, little or no residue of the previous versions are left on the deployment environment. </p>
+
+<h6 id="lessons">Lessons</h6>
+
+<p>iOS (and now Android) is <em>really</em> aggressive in putting your application to sleep / hibernation mode. It makes executing application logic (such as monitoring GPS location and executing race logic) difficult. </p>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../author/stephen/">Stephen Chan</a></h4>
+
+                    <p>Read <a href="../author/stephen/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=A%20Fitness%20App%20that%20Motivates%20by%20Making%20it%20A%20Competition&amp;url=http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story " style="background-image: url(../content/images/2017/04/SHRSLAppBlogCover.png)" href="../mapping-electrification-potential-using-remote-sensing-data/">
+        <section class="post">
+            <h2>Mapping Electrification Potential using Remote Sensing Data</h2>
+            <p>Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="../retrieving-areal-evapotranspiration-data-for-water-quality-modelling/">
+        <section class="post">
+            <h2>Retrieving Areal Evapotranspiration Data for Water Quality Modeling</h2>
+            <p>Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.   Project Code…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan's Blog</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=76923cb666"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=76923cb666"></script>
+
+</body>
