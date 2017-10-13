@@ -1,0 +1,139 @@
+html, body {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#diagram-container {
+  transform-origin: top left;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 752px;
+  width: 564px;
+  transform: scale(1, 1);
+  
+  font-family: 'Dosis', san-serif;
+  font-size: 16px;
+}
+
+#diagram-image {
+  height: 100%;
+  width: 100%;
+}
+
+#application-title {
+  position: absolute;
+  text-align: center;
+  width: 564px;
+  left: 282px;
+  bottom: 0px;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+}
+
+#current-mode {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+#current-unit {
+  position: absolute;
+  top: 35px;
+  right: 15px
+}
+
+#info-link i {
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  transform-origin: top right;
+  transform: scale(1.5, 1.5);
+}
+
+a:link {
+  color: black;
+}
+
+a:active {
+  color: red;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: maroon;
+}
+
+#measurement-labels div {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+#chests-height {
+  top: 465px;
+  left: 52px;
+}
+
+#beds-lower-height {
+  top: 606px;
+  left: 179px;
+}
+
+#beds-upper-height {
+  top: 622px;
+  left: 179px;
+}
+
+#bookcases-height {
+  top: 357px;
+  left: 122px;
+}
+
+#user-height {
+  top: 376px;
+  left: 227px;
+}
+
+#user-height input {
+  width: 50px;
+  text-align: center;
+  font-family: 'Dosis', san-serif;
+  font-size: 16px;
+  
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+#tables-height {
+  top: 579px;
+  left: 371px;
+}
+
+#seats-and-coffee-tables-lower-height {
+  top: 606px;
+  left: 422px;
+}
+
+#seats-and-coffee-tables-upper-height {
+  top: 622px;
+  left: 422px;
+}
+
+#cabinets-height {
+  top: 552px;
+  left: 496px;
+}
+
+#wardrobes-height {
+  top: 383px;
+  left: 510px;
+}
+
