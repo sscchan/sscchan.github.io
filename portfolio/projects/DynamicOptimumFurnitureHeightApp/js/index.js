@@ -12,7 +12,7 @@ function resizeDiagramToFitPageHeight() {
   var diagramScaleRatio = viewportHeight / diagramUnscaledHeight;
 
   if (diagramUnscaledWidth * diagramScaleRatio > viewportWidth) {
-    diagramScaleRatio = viewportWidth / diagramUnscaledWidth);
+    diagramScaleRatio = (viewportWidth / diagramUnscaledWidth);
   }
   
   $("#diagram-container").css({transform: 'scale(' + diagramScaleRatio + ',' + diagramScaleRatio + ')'});
