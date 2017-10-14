@@ -4,7 +4,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 #diagram-container {
@@ -37,14 +37,26 @@ html, body {
 
 #current-mode {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 12px;
+  right: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  text-align: right;
+  
+  border: 0px solid black;
+  border-radius: 8px;    
 }
 
 #current-unit {
   position: absolute;
   top: 35px;
-  right: 15px
+  right: 10px;
+  width: 105px;
+  padding-right: 5px;
+  text-align: right;
+
+  border: 2px solid black;
+  border-radius: 8px;  
 }
 
 #info-link i {
@@ -96,20 +108,64 @@ a:hover {
   left: 122px;
 }
 
-#user-height {
-  top: 376px;
-  left: 227px;
-}
-
-#user-height input {
-  width: 50px;
+.diagram-input {
+  position: absolute;
+  transform: translate(-50%, -50%);
   text-align: center;
   font-family: 'Dosis', san-serif;
   font-size: 16px;
-  
+  width: 20px;
+
   background: transparent;
   border: 2px solid black;
   border-radius: 8px;
+}
+
+#user-height-input-cm {
+  top: 377px;
+  left: 225px;
+  width: 40px;
+
+}
+
+#user-height-input-feet {
+  top: 377px;
+  left: 208px;
+  width: 20px;
+
+  text-align: right;
+  border-radius: 8px 0px 0px 8px;  
+  padding-right: 12px;
+}
+
+#user-height-input-feet-unit-label {
+  position: absolute;
+  font-size: 20px;
+  top: 364px;
+  left: 215px;
+
+  width: 20px;
+  height: 20px;
+}
+
+#user-height-input-inch {
+  top: 377px;
+  left: 241px;
+
+  width: 28px;
+  height: 20px;
+
+  border-radius: 0px 8px 8px 0px;    
+  padding-right: 4px;
+}
+
+#user-height-input-inch-unit-label {
+  position: absolute;
+
+  top: 364px;
+  left: 245px;
+
+  font-size: 20px;
 }
 
 #tables-height {
@@ -135,5 +191,24 @@ a:hover {
 #wardrobes-height {
   top: 383px;
   left: 510px;
+}
+
+/* Remove "Spinners" on Numbers Input Field */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
 

@@ -6,68 +6,76 @@
   
   
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Dosis:600'>
-<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 
-      <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   
 </head>
 
 <body>
   <div id="diagram-container">
-  <img id="diagram-image" src="http://sscchan.github.io/portfolio/projects/DynamicOptimumFurnitureHeightApp/img/optimalheightdiagrambackround.jpg">
-  <div id="application-title">
-    <a href="http://sscchan.github.io/blog/">DYNAMIC OPTIMUM FURNITURE HEIGHT DIAGRAM</a>
-  </div>
-  <div id="current-mode">
-    MODE: LINEAR
-  </div>
-  <div id="current-unit">
-    UNIT: SI [cm]
-  </div>
-  <div id="info-link">
-    <a href="http://sscchan.github.io/blog/">
-      <i class="fa fa fa-info-circle" aria-hidden="true"></i>
-    </a>
-  </div>
-  
-  <div id="measurement-labels">
-    <div id="chests-height">
-      137
+    <img id="diagram-image" src="http://sscchan.github.io/portfolio/projects/DynamicOptimumFurnitureHeightApp/img/optimalheightdiagrambackround.jpg">
+    <div id="application-title">
+      <a href="http://sscchan.github.io/blog/">DYNAMIC OPTIMUM FURNITURE HEIGHT DIAGRAM</a>
     </div>
-    <div id="bookcases-height">
-      208
+    <div id="current-mode">
+      MODE: LINEAR
     </div>
-    <div id="beds-lower-height">
-      55
+    <div id="current-unit">
+      UNITS: SI [cm]
     </div>
-    <div id="beds-upper-height">
-      61
+    <div id="info-link">
+      <a href="http://sscchan.github.io/blog/">
+        <i class="fa fa fa-info-circle" aria-hidden="true"></i>
+      </a>
     </div>
-    <div id="user-height">
-      <input id="user-height-input" type="text" name="user-height-input" value="175">
-    </div>
-    <div id="tables-height">
-      74
-    </div>
-    <div id="seats-and-coffee-tables-lower-height">
-      41
-    </div>
-    <div id="seats-and-coffee-tables-upper-height">
-      46
-    </div>    
-    <div id="cabinets-height">
-      81
-    </div>
-    <div id="wardrobes-height">
-      183
-    </div>
-  </div>
-</div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'></script>
 
-    <script  src="js/index.js"></script>
+    <div id="user-inputs">
+      <input class="diagram-input" id="user-height-input-cm" type="number" name="user-height-input-cm" value="175">
+
+      <input class="diagram-input" id="user-height-input-feet" type="number" name="user-height-input-feet" value="5">
+      <div id="user-height-input-feet-unit-label">'</div>
+
+      <input class="diagram-input" id="user-height-input-inch" type="number" name="user-height-input-inch" value="9">
+      <div id="user-height-input-inch-unit-label">"</div>  
+    </div>
+
+    <div id="measurement-labels">
+      <div id="chests-height">
+        137
+      </div>
+      <div id="bookcases-height">
+        208
+      </div>
+      <div id="beds-lower-height">
+        55
+      </div>
+      <div id="beds-upper-height">
+        61
+      </div>
+      <div id="tables-height">
+        74
+      </div>
+      <div id="seats-and-coffee-tables-lower-height">
+        41
+      </div>
+      <div id="seats-and-coffee-tables-upper-height">
+        46
+      </div>    
+      <div id="cabinets-height">
+        81
+      </div>
+      <div id="wardrobes-height">
+        183
+      </div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'></script>
+
+  <script  src="js/index.js"></script>
 
 </body>
 </html>

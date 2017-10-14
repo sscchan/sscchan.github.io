@@ -2,7 +2,6 @@
 
 
 function resizeDiagramToFitPageHeight() {
-  console.log('resized fired');
   var viewportHeight = $('body').height();
   var viewportWidth = $('body').width();
   
@@ -64,31 +63,113 @@ class FurnitureHeightFittingModel {
 class FurnitureHeightFittingController {
   constructor(model) {
     this.model = model;
+    this.view = {
+      "unitUsed" : "SI"
+    };    
   }
   
   initializeView() {
+    this.updateUserInputUnitDisplay();
     this.updateFurnitureMeasurement();
   }
   
   registerHandler() {
     $(window).resize(resizeDiagramToFitPageHeight);
-    $("#user-height-input").on('input', this.handleUserHeightInputChange.bind(this));
+    $("#current-unit").on('click', this.handleToggleUnitsUsed.bind(this));    
+    $("#user-height-input-cm").on('input', this.handleUserCmHeightInputChange.bind(this));
+    $("#user-height-input-feet").on('input', this.handleUserUSHeightInputChange.bind(this));
+    $("#user-height-input-inch").on('input', this.handleUserUSHeightInputChange.bind(this));    
+
   }
   
-  handleUserHeightInputChange(event) {
-    var newUserHeightInputString = $("#user-height-input").val();
+  handleUserCmHeightInputChange(event) {
+    var newUserHeightInputString = $("#user-height-input-cm").val();
     var newUserHeight = parseFloat(newUserHeightInputString);
     if (!Number.isNaN(newUserHeight)) {
       this.model.setUserHeight(newUserHeight);
     }
   }
-  
-  updateFurnitureMeasurement() {
-    for (var furnitureType in this.model.getScaledFurnitureHeight()) {
-      var newFurnitureDisplayMeasurementValue = Math.round(this.model.getScaledFurnitureHeight()[furnitureType]);
-      $('#' + furnitureType).text(newFurnitureDisplayMeasurementValue);
+
+  handleUserUSHeightInputChange(event) {
+    var newUserHeightFeetInputString = $("#user-height-input-feet").val();
+    var newUserHeightFeet = parseFloat(newUserHeightFeetInputString);
+
+    var newUserHeightInchInputString = $("#user-height-input-inch").val();
+    var newUserHeightInch = parseFloat(newUserHeightInchInputString);    
+    if (!Number.isNaN(newUserHeightFeet) && !Number.isNaN(newUserHeightFeet)) {
+      var newUserHeightInCm = (newUserHeightFeet * 12 + newUserHeightInch) * 2.54;
+      this.model.setUserHeight(newUserHeightInCm);
     }
   }
+
+  updateSIUserInputDisplay() {
+    $("#user-height-input-cm").val(Math.round(this.model.userHeight));
+  }
+
+  updateUSUserInputDisplay() {
+    var valueInCm = this.model.userHeight;
+    var valueInFeet = parseInt(valueInCm / 30.48);
+    var valueInInches = Math.round((valueInCm - (valueInFeet * 30.48)) / 2.54);
+    $("#user-height-input-feet").val(valueInFeet);
+    $("#user-height-input-inch").val(valueInInches);
+  }
+
+  handleToggleUnitsUsed(event) {
+    this.view.unitUsed = (this.view.unitUsed == "SI") ? "US" : "SI";
+    this.updateUnitDisplay();
+    this.updateUserInputUnitDisplay();
+    this.updateFurnitureMeasurement();
+  }
+  
+  updateUnitDisplay() {
+    if (this.view.unitUsed == "US") {
+      $("#current-unit").text("UNITS: US CUST");
+    } else {
+      $("#current-unit").text("UNITS: SI [cm]");
+    }
+  }
+
+  updateUserInputUnitDisplay() {
+    if (this.view.unitUsed == "SI") {
+      $("#user-height-input-cm").show();
+      $("#user-height-input-feet").hide();
+      $("#user-height-input-inch").hide();
+      $("#user-height-input-feet-unit-label").hide();
+      $("#user-height-input-inch-unit-label").hide();
+      this.updateSIUserInputDisplay();
+    } else {
+      $("#user-height-input-cm").hide();
+      $("#user-height-input-feet").show();
+      $("#user-height-input-inch").show();
+      $("#user-height-input-feet-unit-label").show();
+      $("#user-height-input-inch-unit-label").show();
+      this.updateUSUserInputDisplay();        
+    }
+  }
+
+  updateFurnitureMeasurement() {
+    for (var furnitureType in this.model.getScaledFurnitureHeight()) {
+      var newFurnitureDisplayMeasurementValue = this.model.getScaledFurnitureHeight()[furnitureType];
+      $('#' + furnitureType).text(this.inSelectedUnits(newFurnitureDisplayMeasurementValue));
+    }
+  }
+
+  inSelectedUnits(measurementInSI) {
+    if (this.view.unitUsed == "SI") {
+      return Math.round(measurementInSI);
+    } else {
+      return this.convertToFeetAndInches(measurementInSI);
+    }
+  }
+
+  convertToFeetAndInches(valueInCm) {
+    var valueTotalInInches = valueInCm / 2.54;
+    var valueInFeet = parseInt(valueTotalInInches / 12);
+    var valueInInches = Math.round(valueTotalInInches - valueInFeet * 12);
+    var valueInFeetAndInchesText = valueInFeet + "'" + valueInInches + '"';
+    return valueInFeetAndInchesText; 
+  }
+
 }
 
 $(document).ready(function() {
