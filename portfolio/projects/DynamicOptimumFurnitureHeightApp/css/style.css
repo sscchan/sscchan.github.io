@@ -4,7 +4,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 #diagram-container {
@@ -212,3 +212,12 @@ input[type=number] {
     -moz-appearance:textfield;
 }
 
+@media print {
+  html, body {
+    background-color: white;
+  }
+
+  .diagram-input, #current-unit {
+    border: 0px none black;
+  }
+}
