@@ -25,7 +25,7 @@
     <meta property="og:url" content="http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/">
     <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/10/dynamicoptimumfurnitureheightdiagram.jpeg">
     <meta property="article:published_time" content="2017-10-21T15:20:06.000Z">
-    <meta property="article:modified_time" content="2017-10-21T16:00:02.000Z">
+    <meta property="article:modified_time" content="2017-10-21T16:50:42.000Z">
     <meta property="article:tag" content="JavaScript">
     <meta property="article:tag" content="CSS">
     <meta property="article:tag" content="Dependency Injection">
@@ -60,7 +60,7 @@
     "headline": "Dynamic Optimum Furniture Height Diagram",
     "url": "http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/",
     "datePublished": "2017-10-21T15:20:06.000Z",
-    "dateModified": "2017-10-21T16:00:02.000Z",
+    "dateModified": "2017-10-21T16:50:42.000Z",
     "image": "http://sscchan.github.io/blog/content/images/2017/10/dynamicoptimumfurnitureheightdiagram.jpeg",
     "keywords": "JavaScript, CSS, Dependency Injection, Model-View-Presenter, Responsive",
     "description": "I stumbled across an interesting diagram from the 1950s showing the optimal dimension of various furniture items along side a 5&#x27;9&quot; tall person.  Wouldn&#x27;t it be useful to be able to determine the optimum furniture height for people with heights other than 5&#x27;9&quot;? So I went ahead a made a",
@@ -127,11 +127,28 @@
 
 <hr>
 
-<p>Project Code on: <a href="https://github.com/sscchan/sscchan.github.io/tree/master/portfolio/projects/DynamicOptimumFurnitureHeightApp">GitHub</a> | <a href="http://127.0.0.1:2368/portfolio/projects/DynamicOptimumFurnitureHeightApp/index.html">Live Demo</a></p>
+<p>Project Code on: <a href="https://github.com/sscchan/sscchan.github.io/tree/master/portfolio/projects/DynamicOptimumFurnitureHeightApp">GitHub</a> | <a href="http://sscchan.github.io/portfolio/projects/DynamicOptimumFurnitureHeightApp/index.html">Live Demo</a></p>
 
 <p>Checkout the the embedded version:</p>
 
-<iframe src="http://127.0.0.1:2368/portfolio/projects/DynamicOptimumFurnitureHeightApp/index.html" width="100%" height="500" frameborder="0"></iframe>
+<div id="iframe-container" style="  
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 133.3%;
+  margin-bottom: 5%;
+">
+<iframe src="http://sscchan.github.io/portfolio/projects/DynamicOptimumFurnitureHeightApp/index.html" style="  
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  left 0;
+  top: 0;
+  margin-top: 0;
+  border: solid 2px;
+"></iframe>
+</div>
 
 <h6 id="designfeatures">Design &amp; Features</h6>
 
@@ -139,11 +156,12 @@
 
 <ul>
 <li>Metric &amp; US Customary Unit Modes</li>
-<li>Automatic Height Input Unit Conversion</li>
+<li>Automatic User Height Input Unit Conversion</li>
+<li>Saves User Height between Sessions</li>
 <li>Print-Friendly CSS &amp; JS Scaling</li>
 <li>Responsive Design</li>
-<li>Model-View-Presenter Architeture</li>
-<li>Dependency Injection</li>
+<li>Model-View-Presenter Architecture</li>
+<li>Inversion of Control Pattern with Dependency Injection</li>
 </ul>
         </section>
 
