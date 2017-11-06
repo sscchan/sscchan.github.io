@@ -1,51 +1,52 @@
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Optimizing Water Supply Networks with Genetic Algorithm (Part II)</title>
-    <meta name="description" content="">
+    <meta name="description" content="" />
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="shortcut icon" href="../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=e1496b6f80">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=7fa9c36118" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
-    <link rel="canonical" href="http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/amp/">
+    <link rel="canonical" href="http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/amp/" />
     
-    <meta property="og:site_name" content="Stephen Chan's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Optimizing Water Supply Networks with Genetic Algorithm (Part II)">
-    <meta property="og:description" content="This Part II of my blogpost on the application that helps with optimizing water supply networks using genetic algorithm. You can read Part I  here.   The application is written in C/C++.  Project Code on: GitHub   Genetic Algorithm Genetic algorithm is a method for optimization process that is inspired by">
-    <meta property="og:url" content="http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/">
-    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/04/MOGABanner-1.jpg">
-    <meta property="article:published_time" content="2016-05-17T23:34:00.000Z">
-    <meta property="article:modified_time" content="2017-04-12T05:27:29.000Z">
-    <meta property="article:tag" content="C/C++">
-    <meta property="article:tag" content="Water">
-    <meta property="article:tag" content="EPANET">
-    <meta property="article:tag" content="Water Supply">
-    <meta property="article:tag" content="Optimization">
-    <meta property="article:tag" content="Multi-Objective">
-    <meta property="article:tag" content="Genetic Algorithm">
-    <meta property="article:tag" content="Water Resources">
+    <meta property="og:site_name" content="Stephen Chan&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Optimizing Water Supply Networks with Genetic Algorithm (Part II)" />
+    <meta property="og:description" content="This Part II of my blogpost on the application that helps with optimizing water supply networks using genetic algorithm. You can read Part I  here.   The application is written in C/C++.  Project Code on: GitHub   Genetic Algorithm Genetic algorithm is a method for optimization process that is inspired by" />
+    <meta property="og:url" content="http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/" />
+    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/04/MOGABanner-1.jpg" />
+    <meta property="article:published_time" content="2016-05-17T23:34:00.000Z" />
+    <meta property="article:modified_time" content="2017-04-12T05:27:29.000Z" />
+    <meta property="article:tag" content="C/C++" />
+    <meta property="article:tag" content="Water" />
+    <meta property="article:tag" content="EPANET" />
+    <meta property="article:tag" content="Water Supply" />
+    <meta property="article:tag" content="Optimization" />
+    <meta property="article:tag" content="Multi-Objective" />
+    <meta property="article:tag" content="Genetic Algorithm" />
+    <meta property="article:tag" content="Water Resources" />
     
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Optimizing Water Supply Networks with Genetic Algorithm (Part II)">
-    <meta name="twitter:description" content="This Part II of my blogpost on the application that helps with optimizing water supply networks using genetic algorithm. You can read Part I  here.   The application is written in C/C++.  Project Code on: GitHub   Genetic Algorithm Genetic algorithm is a method for optimization process that is inspired by">
-    <meta name="twitter:url" content="http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/">
-    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/04/MOGABanner-1.jpg">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Stephen Chan">
-    <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="C/C++, Water, EPANET, Water Supply, Optimization, Multi-Objective, Genetic Algorithm, Water Resources">
-    <meta property="og:image:width" content="980">
-    <meta property="og:image:height" content="413">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Optimizing Water Supply Networks with Genetic Algorithm (Part II)" />
+    <meta name="twitter:description" content="This Part II of my blogpost on the application that helps with optimizing water supply networks using genetic algorithm. You can read Part I  here.   The application is written in C/C++.  Project Code on: GitHub   Genetic Algorithm Genetic algorithm is a method for optimization process that is inspired by" />
+    <meta name="twitter:url" content="http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/" />
+    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/04/MOGABanner-1.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Stephen Chan" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="C/C++, Water, EPANET, Water Supply, Optimization, Multi-Objective, Genetic Algorithm, Water Resources" />
+    <meta property="og:image:width" content="980" />
+    <meta property="og:image:height" content="413" />
     
     <script type="application/ld+json">
 {
@@ -81,8 +82,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 0.11">
-    <link rel="alternate" type="application/rss+xml" title="Stephen Chan's Blog" href="http://sscchan.github.io/blog/rss/">
+    <meta name="generator" content="Ghost 0.11" />
+    <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog/rss/" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109231432-1"></script>
 <script>
@@ -134,23 +135,23 @@
         <header class="post-header">
             <h1 class="post-title">Optimizing Water Supply Networks with Genetic Algorithm (Part II)</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2016-05-17">17 May 2016</time>  on <a href="../tag/c-c/">C/C++</a>, <a href="../tag/water/">Water</a>, <a href="../tag/epanet/">EPANET</a>, <a href="../tag/water-supply/">Water Supply</a>, <a href="../tag/optimization/">Optimization</a>, <a href="../tag/multi-objective/">Multi-Objective</a>, <a href="../tag/genetic-algorithm/">Genetic Algorithm</a>, <a href="../tag/water-resources/">Water Resources</a>
+                <time class="post-date" datetime="2016-05-17">17 May 2016</time>  on <a href="../tag/c-c/index.html">C/C++</a>, <a href="../tag/water/index.html">Water</a>, <a href="../tag/epanet/index.html">EPANET</a>, <a href="../tag/water-supply/index.html">Water Supply</a>, <a href="../tag/optimization/index.html">Optimization</a>, <a href="../tag/multi-objective/index.html">Multi-Objective</a>, <a href="../tag/genetic-algorithm/index.html">Genetic Algorithm</a>, <a href="../tag/water-resources/index.html">Water Resources</a>
             </section>
         </header>
 
         <section class="post-content">
             <p>This Part II of my blogpost on the application that helps with optimizing water supply networks using genetic algorithm. You can read <a href="http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithmn-part-i/">Part I</a>  here.  </p>
 
-<hr>
+<hr />
 
-<p>The application is written in C/C++. <br>
+<p>The application is written in C/C++. <br />
 Project Code on: <a href="https://github.com/sscchan/Genetic-Algorithm-Optimization-of-Water-Supply-System">GitHub</a>  </p>
 
 <h4 id="geneticalgorithm">Genetic Algorithm</h4>
 
 <p><a href="https://en.wikipedia.org/wiki/Genetic_algorithm">Genetic algorithm</a> is a method for optimization process that is inspired by natural selection. Individual solutions are encoded into "DNA" which are repeatedly mutated, reproduced and selected for "fitness" based on system performance. </p>
 
-<p><img src="../content/images/2017/04/MOGAGADiagram.png" alt="Genetic Algorithm Flow Diagram"></p>
+<p><img src="../content/images/2017/04/MOGAGADiagram.png" alt="Genetic Algorithm Flow Diagram" /></p>
 
 <h5 id="initialization">Initialization</h5>
 
@@ -158,7 +159,7 @@ Project Code on: <a href="https://github.com/sscchan/Genetic-Algorithm-Optimizat
 
 <h5 id="encoding">Encoding</h5>
 
-<p><img src="../content/images/2017/04/MOGAEncodingDiagram.png" alt="System Encoding Diagram">
+<p><img src="../content/images/2017/04/MOGAEncodingDiagram.png" alt="System Encoding Diagram" />
 Possible choices of components of the system are represented as integers. Bit representation of these integers are concatenated and represents a configuration's "DNA". This encoding process enables the mimicking of the biological mutation and reproduction process. </p>
 
 <h5 id="mutation">Mutation</h5>
@@ -169,7 +170,7 @@ Possible choices of components of the system are represented as integers. Bit re
 
 <p>In the reproduction process, configurations that have high "fitness" scores are paired and their encoded DNA are merged to create a new pair of configurations. A simple single-point cross-over approach, where the encoded bits are swapped at after a pivot point, is used.</p>
 
-<p><img src="../content/images/2017/04/MOGACrossover.png" alt="Crossover Diagram"></p>
+<p><img src="../content/images/2017/04/MOGACrossover.png" alt="Crossover Diagram" /></p>
 
 <h4 id="decodingfitnessevaluation">Decoding &amp; Fitness Evaluation</h4>
 
@@ -195,9 +196,9 @@ Possible choices of components of the system are represented as integers. Bit re
 
 
             <section class="author">
-                <h4><a href="../author/stephen/">Stephen Chan</a></h4>
+                <h4><a href="../author/stephen/index.html">Stephen Chan</a></h4>
 
-                    <p>Read <a href="../author/stephen/">more posts</a> by this author.</p>
+                    <p>Read <a href="../author/stephen/index.html">more posts</a> by this author.</p>
                 <div class="author-meta">
                     
                     
@@ -207,13 +208,16 @@ Possible choices of components of the system are represented as integers. Bit re
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Optimizing%20Water%20Supply%20Networks%20with%20Genetic%20Algorithm%20(Part%20II)&amp;url=http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Optimizing%20Water%20Supply%20Networks%20with%20Genetic%20Algorithm%20(Part%20II)&amp;url=http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>
@@ -225,16 +229,16 @@ Possible choices of components of the system are represented as integers. Bit re
 </main>
 
 <aside class="read-next">
-    <a class="read-next-story " style="background-image: url(../content/images/2017/04/TwitterGeneratorBanner.png)" href="../tweetsasmarkovchains/">
+    <a class="read-next-story " style="background-image: url(../content/images/2017/04/TwitterGeneratorBanner.png)" href="../tweetsasmarkovchains/index.html">
         <section class="post">
             <h2>Modelling Tweets as Markov Chains</h2>
-            <p>To celebrate the end of the 2016, let's model president-elect Trump's 2016 tweets as a Markov Chain!  Project Code…</p>
+            <p>To celebrate the end of the 2016, let's model president-elect Trump's 2016 tweets as a Markov Chain!  Project Code&hellip;</p>
         </section>
     </a>
-    <a class="read-next-story prev " style="background-image: url(../content/images/2017/04/MOGABanner.jpg)" href="../optimizing-water-supply-networks-with-genetic-algorithmn-part-i/">
+    <a class="read-next-story prev " style="background-image: url(../content/images/2017/04/MOGABanner.jpg)" href="../optimizing-water-supply-networks-with-genetic-algorithmn-part-i/index.html">
         <section class="post">
             <h2>Optimizing Water Supply Networks with Genetic Algorithm (Part I)</h2>
-            <p>A safe, reliable source of water is fundamental to the health, economy, and wellbeing of communities. However, the design,…</p>
+            <p>A safe, reliable source of water is fundamental to the health, economy, and wellbeing of communities. However, the design,&hellip;</p>
         </section>
     </a>
 </aside>
@@ -242,7 +246,7 @@ Possible choices of components of the system are represented as integers. Bit re
 
 
         <footer class="site-footer clearfix">
-            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan's Blog</a> © 2017</section>
+            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a> &copy; 2017</section>
             <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
         </footer>
 
@@ -250,7 +254,8 @@ Possible choices of components of the system are represented as integers. Bit re
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=e1496b6f80"></script>
-    <script type="text/javascript" src="../assets/js/index.js?v=e1496b6f80"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=7fa9c36118"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=7fa9c36118"></script>
 
 </body>
+</html>

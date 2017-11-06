@@ -1,52 +1,53 @@
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Mapping Electrification Potential using Remote Sensing Data</title>
-    <meta name="description" content="">
+    <meta name="description" content="" />
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="shortcut icon" href="../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=e1496b6f80">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=7fa9c36118" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
-    <link rel="canonical" href="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/amp/">
+    <link rel="canonical" href="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/amp/" />
     
-    <meta property="og:site_name" content="Stephen Chan's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Mapping Electrification Potential using Remote Sensing Data">
-    <meta property="og:description" content="Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department's Clean Energy Data Science Challenge 2017.   Project Code on: GitHub |  Live Demo  The Challenge This application is created as an entry to the State Department's">
-    <meta property="og:url" content="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/">
-    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/04/SHRSLAppBlogCover.png">
-    <meta property="article:published_time" content="2017-04-03T22:27:00.000Z">
-    <meta property="article:modified_time" content="2017-04-07T23:26:47.000Z">
-    <meta property="article:tag" content="Clean Energy Data Science Challenge">
-    <meta property="article:tag" content="GIS">
-    <meta property="article:tag" content="Geospatial Data">
-    <meta property="article:tag" content="Bootstrap">
-    <meta property="article:tag" content="JavaScript">
-    <meta property="article:tag" content="MapBox">
-    <meta property="article:tag" content="Renewable Energy">
-    <meta property="article:tag" content="Solar">
-    <meta property="article:tag" content="Microgrids">
+    <meta property="og:site_name" content="Stephen Chan&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Mapping Electrification Potential using Remote Sensing Data" />
+    <meta property="og:description" content="Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department&#x27;s Clean Energy Data Science Challenge 2017.   Project Code on: GitHub |  Live Demo  The Challenge This application is created as an entry to the State Department&#x27;s" />
+    <meta property="og:url" content="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/" />
+    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/04/SHRSLAppBlogCover.png" />
+    <meta property="article:published_time" content="2017-04-03T22:27:00.000Z" />
+    <meta property="article:modified_time" content="2017-04-07T23:26:47.000Z" />
+    <meta property="article:tag" content="Clean Energy Data Science Challenge" />
+    <meta property="article:tag" content="GIS" />
+    <meta property="article:tag" content="Geospatial Data" />
+    <meta property="article:tag" content="Bootstrap" />
+    <meta property="article:tag" content="JavaScript" />
+    <meta property="article:tag" content="MapBox" />
+    <meta property="article:tag" content="Renewable Energy" />
+    <meta property="article:tag" content="Solar" />
+    <meta property="article:tag" content="Microgrids" />
     
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mapping Electrification Potential using Remote Sensing Data">
-    <meta name="twitter:description" content="Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department's Clean Energy Data Science Challenge 2017.   Project Code on: GitHub |  Live Demo  The Challenge This application is created as an entry to the State Department's">
-    <meta name="twitter:url" content="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/">
-    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/04/SHRSLAppBlogCover.png">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Stephen Chan">
-    <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="Clean Energy Data Science Challenge, GIS, Geospatial Data, Bootstrap, JavaScript, MapBox, Renewable Energy, Solar, Microgrids">
-    <meta property="og:image:width" content="893">
-    <meta property="og:image:height" content="393">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mapping Electrification Potential using Remote Sensing Data" />
+    <meta name="twitter:description" content="Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department&#x27;s Clean Energy Data Science Challenge 2017.   Project Code on: GitHub |  Live Demo  The Challenge This application is created as an entry to the State Department&#x27;s" />
+    <meta name="twitter:url" content="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/" />
+    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/04/SHRSLAppBlogCover.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Stephen Chan" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Clean Energy Data Science Challenge, GIS, Geospatial Data, Bootstrap, JavaScript, MapBox, Renewable Energy, Solar, Microgrids" />
+    <meta property="og:image:width" content="893" />
+    <meta property="og:image:height" content="393" />
     
     <script type="application/ld+json">
 {
@@ -82,8 +83,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 0.11">
-    <link rel="alternate" type="application/rss+xml" title="Stephen Chan's Blog" href="http://sscchan.github.io/blog/rss/">
+    <meta name="generator" content="Ghost 0.11" />
+    <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog/rss/" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109231432-1"></script>
 <script>
@@ -135,17 +136,17 @@
         <header class="post-header">
             <h1 class="post-title">Mapping Electrification Potential using Remote Sensing Data</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2017-04-03">03 April 2017</time>  on <a href="../tag/clean-energy-data-science-challenge/">Clean Energy Data Science Challenge</a>, <a href="../tag/gis/">GIS</a>, <a href="../tag/geospatial-data/">Geospatial Data</a>, <a href="../tag/bootstrap/">Bootstrap</a>, <a href="../tag/javascript/">JavaScript</a>, <a href="../tag/mapbox/">MapBox</a>, <a href="../tag/renewable-energy/">Renewable Energy</a>, <a href="../tag/solar/">Solar</a>, <a href="../tag/microgrids/">Microgrids</a>
+                <time class="post-date" datetime="2017-04-03">03 April 2017</time>  on <a href="../tag/clean-energy-data-science-challenge/index.html">Clean Energy Data Science Challenge</a>, <a href="../tag/gis/index.html">GIS</a>, <a href="../tag/geospatial-data/index.html">Geospatial Data</a>, <a href="../tag/bootstrap/index.html">Bootstrap</a>, <a href="../tag/javascript/index.html">JavaScript</a>, <a href="../tag/mapbox/index.html">MapBox</a>, <a href="../tag/renewable-energy/index.html">Renewable Energy</a>, <a href="../tag/solar/index.html">Solar</a>, <a href="../tag/microgrids/index.html">Microgrids</a>
             </section>
         </header>
 
         <section class="post-content">
             <p>Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department's Clean Energy Data Science Challenge 2017.  </p>
 
-<hr>
+<hr />
 
-<p>Project Code on: <a href="https://github.com/AcmeCleanPower/HRSLToolkit">GitHub</a> |  <a href="https://acmecleanpower.github.io/DARCApp/">Live Demo</a> <br>
-<img src="../content/images/2017/04/HRSLAppScreenshot.png" alt="App Screenshot"></p>
+<p>Project Code on: <a href="https://github.com/AcmeCleanPower/HRSLToolkit">GitHub</a> |  <a href="https://acmecleanpower.github.io/DARCApp/">Live Demo</a> <br />
+<img src="../content/images/2017/04/HRSLAppScreenshot.png" alt="App Screenshot" /></p>
 
 <h4 id="thechallenge">The Challenge</h4>
 
@@ -154,7 +155,7 @@
 <blockquote>
   <p>More than a billion people globally lack access to electricity and another billion lack access to reliable electricity, greatly impacting education, health, social and economic development. A major barrier to investment in this space is a lack of visibility into many countries’ renewable energy potential.</p>
   
-  <p>Your challenge is to find new ways to map this potential. Can you leverage multiple data sources to do, in two days, what could otherwise take many months (and millions of dollars) with traditional methods?</p>
+  <p>Your challenge is to find new ways to map this potential. Can you leverage multiple data sources to do, in two days, what could otherwise take many months (and millions of dollars) with traditional methods?</p>
   
   <p>Creating actionable insights through algorithms, programs, and applications could be a game-changer for entrepreneurs, investors, and policymakers around the world and help to improve the lives of millions of people.</p>
 </blockquote>
@@ -186,7 +187,7 @@
 
 <h4 id="systemarchitecture">System Architecture</h4>
 
-<p><img src="../content/images/2017/04/HRSLAppSystemDiagram.png" alt="System Diagram"></p>
+<p><img src="../content/images/2017/04/HRSLAppSystemDiagram.png" alt="System Diagram" /></p>
 
 <h5 id="frontend">Frontend</h5>
 
@@ -229,9 +230,9 @@
 
 
             <section class="author">
-                <h4><a href="../author/stephen/">Stephen Chan</a></h4>
+                <h4><a href="../author/stephen/index.html">Stephen Chan</a></h4>
 
-                    <p>Read <a href="../author/stephen/">more posts</a> by this author.</p>
+                    <p>Read <a href="../author/stephen/index.html">more posts</a> by this author.</p>
                 <div class="author-meta">
                     
                     
@@ -241,13 +242,16 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Mapping%20Electrification%20Potential%20using%20Remote%20Sensing%20Data&amp;url=http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Mapping%20Electrification%20Potential%20using%20Remote%20Sensing%20Data&amp;url=http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>
@@ -259,16 +263,16 @@
 </main>
 
 <aside class="read-next">
-    <a class="read-next-story " style="background-image: url(../content/images/2017/04/SolarAdoptionDataSystemBanner.jpg)" href="../modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/">
+    <a class="read-next-story " style="background-image: url(../content/images/2017/04/SolarAdoptionDataSystemBanner.jpg)" href="../modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/index.html">
         <section class="post">
             <h2>Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)</h2>
-            <p>In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000…</p>
+            <p>In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000&hellip;</p>
         </section>
     </a>
-    <a class="read-next-story prev " style="background-image: url(../content/images/2017/04/RwfBanner.jpg)" href="../a-fitness-app-that-motivates-by-making-it-a-competition/">
+    <a class="read-next-story prev " style="background-image: url(../content/images/2017/04/RwfBanner.jpg)" href="../a-fitness-app-that-motivates-by-making-it-a-competition/index.html">
         <section class="post">
             <h2>A Fitness App that Motivates by Making it A Competition</h2>
-            <p>How do we get people off the couch and start exercising? Make it a competition so you can one-up…</p>
+            <p>How do we get people off the couch and start exercising? Make it a competition so you can one-up&hellip;</p>
         </section>
     </a>
 </aside>
@@ -276,7 +280,7 @@
 
 
         <footer class="site-footer clearfix">
-            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan's Blog</a> © 2017</section>
+            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a> &copy; 2017</section>
             <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
         </footer>
 
@@ -284,7 +288,8 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=e1496b6f80"></script>
-    <script type="text/javascript" src="../assets/js/index.js?v=e1496b6f80"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=7fa9c36118"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=7fa9c36118"></script>
 
 </body>
+</html>

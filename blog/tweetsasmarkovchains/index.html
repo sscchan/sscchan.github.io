@@ -1,47 +1,48 @@
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Modelling Tweets as Markov Chains</title>
-    <meta name="description" content="">
+    <meta name="description" content="" />
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="shortcut icon" href="../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=e1496b6f80">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=7fa9c36118" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
-    <link rel="canonical" href="http://sscchan.github.io/blog/tweetsasmarkovchains/">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="http://sscchan.github.io/blog/tweetsasmarkovchains/amp/">
+    <link rel="canonical" href="http://sscchan.github.io/blog/tweetsasmarkovchains/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://sscchan.github.io/blog/tweetsasmarkovchains/amp/" />
     
-    <meta property="og:site_name" content="Stephen Chan's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Modelling Tweets as Markov Chains">
-    <meta property="og:description" content="To celebrate the end of the 2016, let's model president-elect Trump's 2016 tweets as a Markov Chain!  Project Code on: GitHub |  Live Demo What is a Markov Chain? Markov Chains are stochastic processes that satisfy the Markov Property. Markov Chains are described &quot;memoryless&quot;, where the probability of the future state">
-    <meta property="og:url" content="http://sscchan.github.io/blog/tweetsasmarkovchains/">
-    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/04/TwitterGeneratorBanner.png">
-    <meta property="article:published_time" content="2017-01-01T20:26:00.000Z">
-    <meta property="article:modified_time" content="2017-04-10T21:38:00.000Z">
-    <meta property="article:tag" content="markov chains">
-    <meta property="article:tag" content="JavaScript">
-    <meta property="article:tag" content="twitter">
-    <meta property="article:tag" content="Stochastic Modeling">
+    <meta property="og:site_name" content="Stephen Chan&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Modelling Tweets as Markov Chains" />
+    <meta property="og:description" content="To celebrate the end of the 2016, let&#x27;s model president-elect Trump&#x27;s 2016 tweets as a Markov Chain!  Project Code on: GitHub |  Live Demo What is a Markov Chain? Markov Chains are stochastic processes that satisfy the Markov Property. Markov Chains are described &quot;memoryless&quot;, where the probability of the future state" />
+    <meta property="og:url" content="http://sscchan.github.io/blog/tweetsasmarkovchains/" />
+    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/04/TwitterGeneratorBanner.png" />
+    <meta property="article:published_time" content="2017-01-01T20:26:00.000Z" />
+    <meta property="article:modified_time" content="2017-04-10T21:38:00.000Z" />
+    <meta property="article:tag" content="markov chains" />
+    <meta property="article:tag" content="JavaScript" />
+    <meta property="article:tag" content="twitter" />
+    <meta property="article:tag" content="Stochastic Modeling" />
     
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Modelling Tweets as Markov Chains">
-    <meta name="twitter:description" content="To celebrate the end of the 2016, let's model president-elect Trump's 2016 tweets as a Markov Chain!  Project Code on: GitHub |  Live Demo What is a Markov Chain? Markov Chains are stochastic processes that satisfy the Markov Property. Markov Chains are described &quot;memoryless&quot;, where the probability of the future state">
-    <meta name="twitter:url" content="http://sscchan.github.io/blog/tweetsasmarkovchains/">
-    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/04/TwitterGeneratorBanner.png">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Stephen Chan">
-    <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="markov chains, JavaScript, twitter, Stochastic Modeling">
-    <meta property="og:image:width" content="1021">
-    <meta property="og:image:height" content="413">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Modelling Tweets as Markov Chains" />
+    <meta name="twitter:description" content="To celebrate the end of the 2016, let&#x27;s model president-elect Trump&#x27;s 2016 tweets as a Markov Chain!  Project Code on: GitHub |  Live Demo What is a Markov Chain? Markov Chains are stochastic processes that satisfy the Markov Property. Markov Chains are described &quot;memoryless&quot;, where the probability of the future state" />
+    <meta name="twitter:url" content="http://sscchan.github.io/blog/tweetsasmarkovchains/" />
+    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/04/TwitterGeneratorBanner.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Stephen Chan" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="markov chains, JavaScript, twitter, Stochastic Modeling" />
+    <meta property="og:image:width" content="1021" />
+    <meta property="og:image:height" content="413" />
     
     <script type="application/ld+json">
 {
@@ -77,8 +78,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 0.11">
-    <link rel="alternate" type="application/rss+xml" title="Stephen Chan's Blog" href="http://sscchan.github.io/blog/rss/">
+    <meta name="generator" content="Ghost 0.11" />
+    <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog/rss/" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109231432-1"></script>
 <script>
@@ -130,18 +131,18 @@
         <header class="post-header">
             <h1 class="post-title">Modelling Tweets as Markov Chains</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2017-01-01">01 January 2017</time>  on <a href="../tag/markov-chains/">markov chains</a>, <a href="../tag/javascript/">JavaScript</a>, <a href="../tag/twitter/">twitter</a>, <a href="../tag/stochastic-modeling/">Stochastic Modeling</a>
+                <time class="post-date" datetime="2017-01-01">01 January 2017</time>  on <a href="../tag/markov-chains/index.html">markov chains</a>, <a href="../tag/javascript/index.html">JavaScript</a>, <a href="../tag/twitter/index.html">twitter</a>, <a href="../tag/stochastic-modeling/index.html">Stochastic Modeling</a>
             </section>
         </header>
 
         <section class="post-content">
             <p><em>To celebrate the end of the 2016, let's model president-elect Trump's 2016 tweets as a Markov Chain!</em> </p>
 
-<hr>
+<hr />
 
 <p>Project Code on: <a href="https://github.com/sscchan/tweet-markov-chain">GitHub</a> |  <a href="http://sscchan.github.io/portfolio/projects/TweeterMarkov/">Live Demo</a></p>
 
-<p><a href="http://sscchan.github.io/portfolio/projects/TweeterMarkov/"><img src="../content/images/2017/01/MarkovTweetBootScreenshot-1.png" alt="Example of Generated Tweet" title=""></a></p>
+<p><a href="http://sscchan.github.io/portfolio/projects/TweeterMarkov/"><img src="../content/images/2017/01/MarkovTweetBootScreenshot-1.png" alt="Example of Generated Tweet" title="" /></a></p>
 
 <h4 id="whatisamarkovchain">What is a Markov Chain?</h4>
 
@@ -226,9 +227,9 @@ function processMarkovTransition() {
 
 
             <section class="author">
-                <h4><a href="../author/stephen/">Stephen Chan</a></h4>
+                <h4><a href="../author/stephen/index.html">Stephen Chan</a></h4>
 
-                    <p>Read <a href="../author/stephen/">more posts</a> by this author.</p>
+                    <p>Read <a href="../author/stephen/index.html">more posts</a> by this author.</p>
                 <div class="author-meta">
                     
                     
@@ -238,13 +239,16 @@ function processMarkovTransition() {
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Modelling%20Tweets%20as%20Markov%20Chains&amp;url=http://sscchan.github.io/blog/tweetsasmarkovchains/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Modelling%20Tweets%20as%20Markov%20Chains&amp;url=http://sscchan.github.io/blog/tweetsasmarkovchains/"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/tweetsasmarkovchains/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/tweetsasmarkovchains/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/tweetsasmarkovchains/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/tweetsasmarkovchains/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>
@@ -256,16 +260,16 @@ function processMarkovTransition() {
 </main>
 
 <aside class="read-next">
-    <a class="read-next-story " style="background-image: url(../content/images/2017/04/APETDataInterrogatorBanner.jpg)" href="../retrieving-areal-evapotranspiration-data-for-water-quality-modelling/">
+    <a class="read-next-story " style="background-image: url(../content/images/2017/04/APETDataInterrogatorBanner.jpg)" href="../retrieving-areal-evapotranspiration-data-for-water-quality-modelling/index.html">
         <section class="post">
             <h2>Retrieving Areal Evapotranspiration Data for Water Quality Modeling</h2>
-            <p>Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.   Project Code…</p>
+            <p>Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.   Project Code&hellip;</p>
         </section>
     </a>
-    <a class="read-next-story prev " style="background-image: url(../content/images/2017/04/MOGABanner-1.jpg)" href="../optimizing-water-supply-networks-with-genetic-algorithm-part-ii/">
+    <a class="read-next-story prev " style="background-image: url(../content/images/2017/04/MOGABanner-1.jpg)" href="../optimizing-water-supply-networks-with-genetic-algorithm-part-ii/index.html">
         <section class="post">
             <h2>Optimizing Water Supply Networks with Genetic Algorithm (Part II)</h2>
-            <p>This Part II of my blogpost on the application that helps with optimizing water supply networks using genetic algorithm.…</p>
+            <p>This Part II of my blogpost on the application that helps with optimizing water supply networks using genetic algorithm.&hellip;</p>
         </section>
     </a>
 </aside>
@@ -273,7 +277,7 @@ function processMarkovTransition() {
 
 
         <footer class="site-footer clearfix">
-            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan's Blog</a> © 2017</section>
+            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a> &copy; 2017</section>
             <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
         </footer>
 
@@ -281,7 +285,8 @@ function processMarkovTransition() {
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=e1496b6f80"></script>
-    <script type="text/javascript" src="../assets/js/index.js?v=e1496b6f80"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=7fa9c36118"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=7fa9c36118"></script>
 
 </body>
+</html>

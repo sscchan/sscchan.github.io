@@ -1,48 +1,49 @@
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Dynamic Optimum Furniture Height Diagram</title>
-    <meta name="description" content="">
+    <meta name="description" content="" />
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="shortcut icon" href="../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=e1496b6f80">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=7fa9c36118" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
-    <link rel="canonical" href="http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/amp/">
+    <link rel="canonical" href="http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/amp/" />
     
-    <meta property="og:site_name" content="Stephen Chan's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Dynamic Optimum Furniture Height Diagram">
-    <meta property="og:description" content="I stumbled across an interesting diagram from the 1950s showing the optimal dimension of various furniture items along side a 5'9&quot; tall person.  Wouldn't it be useful to be able to determine the optimum furniture height for people with heights other than 5'9&quot;? So I went ahead a made a">
-    <meta property="og:url" content="http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/">
-    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/10/dynamicoptimumfurnitureheightdiagram.jpeg">
-    <meta property="article:published_time" content="2017-10-21T15:20:06.000Z">
-    <meta property="article:modified_time" content="2017-10-21T17:15:26.000Z">
-    <meta property="article:tag" content="JavaScript">
-    <meta property="article:tag" content="CSS">
-    <meta property="article:tag" content="Dependency Injection">
-    <meta property="article:tag" content="Model-View-Presenter">
-    <meta property="article:tag" content="Responsive">
+    <meta property="og:site_name" content="Stephen Chan&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Dynamic Optimum Furniture Height Diagram" />
+    <meta property="og:description" content="I stumbled across an interesting diagram from the 1950s showing the optimal dimension of various furniture items along side a 5&#x27;9&quot; tall person.  Wouldn&#x27;t it be useful to be able to determine the optimum furniture height for people with heights other than 5&#x27;9&quot;? So I went ahead a made a" />
+    <meta property="og:url" content="http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/" />
+    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/10/dynamicoptimumfurnitureheightdiagram.jpeg" />
+    <meta property="article:published_time" content="2017-10-21T15:20:06.000Z" />
+    <meta property="article:modified_time" content="2017-10-21T17:15:26.000Z" />
+    <meta property="article:tag" content="JavaScript" />
+    <meta property="article:tag" content="CSS" />
+    <meta property="article:tag" content="Dependency Injection" />
+    <meta property="article:tag" content="Model-View-Presenter" />
+    <meta property="article:tag" content="Responsive" />
     
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dynamic Optimum Furniture Height Diagram">
-    <meta name="twitter:description" content="I stumbled across an interesting diagram from the 1950s showing the optimal dimension of various furniture items along side a 5'9&quot; tall person.  Wouldn't it be useful to be able to determine the optimum furniture height for people with heights other than 5'9&quot;? So I went ahead a made a">
-    <meta name="twitter:url" content="http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/">
-    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/10/dynamicoptimumfurnitureheightdiagram.jpeg">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Stephen Chan">
-    <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="JavaScript, CSS, Dependency Injection, Model-View-Presenter, Responsive">
-    <meta property="og:image:width" content="2477">
-    <meta property="og:image:height" content="740">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dynamic Optimum Furniture Height Diagram" />
+    <meta name="twitter:description" content="I stumbled across an interesting diagram from the 1950s showing the optimal dimension of various furniture items along side a 5&#x27;9&quot; tall person.  Wouldn&#x27;t it be useful to be able to determine the optimum furniture height for people with heights other than 5&#x27;9&quot;? So I went ahead a made a" />
+    <meta name="twitter:url" content="http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/" />
+    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/10/dynamicoptimumfurnitureheightdiagram.jpeg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Stephen Chan" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="JavaScript, CSS, Dependency Injection, Model-View-Presenter, Responsive" />
+    <meta property="og:image:width" content="2477" />
+    <meta property="og:image:height" content="740" />
     
     <script type="application/ld+json">
 {
@@ -78,8 +79,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 0.11">
-    <link rel="alternate" type="application/rss+xml" title="Stephen Chan's Blog" href="http://sscchan.github.io/blog/rss/">
+    <meta name="generator" content="Ghost 0.11" />
+    <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog/rss/" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109231432-1"></script>
 <script>
@@ -131,7 +132,7 @@
         <header class="post-header">
             <h1 class="post-title">Dynamic Optimum Furniture Height Diagram</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2017-10-21">21 October 2017</time>  on <a href="../tag/javascript/">JavaScript</a>, <a href="../tag/css/">CSS</a>, <a href="../tag/dependency-injection/">Dependency Injection</a>, <a href="../tag/model-view-presenter/">Model-View-Presenter</a>, <a href="../tag/responsive/">Responsive</a>
+                <time class="post-date" datetime="2017-10-21">21 October 2017</time>  on <a href="../tag/javascript/index.html">JavaScript</a>, <a href="../tag/css/index.html">CSS</a>, <a href="../tag/dependency-injection/index.html">Dependency Injection</a>, <a href="../tag/model-view-presenter/index.html">Model-View-Presenter</a>, <a href="../tag/responsive/index.html">Responsive</a>
             </section>
         </header>
 
@@ -142,7 +143,7 @@
 
 <p>So I went ahead a made a client-side app to dynamically generate the optimal furniture heights based on the proportions of the original drawing. </p>
 
-<hr>
+<hr />
 
 <p>Project Code on: <a href="https://github.com/sscchan/sscchan.github.io/tree/master/portfolio/projects/DynamicOptimumFurnitureHeightApp">GitHub</a> | <a href="http://sscchan.github.io/portfolio/projects/DynamicOptimumFurnitureHeightApp/index.html">Live Demo</a></p>
 
@@ -191,9 +192,9 @@
 
 
             <section class="author">
-                <h4><a href="../author/stephen/">Stephen Chan</a></h4>
+                <h4><a href="../author/stephen/index.html">Stephen Chan</a></h4>
 
-                    <p>Read <a href="../author/stephen/">more posts</a> by this author.</p>
+                    <p>Read <a href="../author/stephen/index.html">more posts</a> by this author.</p>
                 <div class="author-meta">
                     
                     
@@ -203,13 +204,16 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Dynamic%20Optimum%20Furniture%20Height%20Diagram&amp;url=http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Dynamic%20Optimum%20Furniture%20Height%20Diagram&amp;url=http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>
@@ -221,16 +225,16 @@
 </main>
 
 <aside class="read-next">
-    <a class="read-next-story " style="background-image: url(../content/images/2017/11/penang_flood_map_blog_banner.jpg)" href="../digitized-penang-jica-drainage-study-floodmap/">
+    <a class="read-next-story " style="background-image: url(../content/images/2017/11/penang_flood_map_blog_banner.jpg)" href="../digitized-penang-jica-drainage-study-floodmap/index.html">
         <section class="post">
             <h2>Digitized Penang JICA Drainage Study Floodmap</h2>
-            <p>The city of Penang, Malaysia is currently suffering from widespread flooding (5th November, 2017). The current flood comes on…</p>
+            <p>The state of Penang, Malaysia is currently suffering from widespread flooding (5th November, 2017). The current flood comes on&hellip;</p>
         </section>
     </a>
-    <a class="read-next-story prev " style="background-image: url(../content/images/2017/04/SolarAdoptionDataSystemBanner.jpg)" href="../modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/">
+    <a class="read-next-story prev " style="background-image: url(../content/images/2017/04/SolarAdoptionDataSystemBanner.jpg)" href="../modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery/index.html">
         <section class="post">
             <h2>Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)</h2>
-            <p>In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000…</p>
+            <p>In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000&hellip;</p>
         </section>
     </a>
 </aside>
@@ -238,7 +242,7 @@
 
 
         <footer class="site-footer clearfix">
-            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan's Blog</a> © 2017</section>
+            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a> &copy; 2017</section>
             <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
         </footer>
 
@@ -246,7 +250,8 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=e1496b6f80"></script>
-    <script type="text/javascript" src="../assets/js/index.js?v=e1496b6f80"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=7fa9c36118"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=7fa9c36118"></script>
 
 </body>
+</html>
