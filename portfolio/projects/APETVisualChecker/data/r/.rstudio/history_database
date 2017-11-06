@@ -1,0 +1,66 @@
+1509301296266:mydata = read.csv("ap-an.png.csv")
+1509301298540:mydata
+1509301351619:mydata = read.csv("ap-an.png.csv", HEADER=TRUE, sep=",")
+1509301365504:mydata = read.csv("ap-an.png.csv", header = TRUE, sep=",")
+1509301367412:mydata
+1509301657183:myData.names
+1509301661504:names(myData)
+1509301666771:names(mydata)
+1509301673915:mydata.mapX
+1509301693479:x$mapX
+1509301698478:mydata$mapX
+1509301741471:mydata$mapX * 2
+1509310133654:mydata$mapXmapY = mydata$mapX * mydata$mapY
+1509310136828:mydata
+1509310174622:mydata$mapXSquared = mydata$mapX * mydata$mapX
+1509310191061:mydata$mapYSquared = mydata$mapY * mydata$mapY
+1509310193236:mydata
+1509310603990:lm(formula = pixelX = mapX + mapY + mapXmapY + mapXSquared + mapYSquared, mydata)
+1509310633060:lm(formula = pixelX ~ mapX + mapY + mapXmapY + mapXSquared + mapYSquared, mydata)
+1509310805958:xTransformModel = lm(formula = pixelX ~ mapX + mapY + mapXmapY + mapXSquared + mapYSquared, mydata)
+1509310823280:summary(xTransformModel)
+1509310870763:xTransformModel
+1509311499252:xTestModel = lm(formula = pixelX ~ mapX + mapY + mapX*mapY + mapX*mapX + mapY*mapY, data = mydata)
+1509311514397:summary (xTestModel)
+1509311526274:xTestModel
+1509311562128:xTransformModel
+1509311685554:adelaideLong = 138.6007
+1509311700543:adelaideLat = -34.9285
+1509311800848:predict(xTransformModel, data.frame(mapX=adelaideLong, mapY=adelaideLat, mapXmapY=adelaideLong*adelaideLat, mapXSquared=adelaideLong&adelaideLong, mapYSquared=adelaideLat*adelaideLat))
+1509311811771:predict(xTransformModel, data.frame(mapX=adelaideLong, mapY=adelaideLat, mapXmapY=adelaideLong*adelaideLat, mapXSquared=adelaideLong*adelaideLong, mapYSquared=adelaideLat*adelaideLat))
+1509311985328:yTransformModel
+1509312010770:yTransformModel = lm(formula = pixelY ~ mapX + mapY + mapXmapY + mapXSquared + mapYSquared, mydata)
+1509312025055:predict(yTransformModel, data.frame(mapX=adelaideLong, mapY=adelaideLat, mapXmapY=adelaideLong*adelaideLat, mapXSquared=adelaideLong*adelaideLong, mapYSquared=adelaideLat*adelaideLat))
+1509312866412:xTransformModel
+1509312946327:summary(xTransfromModel)$wts
+1509312955445:summary(xTransformModel)$wts
+1509312958910:xTransformModel
+1509312964619:summary(xTransformModel)
+1509312988148:summary(xTransformModel)$wts
+1509313014125:print(summary(xTransformModel),digits=10)
+1509313026578:print(summary(xTransformModel),digits=16)
+1509313048617:> print(summary(xTransformModel),digits=16)
+1509313048638:Call:
+1509313048652:lm(formula = pixelX ~ mapX + mapY + mapXmapY + mapXSquared +
+1509313048663:mapYSquared, data = mydata)
+1509313048683:Residuals:
+1509313048691:Min                  1Q              Median                  3Q                 Max
+1509313048702:-0.5764907418787931 -0.3606581713172934 -0.1566134218585560  0.2920511310712858  1.0125756246151685
+1509313048717:Coefficients:
+1509313048729:Estimate             Std. Error   t value   Pr(>|t|)
+1509313048738:(Intercept) -1.734901587945514e+03  2.599784704790265e+01 -66.73251 1.9242e-13 ***
+1509313048751:mapX         1.536558752188301e+01  3.676765302306197e-01  41.79105 1.2823e-11 ***
+1509313048758:mapY        -1.409119116079106e+01  4.506868854882288e-01 -31.26603 1.7176e-10 ***
+1509313048771:mapXmapY     1.066496685852057e-01  3.478837540391508e-03  30.65670 2.0474e-10 ***
+1509313048781:mapXSquared  2.069387871250502e-03  1.445482241706881e-03   1.43162    0.18605
+1509313048791:mapYSquared  2.519568024027721e-03  4.797556942116540e-03   0.52518    0.61215
+1509313048803:---
+1509313048814:Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+1509313048832:Residual standard error: 0.5846568 on 9 degrees of freedom
+1509313048840:Multiple R-squared:  0.9999920295411601,	Adjusted R-squared:  0.9999876015084712
+1509313048853:F-statistic: 225832.1245152661 on 5 and 9 DF,  p-value: < 2.2204460492503e-16
+1509313061424:print(summary(yTransformModel),digits=16)
+1509313070706:print(yTransfromModel, digits = 10)
+1509313078672:print(yTransformModel, digits = 10)
+1509313098040:print(xTransfromModel, digits = 10)
+1509313106298:print(xTransformModel, digits = 10)

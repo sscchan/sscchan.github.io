@@ -1,0 +1,12 @@
+mydata = read.csv("ap-an.png.csv")
+mydata
+mydata = read.csv("ap-an.png.csv", HEADER=TRUE, sep=",")
+mydata = read.csv("ap-an.png.csv", header = TRUE, sep=",")
+mydata
+myData.names
+names(myData)
+names(mydata)
+mydata.mapX
+x$mapX
+mydata$mapX
+mydata$mapX * 2
