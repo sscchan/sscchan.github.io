@@ -1,57 +1,56 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>A Fitness App that Motivates by Making it A Competition</title>
-    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=0498ba0f29" />
 
-    <link rel="shortcut icon" href="../favicon.ico">
-
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=7fa9c36118">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
-
-    <link rel="canonical" href="http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/amp/">
+    <link rel="canonical" href="http://sscchan.github.io/blog//a-fitness-app-that-motivates-by-making-it-a-competition/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://sscchan.github.io/blog//a-fitness-app-that-motivates-by-making-it-a-competition/amp/" />
     
-    <meta property="og:site_name" content="Stephen Chan's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="A Fitness App that Motivates by Making it A Competition">
-    <meta property="og:description" content="How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously.   Project Code on: GitHub  System Architecture Front End The iOS Frontend is">
-    <meta property="og:url" content="http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/">
-    <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2017/04/RwfBanner.jpg">
-    <meta property="article:published_time" content="2017-03-09T23:17:00.000Z">
-    <meta property="article:modified_time" content="2017-04-10T03:01:05.000Z">
-    <meta property="article:tag" content="JavaScript">
-    <meta property="article:tag" content="nodeJS">
-    <meta property="article:tag" content="iOS">
-    <meta property="article:tag" content="React-Native">
-    <meta property="article:tag" content="GPS">
-    <meta property="article:tag" content="Flask">
-    <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="Microservices">
-    <meta property="article:tag" content="Docker">
-    <meta property="article:tag" content="Containers">
-    <meta property="article:tag" content="Websockets">
-    <meta property="article:tag" content="Real-time">
-    <meta property="article:tag" content="Continuous Integration">
-    <meta property="article:tag" content="CircleCI">
+    <meta property="og:site_name" content="Stephen Chan&#x27;s Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="A Fitness App that Motivates by Making it A Competition" />
+    <meta property="og:description" content="How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously. Project Code on: GitHub  System ArchitectureFront EndThe iOS Frontend is built with" />
+    <meta property="og:url" content="http://sscchan.github.io/blog//a-fitness-app-that-motivates-by-making-it-a-competition/" />
+    <meta property="og:image" content="http://sscchan.github.io/blog//content/images/2020/12/RwfBanner.jpg" />
+    <meta property="article:published_time" content="2017-03-09T00:00:00.000Z" />
+    <meta property="article:modified_time" content="2020-12-25T00:43:45.000Z" />
+    <meta property="article:tag" content="Javascript" />
+    <meta property="article:tag" content="NodeJS" />
+    <meta property="article:tag" content="iOS" />
+    <meta property="article:tag" content="React-Native" />
+    <meta property="article:tag" content="GPS" />
+    <meta property="article:tag" content="Flask" />
+    <meta property="article:tag" content="Python" />
+    <meta property="article:tag" content="Microservice" />
+    <meta property="article:tag" content="Docker" />
+    <meta property="article:tag" content="Containers" />
+    <meta property="article:tag" content="Websockets" />
+    <meta property="article:tag" content="Real-time" />
+    <meta property="article:tag" content="Continuous Integration" />
+    <meta property="article:tag" content="CircleCI" />
     
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="A Fitness App that Motivates by Making it A Competition">
-    <meta name="twitter:description" content="How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously.   Project Code on: GitHub  System Architecture Front End The iOS Frontend is">
-    <meta name="twitter:url" content="http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/">
-    <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2017/04/RwfBanner.jpg">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Stephen Chan">
-    <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="JavaScript, nodeJS, iOS, React-Native, GPS, Flask, Python, Microservices, Docker, Containers, Websockets, Real-time, Continuous Integration, CircleCI">
-    <meta property="og:image:width" content="1017">
-    <meta property="og:image:height" content="421">
+    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Fitness App that Motivates by Making it A Competition" />
+    <meta name="twitter:description" content="How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously. Project Code on: GitHub  System ArchitectureFront EndThe iOS Frontend is built with" />
+    <meta name="twitter:url" content="http://sscchan.github.io/blog//a-fitness-app-that-motivates-by-making-it-a-competition/" />
+    <meta name="twitter:image" content="http://sscchan.github.io/blog//content/images/2020/12/RwfBanner.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Stephen Chan" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Javascript, NodeJS, iOS, React-Native, GPS, Flask, Python, Microservice, Docker, Containers, Websockets, Real-time, Continuous Integration, CircleCI" />
+    <meta name="twitter:site" content="@ghost" />
+    <meta property="og:image:width" content="1017" />
+    <meta property="og:image:height" content="421" />
     
     <script type="application/ld+json">
 {
@@ -60,184 +59,402 @@
     "publisher": {
         "@type": "Organization",
         "name": "Stephen Chan&#x27;s Blog",
-        "logo": "http://sscchan.github.io/blog/ghost/img/ghosticon.jpg"
+        "url": "http://sscchan.github.io/blog//",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://sscchan.github.io/blog//favicon.ico",
+            "width": 48,
+            "height": 48
+        }
     },
     "author": {
         "@type": "Person",
         "name": "Stephen Chan",
-        "url": "http://sscchan.github.io/blog/author/stephen/",
+        "url": "http://sscchan.github.io/blog//author/stephen/",
         "sameAs": []
     },
     "headline": "A Fitness App that Motivates by Making it A Competition",
-    "url": "http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/",
-    "datePublished": "2017-03-09T23:17:00.000Z",
-    "dateModified": "2017-04-10T03:01:05.000Z",
+    "url": "http://sscchan.github.io/blog//a-fitness-app-that-motivates-by-making-it-a-competition/",
+    "datePublished": "2017-03-09T00:00:00.000Z",
+    "dateModified": "2020-12-25T00:43:45.000Z",
     "image": {
         "@type": "ImageObject",
-        "url": "http://sscchan.github.io/blog/content/images/2017/04/RwfBanner.jpg",
+        "url": "http://sscchan.github.io/blog//content/images/2020/12/RwfBanner.jpg",
         "width": 1017,
         "height": 421
     },
-    "keywords": "JavaScript, nodeJS, iOS, React-Native, GPS, Flask, Python, Microservices, Docker, Containers, Websockets, Real-time, Continuous Integration, CircleCI",
-    "description": "How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously.   Project Code on: GitHub  System Architecture Front End The iOS Frontend is",
+    "keywords": "Javascript, NodeJS, iOS, React-Native, GPS, Flask, Python, Microservice, Docker, Containers, Websockets, Real-time, Continuous Integration, CircleCI",
+    "description": "How do we get people off the couch and start exercising? Make it a competition\nso you can one-up your friends. This app challenges allows you to challenge your\nfriends to a competitive race in real-time or asynchronously.\n\n\n--------------------------------------------------------------------------------\n\nProject Code on: GitHub [https://github.com/HR-Elves/race-with-friends-server]\n\n\nSystem Architecture\nFront End\nThe iOS Frontend is built with React-Native following the Google Materials\nDesign g",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://sscchan.github.io/blog"
+        "@id": "http://sscchan.github.io/blog//"
     }
 }
     </script>
 
-    <meta name="generator" content="Ghost 0.11">
-    <link rel="alternate" type="application/rss+xml" title="Stephen Chan's Blog" href="http://sscchan.github.io/blog/rss/">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109231432-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta name="generator" content="Ghost 3.40" />
+    <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog//rss/" />
 
-  gtag('config', 'UA-109231432-1');
-</script>
-
-<style>
-.vertical, .main-header-content {
-    background-color: rgba(0,0,0,0.2);
-}
-</style>
 </head>
-<body class="post-template tag-javascript tag-nodejs tag-ios tag-react-native tag-gps tag-flask tag-python tag-microservices tag-docker tag-containers tag-websockets tag-real-time tag-continuous-integration tag-circleci nav-closed">
-
-    <div class="nav">
-    <h3 class="nav-title">Menu</h3>
-    <a href="index.html#" class="nav-close">
-        <span class="hidden">Close</span>
-    </a>
-    <ul>
-            <li class="nav-home" role="presentation"><a href="http://sscchan.github.io/blog/">Home</a></li>
-            <li class="nav-github" role="presentation"><a href="https://github.com/sscchan">Github</a></li>
-            <li class="nav-linkedin" role="presentation"><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
-    </ul>
-        <a class="subscribe-button icon-feed" href="http://sscchan.github.io/blog/rss/">Subscribe</a>
-</div>
-<span class="nav-cover"></span>
-
+<body class="post-template tag-javascript tag-nodejs tag-ios tag-react-native tag-gps tag-flask tag-python tag-microservice tag-docker tag-containers tag-websockets tag-real-time tag-continuous-integration tag-circleci">
 
     <div class="site-wrapper">
 
         
 
+<header class="site-header">
+    <div class="outer site-nav-main">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+                <a class="site-nav-logo" href="http://sscchan.github.io/blog/">Stephen Chan&#x27;s Blog</a>
+            <div class="site-nav-content">
+                    <ul class="nav">
+    <li class="nav-home"><a href="http://sscchan.github.io/blog//">Home</a></li>
+    <li class="nav-author"><a href="http://sscchan.github.io/blog//about-the-author/">Author</a></li>
+</ul>
 
-<header class="main-header post-head " style="background-image: url(../content/images/2017/04/RwfBanner.jpg)">
-    <nav class="main-nav overlay clearfix">
-        
-            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
-    </nav>
-</header>
+                    <span class="nav-post-title dash">A Fitness App that Motivates by Making it A Competition</span>
+            </div>
+        </div>
+    </div>
+    <div class="site-nav-right">
+            <div class="social-links">
+                    <a class="social-link social-link-fb" href="https://www.facebook.com/ghost" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z" /></svg></a>
+                    <a class="social-link social-link-tw" href="https://twitter.com/ghost" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            </div>
+                <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog//rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+</a>
 
-<main class="content" role="main">
-    <article class="post tag-javascript tag-nodejs tag-ios tag-react-native tag-gps tag-flask tag-python tag-microservices tag-docker tag-containers tag-websockets tag-real-time tag-continuous-integration tag-circleci">
-
-        <header class="post-header">
-            <h1 class="post-title">A Fitness App that Motivates by Making it A Competition</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="2017-03-09">09 March 2017</time>  on <a href="../tag/javascript/">JavaScript</a>, <a href="../tag/nodejs/">nodeJS</a>, <a href="../tag/ios/">iOS</a>, <a href="../tag/react-native/">React-Native</a>, <a href="../tag/gps/">GPS</a>, <a href="../tag/flask/">Flask</a>, <a href="../tag/python/">Python</a>, <a href="../tag/microservices/">Microservices</a>, <a href="../tag/docker/">Docker</a>, <a href="../tag/containers/">Containers</a>, <a href="../tag/websockets/">Websockets</a>, <a href="../tag/real-time/">Real-time</a>, <a href="../tag/continuous-integration/">Continuous Integration</a>, <a href="../tag/circleci/">CircleCI</a>
-            </section>
-        </header>
-
-        <section class="post-content">
-            <p>How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously.  </p>
-
-<hr>
-
-<p>Project Code on: <a href="https://github.com/HR-Elves/race-with-friends-server">GitHub</a> <br>
-<img src="../content/images/2017/04/RwfScreenSideBySide.png" alt="App Screenshot"></p>
-
-<h4 id="systemarchitecture">System Architecture</h4>
-
-<p><img src="../content/images/2017/04/RwFSystemsDiagram.png" alt="System Architecture"></p>
-
-<h6 id="frontend">Front End</h6>
-
-<p>The iOS Frontend is built with React-Native following the Google Materials Design guidelines. Authentication is handled with Auth0 with the Facebook (and potentially other) platform. The selection of React-Native as a frontend framework allow us to write mobile application in JavaScript and will facilitate easier porting to Android in the future.  </p>
-
-<h6 id="backend">Back End</h6>
-
-<p>The Backend are a collection of containerized microservices running under a docker-machine. The microservices architecture allow the team members to work on the codebase with minimum amount of overlap, reducing the time needed to resolve code conflicts. </p>
-
-<p>The use of containerized microservices also provided flexibility in how the back-end is implemented. nodeJS + Express is used for the microservices responsible for routing, authentication, users management and websocket live race relays. Python and PostgresSQL are used for runs and challenges services to facilitate future manipulation work on geospatial data.  </p>
-
-<h4 id="continuousintegrationcideployment">Continuous Integration (CI) &amp; Deployment</h4>
-
-<p><img src="../content/images/2017/04/RwfCIDiagram.png" alt="Continuous Integration Diagram">
-The development process of this application utilizes Continuous Testing, Integration &amp; Deployment workflow. Merges to the master branch are tested, and if the tests passes, docker images for each microservices are rebuilt and pushed to Docker Hub. <br>
-The EC2 instances then pull newly built docker images from the Docker Hub. Since we're using docker containers, little or no residue of the previous versions are left on the deployment environment. </p>
-
-<h6 id="lessons">Lessons</h6>
-
-<p>iOS (and now Android) is <em>really</em> aggressive in putting your application to sleep / hibernation mode. It makes executing application logic (such as monitoring GPS location and executing race logic) difficult. </p>
-        </section>
-
-        <footer class="post-footer">
+    </div>
+</nav>
+    </div>
+</div></header>
 
 
+<main id="site-main" class="site-main outer">
+    <div class="inner">
 
-            <section class="author">
-                <h4><a href="../author/stephen/">Stephen Chan</a></h4>
+        <article class="post-full post tag-javascript tag-nodejs tag-ios tag-react-native tag-gps tag-flask tag-python tag-microservice tag-docker tag-containers tag-websockets tag-real-time tag-continuous-integration tag-circleci ">
 
-                    <p>Read <a href="../author/stephen/">more posts</a> by this author.</p>
-                <div class="author-meta">
-                    
-                    
+            <header class="post-full-header">
+
+                <section class="post-full-tags">
+                    <a href="/tag/javascript/">Javascript</a>
+                </section>
+
+                <h1 class="post-full-title">A Fitness App that Motivates by Making it A Competition</h1>
+
+
+                <div class="post-full-byline">
+
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+                            <li class="author-list-item">
+
+                                <div class="author-card">
+                                    <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
+</div>
+                                    <div class="author-info">
+                                        <h2>Stephen Chan</h2>
+                                        <p>Read <a href="/author/stephen/">more posts</a> by this author.</p>
+                                    </div>
+                                </div>
+
+                                <a href="/author/stephen/" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
+</a>
+
+                            </li>
+                        </ul>
+
+                        <section class="post-full-byline-meta">
+                            <h4 class="author-name"><a href="/author/stephen/">Stephen Chan</a></h4>
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="2017-03-09">9 Mar 2017</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span> 2 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            <figure class="post-full-image">
+                <img
+                    srcset="/content/images/size/w300/2020/12/RwfBanner.jpg 300w,
+                            /content/images/size/w600/2020/12/RwfBanner.jpg 600w,
+                            /content/images/size/w1000/2020/12/RwfBanner.jpg 1000w,
+                            /content/images/size/w2000/2020/12/RwfBanner.jpg 2000w"
+                    sizes="(max-width: 800px) 400px,
+                        (max-width: 1170px) 1170px,
+                            2000px"
+                    src="/content/images/size/w2000/2020/12/RwfBanner.jpg"
+                    alt="A Fitness App that Motivates by Making it A Competition"
+                />
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <p>How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends to a competitive race in real-time or asynchronously.</p><hr><p>Project Code on: <a href="https://github.com/HR-Elves/race-with-friends-server">GitHub</a><br></p><figure class="kg-card kg-image-card"><img src="http://sscchan.github.io/blog/content/images/2017/04/RwfScreenSideBySide.png" class="kg-image" alt="App Screenshot"></figure><h4 id="system-architecture">System Architecture</h4><figure class="kg-card kg-image-card"><img src="http://sscchan.github.io/blog/content/images/2017/04/RwFSystemsDiagram.png" class="kg-image" alt="System Architecture"></figure><h6 id="front-end">Front End</h6><p>The iOS Frontend is built with React-Native following the Google Materials Design guidelines. Authentication is handled with Auth0 with the Facebook (and potentially other) platform. The selection of React-Native as a frontend framework allow us to write mobile application in JavaScript and will facilitate easier porting to Android in the future.</p><h6 id="back-end">Back End</h6><p>The Backend are a collection of containerized microservices running under a docker-machine. The microservices architecture allow the team members to work on the codebase with minimum amount of overlap, reducing the time needed to resolve code conflicts.</p><p>The use of containerized microservices also provided flexibility in how the back-end is implemented. nodeJS + Express is used for the microservices responsible for routing, authentication, users management and websocket live race relays. Python and PostgresSQL are used for runs and challenges services to facilitate future manipulation work on geospatial data.</p><h4 id="continuous-integration-ci-deployment">Continuous Integration (CI) &amp; Deployment</h4><figure class="kg-card kg-image-card"><img src="http://sscchan.github.io/blog/content/images/2017/04/RwfCIDiagram.png" class="kg-image" alt="Continuous Integration Diagram"></figure><p>The development process of this application utilizes Continuous Testing, Integration &amp; Deployment workflow. Merges to the master branch are tested, and if the tests passes, docker images for each microservices are rebuilt and pushed to Docker Hub.<br>The EC2 instances then pull newly built docker images from the Docker Hub. Since we're using docker containers, little or no residue of the previous versions are left on the deployment environment.</p><h6 id="lessons">Lessons</h6><p>iOS (and now Android) is <em>really</em> aggressive in putting your application to sleep / hibernation mode. It makes executing application logic (such as monitoring GPS location and executing race logic) difficult.</p>
                 </div>
             </section>
 
 
-            <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=A%20Fitness%20App%20that%20Motivates%20by%20Making%20it%20A%20Competition&amp;url=http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://sscchan.github.io/blog/a-fitness-app-that-motivates-by-making-it-a-competition/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
-            </section>
 
+        </article>
 
-        </footer>
-
-    </article>
+    </div>
 </main>
 
-<aside class="read-next">
-    <a class="read-next-story " style="background-image: url(../content/images/2017/04/SHRSLAppBlogCover.png)" href="../mapping-electrification-potential-using-remote-sensing-data/">
-        <section class="post">
-            <h2>Mapping Electrification Potential using Remote Sensing Data</h2>
-            <p>Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed…</p>
-        </section>
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+                <article class="read-next-card">
+                    <header class="read-next-card-header">
+                        <h3><span>More in</span> <a href="/tag/javascript/">Javascript</a></h3>
+                    </header>
+                    <div class="read-next-card-content">
+                        <ul>
+                            <li>
+                                <h4><a href="/dynamic-optimum-furniture-height-diagram/">Dynamic Optimum Furniture Height Diagram</a></h4>
+                                <div class="read-next-card-meta">
+                                    <p><time datetime="2017-10-21">21 Oct 2017</time> –
+                                        1 min read</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4><a href="/mapping-electrification-potential-using-remote-sensing-data/">Mapping Electrification Potential using Remote Sensing Data</a></h4>
+                                <div class="read-next-card-meta">
+                                    <p><time datetime="2017-04-03">3 Apr 2017</time> –
+                                        2 min read</p>
+                                </div>
+                            </li>
+                            <li>
+                                <h4><a href="/tracking-monitoring-and-alert-sy/">Tracking, Monitoring and Alert System for Incoming Congress Legislations</a></h4>
+                                <div class="read-next-card-meta">
+                                    <p><time datetime="2017-02-11">11 Feb 2017</time> –
+                                        2 min read</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <footer class="read-next-card-footer">
+                        <a href="/tag/javascript/">See all 4 posts
+                            →</a>
+                    </footer>
+                </article>
+
+                <article class="post-card post tag-clean-energy-data-science-challenge tag-gis tag-geospatial-data tag-bootstrap tag-javascript tag-mapbox tag-renewable-energy tag-solar tag-microgrids ">
+
+    <a class="post-card-image-link" href="/mapping-electrification-potential-using-remote-sensing-data/">
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2020/12/SHRSLAppBlogCover.png 300w,
+                    /content/images/size/w600/2020/12/SHRSLAppBlogCover.png 600w,
+                    /content/images/size/w1000/2020/12/SHRSLAppBlogCover.png 1000w,
+                    /content/images/size/w2000/2020/12/SHRSLAppBlogCover.png 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="/content/images/size/w600/2020/12/SHRSLAppBlogCover.png"
+            alt="Mapping Electrification Potential using Remote Sensing Data"
+        />
     </a>
-    <a class="read-next-story prev " style="background-image: url(../content/images/2017/04/LegislationWatchBanner.jpg)" href="../be-informed-of-incoming-congress-legislations/">
-        <section class="post">
-            <h2>Tracking, Monitoring and Alert System for Incoming Congress Legislations</h2>
-            <p>With thousands of Bills being introduced to congress each year, how do informed citizens keep track of legislations that…</p>
-        </section>
-    </a>
-</aside>
 
+    <div class="post-card-content">
 
+        <a class="post-card-content-link" href="/mapping-electrification-potential-using-remote-sensing-data/">
 
-        <footer class="site-footer clearfix">
-            <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan's Blog</a> © 2017</section>
-            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Clean Energy Data Science Challenge</div>
+                <h2 class="post-card-title">Mapping Electrification Potential using Remote Sensing Data</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department's Clean Energy Data Science Challenge</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Stephen Chan
+                    </div>
+            
+                    <a href="/author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
+</a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="/author/stephen/">Stephen Chan</a></span>
+                <span class="post-card-byline-date"><time datetime="2017-04-03">3 Apr 2017</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
         </footer>
 
     </div>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+</article>
+
+                <article class="post-card post tag-javascript tag-bootstrap tag-legislation tag-congress tag-react-native tag-responsive tag-html tag-css ">
+
+    <a class="post-card-image-link" href="/tracking-monitoring-and-alert-sy/">
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2020/12/LegislationWatchBanner.jpg 300w,
+                    /content/images/size/w600/2020/12/LegislationWatchBanner.jpg 600w,
+                    /content/images/size/w1000/2020/12/LegislationWatchBanner.jpg 1000w,
+                    /content/images/size/w2000/2020/12/LegislationWatchBanner.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="/content/images/size/w600/2020/12/LegislationWatchBanner.jpg"
+            alt="Tracking, Monitoring and Alert System for Incoming Congress Legislations"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/tracking-monitoring-and-alert-sy/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Javascript</div>
+                <h2 class="post-card-title">Tracking, Monitoring and Alert System for Incoming Congress Legislations</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>With thousands of Bills being introduced to congress each year, how do informed citizens keep track of legislations that are important to them? We created an application to keep monitor</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Stephen Chan
+                    </div>
+            
+                    <a href="/author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
+</a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="/author/stephen/">Stephen Chan</a></span>
+                <span class="post-card-byline-date"><time datetime="2017-02-11">11 Feb 2017</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+        </div>
+    </div>
+</aside>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="http://sscchan.github.io/blog/">Stephen Chan&#x27;s Blog</a> &copy; 2020</section>
+                <nav class="site-footer-nav">
+                    <a href="http://sscchan.github.io/blog/">Latest Posts</a>
+                    <a href="https://www.facebook.com/ghost" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/ghost" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src="/assets/built/casper.js?v=0498ba0f29"></script>
+
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+        var success = getParameterByName('success');
+
+        $(document).ready(function () {
+            if (action == 'subscribe' && (success === null || success === 'true')) {
+                $('body').addClass('subscribe-success');
+            }
+
+            if (action == 'subscribe' && success === 'false') {
+                $('body').addClass('subscribe-failure');
+            }
+
+            $('.subscribe-notification .subscribe-close-button').click(function () {
+                $('.subscribe-notification').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function() {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        // FitVids - start
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // FitVids - end
+
+        // Replace nav with title on scroll - start
+        Casper.stickyNavTitle({
+            navSelector: '.site-nav-main',
+            titleSelector: '.post-full-title',
+            activeClass: 'nav-post-title-active'
+        });
+        // Replace nav with title on scroll - end
+
+        // Hover on avatar
+        var hoverTimeout;
+        $('.author-list-item').hover(function () {
+            var $this = $(this);
+
+            clearTimeout(hoverTimeout);
+
+            $('.author-card').removeClass('hovered');
+            $(this).children('.author-card').addClass('hovered');
+
+        }, function () {
+            var $this = $(this);
+
+            hoverTimeout = setTimeout(function () {
+                $this.children('.author-card').removeClass('hovered');
+            }, 800);
+        });
+    });
+</script>
+
+
     
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=7fa9c36118"></script>
-    <script type="text/javascript" src="../assets/js/index.js?v=7fa9c36118"></script>
 
 </body>
+</html>
