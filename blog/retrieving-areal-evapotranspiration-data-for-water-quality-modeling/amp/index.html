@@ -12,11 +12,11 @@
     <meta property="og:site_name" content="Stephen Chan&#x27;s Blog" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Retrieving Areal Evapotranspiration Data for Water Quality Modeling" />
-    <meta property="og:description" content="Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling. Project Code on: GitHub  MotivationMUSIC is the de-facto software for modeling performance of stormwater quality management systems. One of the critical input to the model is the monthly evapotranspiration data, which is dependent" />
+    <meta property="og:description" content="Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling. Project Code on: GitHub MotivationMUSIC is the de-facto software for modeling performance of stormwater quality management systems. One of the critical input to the model is the monthly evapotranspiration data, which is dependent" />
     <meta property="og:url" content="http://sscchan.github.io/blog/retrieving-areal-evapotranspiration-data-for-water-quality-modeling/" />
     <meta property="og:image" content="http://sscchan.github.io/blog/content/images/2020/12/APETDataInterrogatorBanner.jpg" />
     <meta property="article:published_time" content="2017-01-10T00:00:00.000Z" />
-    <meta property="article:modified_time" content="2020-12-25T00:49:29.000Z" />
+    <meta property="article:modified_time" content="2020-12-25T02:05:12.000Z" />
     <meta property="article:tag" content="GIS" />
     <meta property="article:tag" content="Water Quality" />
     <meta property="article:tag" content="Stormwater" />
@@ -28,7 +28,7 @@
     
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Retrieving Areal Evapotranspiration Data for Water Quality Modeling" />
-    <meta name="twitter:description" content="Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling. Project Code on: GitHub  MotivationMUSIC is the de-facto software for modeling performance of stormwater quality management systems. One of the critical input to the model is the monthly evapotranspiration data, which is dependent" />
+    <meta name="twitter:description" content="Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling. Project Code on: GitHub MotivationMUSIC is the de-facto software for modeling performance of stormwater quality management systems. One of the critical input to the model is the monthly evapotranspiration data, which is dependent" />
     <meta name="twitter:url" content="http://sscchan.github.io/blog/retrieving-areal-evapotranspiration-data-for-water-quality-modeling/" />
     <meta name="twitter:image" content="http://sscchan.github.io/blog/content/images/2020/12/APETDataInterrogatorBanner.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -62,7 +62,7 @@
     "headline": "Retrieving Areal Evapotranspiration Data for Water Quality Modeling",
     "url": "http://sscchan.github.io/blog/retrieving-areal-evapotranspiration-data-for-water-quality-modeling/",
     "datePublished": "2017-01-10T00:00:00.000Z",
-    "dateModified": "2020-12-25T00:49:29.000Z",
+    "dateModified": "2020-12-25T02:05:12.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "http://sscchan.github.io/blog/content/images/2020/12/APETDataInterrogatorBanner.jpg",
@@ -70,7 +70,7 @@
         "height": 472
     },
     "keywords": "GIS, Water Quality, Stormwater, NodeJS, Express, Angular, Bootstrap, Google Map API",
-    "description": "Making it easy for non-GIS savvy engineers to access the data they need for\nwater quality modelling.\n\nProject Code on: GitHub\n[https://github.com/sscchan/Interrogator-for-Australian-Monthly-APET]\n\n\nMotivation\nMUSIC [http://ewater.org.au/products/music/] is the de-facto software for\nmodeling performance of stormwater quality management systems.\n\nOne of the critical input to the model is the monthly evapotranspiration data,\nwhich is dependent upon the location of the project site in question. The\n",
+    "description": "Making it easy for non-GIS savvy engineers to access the data they need for\nwater quality modelling.\n\nProject Code on: GitHub\n[https://github.com/sscchan/Interrogator-for-Australian-Monthly-APET]\n\nMotivation\nMUSIC [http://ewater.org.au/products/music/] is the de-facto software for\nmodeling performance of stormwater quality management systems.\n\nOne of the critical input to the model is the monthly evapotranspiration data,\nwhich is dependent upon the location of the project site in question. The\ne",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://sscchan.github.io/blog/"
@@ -669,7 +669,7 @@
             </figure>
             <section class="post-content">
 
-                <p>Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.</p><p>Project Code on: <a href="https://github.com/sscchan/Interrogator-for-Australian-Monthly-APET">GitHub</a><br /></p><figure class="kg-card kg-image-card"><amp-img src="http://sscchan.github.io/blog/content/images/2017/04/APETDataInterrogatorScreenshot-2.png" class="kg-image" alt="App Screenshot" width="795" height="365" layout="responsive"></amp-img></figure><h4 id="motivation">Motivation</h4><p><a href="http://ewater.org.au/products/music/">MUSIC</a> is the de-facto software for modeling performance of stormwater quality management systems.</p><p>One of the critical input to the model is the monthly evapotranspiration data, which is dependent upon the location of the project site in question. The evapotranspiration GIS data is available publicly from state agencies, but non-GIS savvy engineers often are unable to access it easily.</p><p>So I've built a tool to make it easier and faster for engineers to retrieve the evaporation data for their projects.</p><hr></hr><h4 id="architecture">Architecture</h4><figure class="kg-card kg-image-card"><amp-img src="http://sscchan.github.io/blog/content/images/2017/04/APETDataInterrogatorSystemDiagram.png" class="kg-image" alt="Application System Diagram" width="802" height="457" layout="responsive"></amp-img></figure><h5 id="frontend">Frontend</h5><p>The frontend consists of a map based UI that is built with Angular &amp; Bootstrap framework. It utilizes the Google Maps API for location search and coordinate retrival. The coordinates are sent as input arguments to the backend to retrieve the evaporation data for a particular project location.</p><h5 id="backend">Backend</h5><p>The backend consists of a nodeJS + Express server acting as both API &amp; Web Server hosted on Heroku Cloud Platform. The server parses evaporation ArcGrid GIS data on startup and expose the data query service with a RESTful API.</p><h4 id="what-s-next">What's next?</h4><p>As part of the quality assurance process all of the modeling (as well as inputs) must be checked. Right now there's no easy way to do that other than going to compare the values to evaporation contours charts from BOM. The next feature will include positions overlay on these chart so that a PDF report can be generated for QA and filing purposes.</p>
+                <p>Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.</p><p>Project Code on: <a href="https://github.com/sscchan/Interrogator-for-Australian-Monthly-APET">GitHub</a></p><figure class="kg-card kg-image-card"></figure><h4 id="motivation">Motivation</h4><p><a href="http://ewater.org.au/products/music/">MUSIC</a> is the de-facto software for modeling performance of stormwater quality management systems.</p><p>One of the critical input to the model is the monthly evapotranspiration data, which is dependent upon the location of the project site in question. The evapotranspiration GIS data is available publicly from state agencies, but non-GIS savvy engineers often are unable to access it easily.</p><p>So I've built a tool to make it easier and faster for engineers to retrieve the evaporation data for their projects.</p><h4 id="architecture">Architecture</h4><figure class="kg-card kg-image-card"></figure><h5 id="frontend">Frontend</h5><p>The frontend consists of a map based UI that is built with Angular &amp; Bootstrap framework. It utilizes the Google Maps API for location search and coordinate retrieval. The coordinates are sent as input arguments to the backend to retrieve the evaporation data for a particular project location.</p><h5 id="backend">Backend</h5><p>The backend consists of a nodeJS + Express server acting as both API &amp; Web Server hosted on Heroku Cloud Platform. The server parses evaporation ArcGrid GIS data on startup and expose the data query service with a RESTful API.</p><h4 id="what-s-next">What's next?</h4><p>As part of the quality assurance process all of the modeling (as well as inputs) must be checked. Right now there's no easy way to do that other than going to compare the values to evaporation contours charts from BOM. The next feature will include positions overlay on these chart so that a PDF report can be generated for QA and filing purposes.</p>
 
             </section>
 
