@@ -1,4 +1,4 @@
 User-agent: *
-Sitemap: http://sscchan.github.io/blog//sitemap.xml
+Sitemap: http://sscchan.github.io//blog/sitemap.xml
 Disallow: /ghost/
 Disallow: /p/
