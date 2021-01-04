@@ -9,7 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="./../assets/built/screen.css?v=80e7a78399" />
+    <link rel="stylesheet" type="text/css" href="./../assets/main/css/main.css?v=c6f281c255" />
+    <noscript><link rel="stylesheet" href="./../assets/main/css/noscript.css?v=c6f281c255" /></noscript>
 
     <link rel="canonical" href="http://sscchan.github.io/blog/mapping-electrification-potential-using-remote-sensing-data/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -88,327 +89,96 @@
     <meta name="generator" content="Ghost 3.40" />
     <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog/rss/" />
 
-</head>
-<body class="post-template tag-clean-energy-data-science-challenge tag-gis tag-geospatial-data tag-bootstrap tag-javascript tag-mapbox tag-renewable-energy tag-solar tag-microgrids">
+    <style>#wrapper>.bg {background-image: url(./../assets/images/overlay.png?v=c6f281c255),linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("/content/images/2020/12/FrontPageBackground.png") }</style>
 
-    <div class="site-wrapper">
+</head>
+<body class="is-preload post-template tag-clean-energy-data-science-challenge tag-gis tag-geospatial-data tag-bootstrap tag-javascript tag-mapbox tag-renewable-energy tag-solar tag-microgrids">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="http://sscchan.github.io/blog" class="logo">Stephen Chan&#x27;s Blog</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="http://sscchan.github.io/blog/">Home</a></li>
+        <li class="nav-linkedin "><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
+    </ul>
+    <ul class="icons">
+        <li><a href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
+    </ul>
+</nav>
+
 
         
 
-<header class="site-header">
-    <div class="outer site-nav-main">
-    <div class="inner">
-        <nav class="site-nav">
-    <div class="site-nav-left-wrapper">
-        <div class="site-nav-left">
-                <a class="site-nav-logo" href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a>
-            <div class="site-nav-content">
-                    <ul class="nav">
-    <li class="nav-home"><a href="http://sscchan.github.io/blog/">Home</a></li>
-    <li class="nav-linkedin"><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
-</ul>
+<main id="main">
 
-                    <span class="nav-post-title dash">Mapping Electrification Potential using Remote Sensing Data</span>
-            </div>
+    <section class="post">
+
+        <header class="major">
+            <span class="date">April 3, 2017</span>
+            <h1>Mapping Electrification Potential using Remote Sensing Data</h1>
+        </header>
+
+        <div class="image main"><img src="./../content/images/2020/12/SHRSLAppBlogCover.png" alt="Mapping Electrification Potential using Remote Sensing Data" /></div>
+
+        <div class="content">
+            <p>Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department's Clean Energy Data Science Challenge 2017.</p><p>Project Code on: <a href="https://github.com/AcmeCleanPower/HRSLToolkit">GitHub</a> | <a href="https://acmecleanpower.github.io/DARCApp/">Live Demo</a></p><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/HRSLAppScreenshot.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/HRSLAppScreenshot.png 600w, http://sscchan.github.io/blog/content/images/2020/12/HRSLAppScreenshot.png 686w"></figure><h4 id="the-challenge">The Challenge</h4><p>This application is created as an entry to the State Department's Clean Energy Data Science Challenge 2017:</p><blockquote><em><em>More than a billion people globally lack access to electricity and another billion lack access to reliable electricity, greatly impacting education, health, social and economic development. A major barrier to investment in this space is a lack of visibility into many countries’ renewable energy potential.</em></em></blockquote><blockquote><em><em>Your challenge is to find new ways to map this potential. Can you leverage multiple data sources to do, in two days, what could otherwise take many months (and millions of dollars) with traditional methods?</em></em></blockquote><blockquote><em><em>Creating actionable insights through algorithms, programs, and applications could be a game-changer for entrepreneurs, investors, and policymakers around the world and help to improve the lives of millions of people.</em></em></blockquote><h4 id="our-team-of-seven">Our Team of Seven</h4><ul><li>2 Business Analysts / Researcher</li><li>1 Geospatial Data Engineer</li><li>1 Geospatial Data Scientist</li><li>1 Generalist Data Engineer</li><li>1 Frontend Engineer</li><li>1 Fullstack Engineer + GIS Operator (&lt;- me)</li></ul><p>The team was formed on the first day and most of the team members doesn't know each other prior to the event.</p><h4 id="design-philosophy">Design Philosophy</h4><p>The design philosophy of the application is to utilize accurate remote sensing data to identify electrification opportunities for underserved communities around the world. The use of remote sensing data remove the reliance on traditional data sources for regions of the world that are often non-existent, inaccurate, incomplete and outdated</p><h4 id="approach">Approach</h4><p>The application utilizes the recently released High Resolution Settlement Layer (HRSL) data (1 arc-second / ~30m resolution) to identify human settlements extents.</p><p>The electrification status of the these settlements are then determined using NASA's Visible Infrared Imaging Radiometer Suite (VIIRS) nighttime sensor data (~150m resolution).</p><p>Combining the two data set, the application identifies candidate communities where there are sufficient population density to make electrification potentially viable.</p><h4 id="system-architecture">System Architecture</h4><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/HRSLAppSystemDiagram.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/HRSLAppSystemDiagram.png 600w, http://sscchan.github.io/blog/content/images/2020/12/HRSLAppSystemDiagram.png 784w" sizes="(min-width: 720px) 720px"></figure><h5 id="frontend">Frontend</h5><p>The Frontend has a map-based UI utilizing Mapbox GL JS library and the Bootstrap framework. The following data layers are added to the visualization:</p><ul><li>HRSL (Settlement Density)</li><li>VIIRS Nighttime Radiance</li><li>Existing HV Electricity Transmission Lines</li><li>Existing Roads</li><li>Potential Viable Electrification Sites</li></ul><h5 id="backend">Backend</h5><p>The geospatial analysis results are stored within Mapbox's platform, removing the need for hosting our own geoserver. Raster data transformation was needed to create raster data layers to suit Mapbox's very specific bit-depth, projection and format specifications.</p><h4 id="lessons">Lessons</h4><p>Mapbox raster data has very specific requirements - 8-bit Geotiff with WGS 84/Pseudo-Mercator (EPSG:3857) with no Alpha. It's likely you'll need to do post-processing from the data analytics pipelines to fit the specification.</p><h4 id="what-s-next">What's next?</h4><p>Features are currently being incrementally added to the project. Future coverage for analysis include countries such as:</p><ul><li>Burkina Faso</li><li>Ghana</li><li>Haiti</li><li>Ivory Coast</li><li>Madagascar</li><li>Malawi</li><li>South Africa</li><li>Sri Lanka</li></ul>
         </div>
-    </div>
-    <div class="site-nav-right">
-            <div class="social-links">
-            </div>
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-</a>
-
-    </div>
-</nav>
-    </div>
-</div></header>
 
 
-<main id="site-main" class="site-main outer">
-    <div class="inner">
+        <footer class="post-footer">
 
-        <article class="post-full post tag-clean-energy-data-science-challenge tag-gis tag-geospatial-data tag-bootstrap tag-javascript tag-mapbox tag-renewable-energy tag-solar tag-microgrids ">
-
-            <header class="post-full-header">
-
-                <section class="post-full-tags">
-                    <a href="./../tag/clean-energy-data-science-challenge/">Clean Energy Data Science Challenge</a>
-                </section>
-
-                <h1 class="post-full-title">Mapping Electrification Potential using Remote Sensing Data</h1>
-
-
-                <div class="post-full-byline">
-
-                    <section class="post-full-byline-content">
-
-                        <ul class="author-list">
-                            <li class="author-list-item">
-
-                                <div class="author-card">
-                                    <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</div>
-                                    <div class="author-info">
-                                        <h2>Stephen Chan</h2>
-                                        <p>Read <a href="./../author/stephen/">more posts</a> by this author.</p>
-                                    </div>
-                                </div>
-
-                                <a href="./../author/stephen/" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-
-                            </li>
-                        </ul>
-
-                        <section class="post-full-byline-meta">
-                            <h4 class="author-name"><a href="./../author/stephen/">Stephen Chan</a></h4>
-                            <div class="byline-meta-content">
-                                <time class="byline-meta-date" datetime="2017-04-03">3 Apr 2017</time>
-                                <span class="byline-reading-time"><span class="bull">&bull;</span> 2 min read</span>
-                            </div>
-                        </section>
-
+            <div class="authors">
+                <a class="author-box" href="./../author/stephen/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Stephen Chan</h5>
+                        <p>Read more posts by this author.</p>
                     </section>
+                </a>
+            </div>
 
+        </footer>
 
-                </div>
-            </header>
+    </section>
 
-            <figure class="post-full-image">
-                <img
-                    srcset="./../content/images/size/w300/2020/12/SHRSLAppBlogCover.png 300w,
-                            ./../content/images/size/w600/2020/12/SHRSLAppBlogCover.png 600w,
-                            ./../content/images/size/w1000/2020/12/SHRSLAppBlogCover.png 1000w,
-                            ./../content/images/size/w2000/2020/12/SHRSLAppBlogCover.png 2000w"
-                    sizes="(max-width: 800px) 400px,
-                        (max-width: 1170px) 1170px,
-                            2000px"
-                    src="./../content/images/size/w2000/2020/12/SHRSLAppBlogCover.png"
-                    alt="Mapping Electrification Potential using Remote Sensing Data"
-                />
-            </figure>
-
-            <section class="post-full-content">
-                <div class="post-content">
-                    <p>Accelerating the identification of electrification opportunities for underserved communities around the world using accurate remote sensing data. Application developed as an entry to the Department's Clean Energy Data Science Challenge 2017.</p><p>Project Code on: <a href="https://github.com/AcmeCleanPower/HRSLToolkit">GitHub</a> | <a href="https://acmecleanpower.github.io/DARCApp/">Live Demo</a></p><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/HRSLAppScreenshot.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/HRSLAppScreenshot.png 600w, http://sscchan.github.io/blog/content/images/2020/12/HRSLAppScreenshot.png 686w"></figure><h4 id="the-challenge">The Challenge</h4><p>This application is created as an entry to the State Department's Clean Energy Data Science Challenge 2017:</p><blockquote><em><em>More than a billion people globally lack access to electricity and another billion lack access to reliable electricity, greatly impacting education, health, social and economic development. A major barrier to investment in this space is a lack of visibility into many countries’ renewable energy potential.</em></em></blockquote><blockquote><em><em>Your challenge is to find new ways to map this potential. Can you leverage multiple data sources to do, in two days, what could otherwise take many months (and millions of dollars) with traditional methods?</em></em></blockquote><blockquote><em><em>Creating actionable insights through algorithms, programs, and applications could be a game-changer for entrepreneurs, investors, and policymakers around the world and help to improve the lives of millions of people.</em></em></blockquote><h4 id="our-team-of-seven">Our Team of Seven</h4><ul><li>2 Business Analysts / Researcher</li><li>1 Geospatial Data Engineer</li><li>1 Geospatial Data Scientist</li><li>1 Generalist Data Engineer</li><li>1 Frontend Engineer</li><li>1 Fullstack Engineer + GIS Operator (&lt;- me)</li></ul><p>The team was formed on the first day and most of the team members doesn't know each other prior to the event.</p><h4 id="design-philosophy">Design Philosophy</h4><p>The design philosophy of the application is to utilize accurate remote sensing data to identify electrification opportunities for underserved communities around the world. The use of remote sensing data remove the reliance on traditional data sources for regions of the world that are often non-existent, inaccurate, incomplete and outdated</p><h4 id="approach">Approach</h4><p>The application utilizes the recently released High Resolution Settlement Layer (HRSL) data (1 arc-second / ~30m resolution) to identify human settlements extents.</p><p>The electrification status of the these settlements are then determined using NASA's Visible Infrared Imaging Radiometer Suite (VIIRS) nighttime sensor data (~150m resolution).</p><p>Combining the two data set, the application identifies candidate communities where there are sufficient population density to make electrification potentially viable.</p><h4 id="system-architecture">System Architecture</h4><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/HRSLAppSystemDiagram.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/HRSLAppSystemDiagram.png 600w, http://sscchan.github.io/blog/content/images/2020/12/HRSLAppSystemDiagram.png 784w" sizes="(min-width: 720px) 720px"></figure><h5 id="frontend">Frontend</h5><p>The Frontend has a map-based UI utilizing Mapbox GL JS library and the Bootstrap framework. The following data layers are added to the visualization:</p><ul><li>HRSL (Settlement Density)</li><li>VIIRS Nighttime Radiance</li><li>Existing HV Electricity Transmission Lines</li><li>Existing Roads</li><li>Potential Viable Electrification Sites</li></ul><h5 id="backend">Backend</h5><p>The geospatial analysis results are stored within Mapbox's platform, removing the need for hosting our own geoserver. Raster data transformation was needed to create raster data layers to suit Mapbox's very specific bit-depth, projection and format specifications.</p><h4 id="lessons">Lessons</h4><p>Mapbox raster data has very specific requirements - 8-bit Geotiff with WGS 84/Pseudo-Mercator (EPSG:3857) with no Alpha. It's likely you'll need to do post-processing from the data analytics pipelines to fit the specification.</p><h4 id="what-s-next">What's next?</h4><p>Features are currently being incrementally added to the project. Future coverage for analysis include countries such as:</p><ul><li>Burkina Faso</li><li>Ghana</li><li>Haiti</li><li>Ivory Coast</li><li>Madagascar</li><li>Malawi</li><li>South Africa</li><li>Sri Lanka</li></ul>
-                </div>
-            </section>
-
-
-
-        </article>
-
-    </div>
 </main>
 
-<aside class="read-next outer">
-    <div class="inner">
-        <div class="read-next-feed">
 
-                <article class="post-card post tag-solar tag-geospatial-data tag-gis tag-visualzation tag-suncode-hackathon tag-predictive-model ">
-
-    <a class="post-card-image-link" href="./../modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery-processing/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2020/12/SolarAdoptionDataSystemBanner.jpg 300w,
-                    ./../content/images/size/w600/2020/12/SolarAdoptionDataSystemBanner.jpg 600w,
-                    ./../content/images/size/w1000/2020/12/SolarAdoptionDataSystemBanner.jpg 1000w,
-                    ./../content/images/size/w2000/2020/12/SolarAdoptionDataSystemBanner.jpg 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="./../content/images/size/w600/2020/12/SolarAdoptionDataSystemBanner.jpg"
-            alt="Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery-processing/">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">Solar</div>
-                <h2 class="post-card-title">Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000 for the typical 6-kilowatt residential rooftop). This project is born out</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Stephen Chan
-                    </div>
-            
-                    <a href="./../author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/stephen/">Stephen Chan</a></span>
-                <span class="post-card-byline-date"><time datetime="2017-04-09">9 Apr 2017</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-
-                <article class="post-card post tag-javascript tag-nodejs tag-ios tag-react-native tag-gps tag-flask tag-python tag-microservice tag-docker tag-containers tag-websockets tag-real-time tag-continuous-integration tag-circleci ">
-
-    <a class="post-card-image-link" href="./../a-fitness-app-that-motivates-by-making-it-a-competition/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2020/12/RwfBanner.jpg 300w,
-                    ./../content/images/size/w600/2020/12/RwfBanner.jpg 600w,
-                    ./../content/images/size/w1000/2020/12/RwfBanner.jpg 1000w,
-                    ./../content/images/size/w2000/2020/12/RwfBanner.jpg 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="./../content/images/size/w600/2020/12/RwfBanner.jpg"
-            alt="A Fitness App that Motivates by Making it A Competition"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../a-fitness-app-that-motivates-by-making-it-a-competition/">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">Javascript</div>
-                <h2 class="post-card-title">A Fitness App that Motivates by Making it A Competition</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>How do we get people off the couch and start exercising? Make it a competition so you can one-up your friends. This app challenges allows you to challenge your friends</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Stephen Chan
-                    </div>
-            
-                    <a href="./../author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/stephen/">Stephen Chan</a></span>
-                <span class="post-card-byline-date"><time datetime="2017-03-09">9 Mar 2017</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-        </div>
-    </div>
-</aside>
-
-
-
-
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a> &copy; 2021</section>
-                <nav class="site-footer-nav">
-                    <a href="http://sscchan.github.io/blog">Latest Posts</a>
-                    
-                    
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </nav>
-            </div>
-        </footer>
-
-    </div>
-
-
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-    <script src="./../assets/built/casper.js?v=80e7a78399"></script>
-
-    <script>
-        // Parse the URL parameter
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-
-        // Give the parameter a variable name
-        var action = getParameterByName('action');
-        var success = getParameterByName('success');
-
-        $(document).ready(function () {
-            if (action == 'subscribe' && (success === null || success === 'true')) {
-                $('body').addClass('subscribe-success');
-            }
-
-            if (action == 'subscribe' && success === 'false') {
-                $('body').addClass('subscribe-failure');
-            }
-
-            $('.subscribe-notification .subscribe-close-button').click(function () {
-                $('.subscribe-notification').addClass('close');
-            });
-
-            // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
-                $('.subscribe-overlay form').removeClass();
-                $('.subscribe-email').val('');
-            });
-        });
-    </script>
-
-    <script>
-    $(document).ready(function () {
-        // FitVids - start
-        var $postContent = $(".post-full-content");
-        $postContent.fitVids();
-        // FitVids - end
-
-        // Replace nav with title on scroll - start
-        Casper.stickyNavTitle({
-            navSelector: '.site-nav-main',
-            titleSelector: '.post-full-title',
-            activeClass: 'nav-post-title-active'
-        });
-        // Replace nav with title on scroll - end
-
-        // Hover on avatar
-        var hoverTimeout;
-        $('.author-list-item').hover(function () {
-            var $this = $(this);
-
-            clearTimeout(hoverTimeout);
-
-            $('.author-card').removeClass('hovered');
-            $(this).children('.author-card').addClass('hovered');
-
-        }, function () {
-            var $this = $(this);
-
-            hoverTimeout = setTimeout(function () {
-                $this.children('.author-card').removeClass('hovered');
-            }, 800);
-        });
-    });
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
 </script>
 
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; Stephen Chan&#x27;s Blog</li>
+                <li>Design by <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>Published with <a href="https://ghost.org">Ghost</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="./../assets/main/js/jquery.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrollex.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrolly.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/browser.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/breakpoints.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/util.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/main.js?v=c6f281c255"></script>
 
     
 

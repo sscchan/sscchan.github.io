@@ -9,7 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="./../assets/built/screen.css?v=80e7a78399" />
+    <link rel="stylesheet" type="text/css" href="./../assets/main/css/main.css?v=c6f281c255" />
+    <noscript><link rel="stylesheet" href="./../assets/main/css/noscript.css?v=c6f281c255" /></noscript>
 
     <link rel="canonical" href="http://sscchan.github.io/blog/optimizing-water-supply-networks-with-genetic-algorithm-part-ii/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -87,347 +88,96 @@
     <meta name="generator" content="Ghost 3.40" />
     <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog/rss/" />
 
-</head>
-<body class="post-template tag-c-c tag-water tag-epanet tag-water-supply tag-optimization tag-multi-objective tag-genetic-algorithm tag-water-resources">
+    <style>#wrapper>.bg {background-image: url(./../assets/images/overlay.png?v=c6f281c255),linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("/content/images/2020/12/FrontPageBackground.png") }</style>
 
-    <div class="site-wrapper">
+</head>
+<body class="is-preload post-template tag-c-c tag-water tag-epanet tag-water-supply tag-optimization tag-multi-objective tag-genetic-algorithm tag-water-resources">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="http://sscchan.github.io/blog" class="logo">Stephen Chan&#x27;s Blog</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="http://sscchan.github.io/blog/">Home</a></li>
+        <li class="nav-linkedin "><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
+    </ul>
+    <ul class="icons">
+        <li><a href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
+    </ul>
+</nav>
+
 
         
 
-<header class="site-header">
-    <div class="outer site-nav-main">
-    <div class="inner">
-        <nav class="site-nav">
-    <div class="site-nav-left-wrapper">
-        <div class="site-nav-left">
-                <a class="site-nav-logo" href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a>
-            <div class="site-nav-content">
-                    <ul class="nav">
-    <li class="nav-home"><a href="http://sscchan.github.io/blog/">Home</a></li>
-    <li class="nav-linkedin"><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
-</ul>
+<main id="main">
 
-                    <span class="nav-post-title dash">Optimizing Water Supply Networks with Genetic Algorithm (Part II)</span>
-            </div>
+    <section class="post">
+
+        <header class="major">
+            <span class="date">May 17, 2016</span>
+            <h1>Optimizing Water Supply Networks with Genetic Algorithm (Part II)</h1>
+        </header>
+
+        <div class="image main"><img src="./../content/images/2020/12/MOGABanner-1.jpg" alt="Optimizing Water Supply Networks with Genetic Algorithm (Part II)" /></div>
+
+        <div class="content">
+            <p>This Part II of my blogpost on the application that helps with optimizing water supply networks using genetic algorithm. </p><hr><p>The application is written in C/C++.<br>Project Code on: <a href="https://github.com/sscchan/Genetic-Algorithm-Optimization-of-Water-Supply-System">GitHub</a></p><h4 id="genetic-algorithm">Genetic Algorithm</h4><p><a href="https://en.wikipedia.org/wiki/Genetic_algorithm">Genetic algorithm</a> is a method for optimization process that is inspired by natural selection. Individual solutions are encoded into "DNA" which are repeatedly mutated, reproduced and selected for "fitness" based on system performance.</p><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/MOGAGADiagram.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/MOGAGADiagram.png 600w, http://sscchan.github.io/blog/content/images/size/w1000/2020/12/MOGAGADiagram.png 1000w, http://sscchan.github.io/blog/content/images/2020/12/MOGAGADiagram.png 1031w" sizes="(min-width: 720px) 720px"></figure><h5 id="initialization">Initialization</h5><p>A randomize set of configurations are used to fill the initial population.</p><h5 id="encoding">Encoding</h5><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/MOGAEncodingDiagram.png" class="kg-image" alt></figure><p>Possible choices of components of the system are represented as integers. Bit representation of these integers are concatenated and represents a configuration's "DNA". This encoding process enables the mimicking of the biological mutation and reproduction process.</p><h5 id="mutation">Mutation</h5><p>In the mutation process, random bits of each configuration's encoded "DNA" are "mutated" or flipped to create new variations of configurations. These small, random variation is intended to explore the solution space in an incremental manner.</p><h5 id="reproduction-crossover">Reproduction / Crossover</h5><p>In the reproduction process, configurations that have high "fitness" scores are paired and their encoded DNA are merged to create a new pair of configurations. A simple single-point cross-over approach, where the encoded bits are swapped at after a pivot point, is used.</p><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/MOGACrossover.png" class="kg-image" alt></figure><h4 id="decoding-fitness-evaluation">Decoding &amp; Fitness Evaluation</h4><p>The newly mutated and reproduced population is decoded from their DNA representations into system configuration. These configurations are then evaluated for performance (pressure, flow, pump utilization, etc) as well as construction and operating costs using the EPANET network analysis toolkit and the cost calculation module. Each individual configuration is then assigned a "rank" according to their performance.</p><p>A crucial difference between standard GA and the current multi-objective GA approaches are the ranking process. Multi-objective GA ranks individual solutions based on their pareto-optimality as oppose to an individual performance metric. With this approach, multiple configurations can have the same "rank".</p><h4 id="population-culling">Population Culling</h4><p>During the reproduction / crossover process, the total population is effectively doubled. In order to maintain the constant population numbers, system configurations with low fitness scores are removed.</p><h4 id="new-generation">New Generation</h4><p>Each mutate-reproduce-cull cycle represents a new generation of the population of configurations. The process will then repeat until the required number of generations is reached (or a set of performance criteria are satisfied).</p><h3 id="results">Results</h3><p>After a sufficient number of generations, we should have identified a set of close-to-pareto-optimum solutions. Designers and decision makers can then evaluate the performance and cost tradeoffs between these limited set of potential configurations.</p>
         </div>
-    </div>
-    <div class="site-nav-right">
-            <div class="social-links">
-            </div>
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-</a>
-
-    </div>
-</nav>
-    </div>
-</div></header>
 
 
-<main id="site-main" class="site-main outer">
-    <div class="inner">
+        <footer class="post-footer">
 
-        <article class="post-full post tag-c-c tag-water tag-epanet tag-water-supply tag-optimization tag-multi-objective tag-genetic-algorithm tag-water-resources ">
-
-            <header class="post-full-header">
-
-                <section class="post-full-tags">
-                    <a href="./../tag/c-c/">C/C++</a>
-                </section>
-
-                <h1 class="post-full-title">Optimizing Water Supply Networks with Genetic Algorithm (Part II)</h1>
-
-
-                <div class="post-full-byline">
-
-                    <section class="post-full-byline-content">
-
-                        <ul class="author-list">
-                            <li class="author-list-item">
-
-                                <div class="author-card">
-                                    <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</div>
-                                    <div class="author-info">
-                                        <h2>Stephen Chan</h2>
-                                        <p>Read <a href="./../author/stephen/">more posts</a> by this author.</p>
-                                    </div>
-                                </div>
-
-                                <a href="./../author/stephen/" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-
-                            </li>
-                        </ul>
-
-                        <section class="post-full-byline-meta">
-                            <h4 class="author-name"><a href="./../author/stephen/">Stephen Chan</a></h4>
-                            <div class="byline-meta-content">
-                                <time class="byline-meta-date" datetime="2016-05-17">17 May 2016</time>
-                                <span class="byline-reading-time"><span class="bull">&bull;</span> 2 min read</span>
-                            </div>
-                        </section>
-
+            <div class="authors">
+                <a class="author-box" href="./../author/stephen/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Stephen Chan</h5>
+                        <p>Read more posts by this author.</p>
                     </section>
+                </a>
+            </div>
 
+        </footer>
 
-                </div>
-            </header>
+    </section>
 
-            <figure class="post-full-image">
-                <img
-                    srcset="./../content/images/size/w300/2020/12/MOGABanner-1.jpg 300w,
-                            ./../content/images/size/w600/2020/12/MOGABanner-1.jpg 600w,
-                            ./../content/images/size/w1000/2020/12/MOGABanner-1.jpg 1000w,
-                            ./../content/images/size/w2000/2020/12/MOGABanner-1.jpg 2000w"
-                    sizes="(max-width: 800px) 400px,
-                        (max-width: 1170px) 1170px,
-                            2000px"
-                    src="./../content/images/size/w2000/2020/12/MOGABanner-1.jpg"
-                    alt="Optimizing Water Supply Networks with Genetic Algorithm (Part II)"
-                />
-            </figure>
-
-            <section class="post-full-content">
-                <div class="post-content">
-                    <p>This Part II of my blogpost on the application that helps with optimizing water supply networks using genetic algorithm. </p><hr><p>The application is written in C/C++.<br>Project Code on: <a href="https://github.com/sscchan/Genetic-Algorithm-Optimization-of-Water-Supply-System">GitHub</a></p><h4 id="genetic-algorithm">Genetic Algorithm</h4><p><a href="https://en.wikipedia.org/wiki/Genetic_algorithm">Genetic algorithm</a> is a method for optimization process that is inspired by natural selection. Individual solutions are encoded into "DNA" which are repeatedly mutated, reproduced and selected for "fitness" based on system performance.</p><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/MOGAGADiagram.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/MOGAGADiagram.png 600w, http://sscchan.github.io/blog/content/images/size/w1000/2020/12/MOGAGADiagram.png 1000w, http://sscchan.github.io/blog/content/images/2020/12/MOGAGADiagram.png 1031w" sizes="(min-width: 720px) 720px"></figure><h5 id="initialization">Initialization</h5><p>A randomize set of configurations are used to fill the initial population.</p><h5 id="encoding">Encoding</h5><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/MOGAEncodingDiagram.png" class="kg-image" alt></figure><p>Possible choices of components of the system are represented as integers. Bit representation of these integers are concatenated and represents a configuration's "DNA". This encoding process enables the mimicking of the biological mutation and reproduction process.</p><h5 id="mutation">Mutation</h5><p>In the mutation process, random bits of each configuration's encoded "DNA" are "mutated" or flipped to create new variations of configurations. These small, random variation is intended to explore the solution space in an incremental manner.</p><h5 id="reproduction-crossover">Reproduction / Crossover</h5><p>In the reproduction process, configurations that have high "fitness" scores are paired and their encoded DNA are merged to create a new pair of configurations. A simple single-point cross-over approach, where the encoded bits are swapped at after a pivot point, is used.</p><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/MOGACrossover.png" class="kg-image" alt></figure><h4 id="decoding-fitness-evaluation">Decoding &amp; Fitness Evaluation</h4><p>The newly mutated and reproduced population is decoded from their DNA representations into system configuration. These configurations are then evaluated for performance (pressure, flow, pump utilization, etc) as well as construction and operating costs using the EPANET network analysis toolkit and the cost calculation module. Each individual configuration is then assigned a "rank" according to their performance.</p><p>A crucial difference between standard GA and the current multi-objective GA approaches are the ranking process. Multi-objective GA ranks individual solutions based on their pareto-optimality as oppose to an individual performance metric. With this approach, multiple configurations can have the same "rank".</p><h4 id="population-culling">Population Culling</h4><p>During the reproduction / crossover process, the total population is effectively doubled. In order to maintain the constant population numbers, system configurations with low fitness scores are removed.</p><h4 id="new-generation">New Generation</h4><p>Each mutate-reproduce-cull cycle represents a new generation of the population of configurations. The process will then repeat until the required number of generations is reached (or a set of performance criteria are satisfied).</p><h3 id="results">Results</h3><p>After a sufficient number of generations, we should have identified a set of close-to-pareto-optimum solutions. Designers and decision makers can then evaluate the performance and cost tradeoffs between these limited set of potential configurations.</p>
-                </div>
-            </section>
-
-
-
-        </article>
-
-    </div>
 </main>
 
-<aside class="read-next outer">
-    <div class="inner">
-        <div class="read-next-feed">
-                <article class="read-next-card">
-                    <header class="read-next-card-header">
-                        <h3><span>More in</span> <a href="./../tag/c-c/">C/C++</a></h3>
-                    </header>
-                    <div class="read-next-card-content">
-                        <ul>
-                            <li>
-                                <h4><a href="./../optimizing-water-supply-networks-with-genetic-algorithm-part-i/">Optimizing Water Supply Networks with Genetic Algorithm (Part I)</a></h4>
-                                <div class="read-next-card-meta">
-                                    <p><time datetime="2016-05-10">10 May 2016</time> –
-                                        2 min read</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <footer class="read-next-card-footer">
-                        <a href="./../tag/c-c/">1 post
-                            →</a>
-                    </footer>
-                </article>
 
-                <article class="post-card post tag-markov-chains tag-javascript tag-twitter tag-stochastic-modelling ">
-
-    <a class="post-card-image-link" href="./../modelling-tweets-as-markov-chains/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2020/12/TwitterGeneratorBanner.png 300w,
-                    ./../content/images/size/w600/2020/12/TwitterGeneratorBanner.png 600w,
-                    ./../content/images/size/w1000/2020/12/TwitterGeneratorBanner.png 1000w,
-                    ./../content/images/size/w2000/2020/12/TwitterGeneratorBanner.png 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="./../content/images/size/w600/2020/12/TwitterGeneratorBanner.png"
-            alt="Modelling Tweets as Markov Chains"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../modelling-tweets-as-markov-chains/">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">Markov Chains</div>
-                <h2 class="post-card-title">Modelling Tweets as Markov Chains</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>To celebrate the end of the 2016, let's model president-elect Trump's 2016 tweets as a Markov Chain! Project Code on: GitHub | Live Demo What is a Markov Chain?Markov Chains</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Stephen Chan
-                    </div>
-            
-                    <a href="./../author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/stephen/">Stephen Chan</a></span>
-                <span class="post-card-byline-date"><time datetime="2017-01-01">1 Jan 2017</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-
-                <article class="post-card post tag-c-c tag-water tag-epanet tag-water-supply tag-optimization tag-multi-objective tag-genetic-algorithm tag-water-resources ">
-
-    <a class="post-card-image-link" href="./../optimizing-water-supply-networks-with-genetic-algorithm-part-i/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2020/12/MOGABanner.jpg 300w,
-                    ./../content/images/size/w600/2020/12/MOGABanner.jpg 600w,
-                    ./../content/images/size/w1000/2020/12/MOGABanner.jpg 1000w,
-                    ./../content/images/size/w2000/2020/12/MOGABanner.jpg 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="./../content/images/size/w600/2020/12/MOGABanner.jpg"
-            alt="Optimizing Water Supply Networks with Genetic Algorithm (Part I)"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../optimizing-water-supply-networks-with-genetic-algorithm-part-i/">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">C/C++</div>
-                <h2 class="post-card-title">Optimizing Water Supply Networks with Genetic Algorithm (Part I)</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>A safe, reliable source of water is fundamental to the health, economy, and wellbeing of communities. However, the design, construction, operation and maintenance of water supply systems require significant resources.</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Stephen Chan
-                    </div>
-            
-                    <a href="./../author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/stephen/">Stephen Chan</a></span>
-                <span class="post-card-byline-date"><time datetime="2016-05-10">10 May 2016</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-        </div>
-    </div>
-</aside>
-
-
-
-
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a> &copy; 2021</section>
-                <nav class="site-footer-nav">
-                    <a href="http://sscchan.github.io/blog">Latest Posts</a>
-                    
-                    
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </nav>
-            </div>
-        </footer>
-
-    </div>
-
-
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-    <script src="./../assets/built/casper.js?v=80e7a78399"></script>
-
-    <script>
-        // Parse the URL parameter
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-
-        // Give the parameter a variable name
-        var action = getParameterByName('action');
-        var success = getParameterByName('success');
-
-        $(document).ready(function () {
-            if (action == 'subscribe' && (success === null || success === 'true')) {
-                $('body').addClass('subscribe-success');
-            }
-
-            if (action == 'subscribe' && success === 'false') {
-                $('body').addClass('subscribe-failure');
-            }
-
-            $('.subscribe-notification .subscribe-close-button').click(function () {
-                $('.subscribe-notification').addClass('close');
-            });
-
-            // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
-                $('.subscribe-overlay form').removeClass();
-                $('.subscribe-email').val('');
-            });
-        });
-    </script>
-
-    <script>
-    $(document).ready(function () {
-        // FitVids - start
-        var $postContent = $(".post-full-content");
-        $postContent.fitVids();
-        // FitVids - end
-
-        // Replace nav with title on scroll - start
-        Casper.stickyNavTitle({
-            navSelector: '.site-nav-main',
-            titleSelector: '.post-full-title',
-            activeClass: 'nav-post-title-active'
-        });
-        // Replace nav with title on scroll - end
-
-        // Hover on avatar
-        var hoverTimeout;
-        $('.author-list-item').hover(function () {
-            var $this = $(this);
-
-            clearTimeout(hoverTimeout);
-
-            $('.author-card').removeClass('hovered');
-            $(this).children('.author-card').addClass('hovered');
-
-        }, function () {
-            var $this = $(this);
-
-            hoverTimeout = setTimeout(function () {
-                $this.children('.author-card').removeClass('hovered');
-            }, 800);
-        });
-    });
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
 </script>
 
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; Stephen Chan&#x27;s Blog</li>
+                <li>Design by <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>Published with <a href="https://ghost.org">Ghost</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="./../assets/main/js/jquery.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrollex.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrolly.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/browser.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/breakpoints.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/util.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/main.js?v=c6f281c255"></script>
 
     
 

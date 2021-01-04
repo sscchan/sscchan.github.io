@@ -9,7 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="./../assets/built/screen.css?v=80e7a78399" />
+    <link rel="stylesheet" type="text/css" href="./../assets/main/css/main.css?v=c6f281c255" />
+    <noscript><link rel="stylesheet" href="./../assets/main/css/noscript.css?v=c6f281c255" /></noscript>
 
     <link rel="canonical" href="http://sscchan.github.io/blog/about-the-author/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -64,131 +65,66 @@
     <meta name="generator" content="Ghost 3.40" />
     <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog/rss/" />
 
-</head>
-<body class="page-template page-about-the-author">
+    <style>#wrapper>.bg {background-image: url(./../assets/images/overlay.png?v=c6f281c255),linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("/content/images/2020/12/FrontPageBackground.png") }</style>
 
-    <div class="site-wrapper">
+</head>
+<body class="is-preload page-template page-about-the-author">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="http://sscchan.github.io/blog" class="logo">Stephen Chan&#x27;s Blog</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="http://sscchan.github.io/blog/">Home</a></li>
+        <li class="nav-linkedin "><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
+    </ul>
+    <ul class="icons">
+        <li><a href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
+    </ul>
+</nav>
+
 
         
-<header class="site-header">
-    <div class="outer site-nav-main">
-        <div class="inner">
-            <nav class="site-nav">
-    <div class="site-nav-left-wrapper">
-        <div class="site-nav-left">
-                <a class="site-nav-logo" href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a>
-            <div class="site-nav-content">
-                    <ul class="nav">
-    <li class="nav-home"><a href="http://sscchan.github.io/blog/">Home</a></li>
-    <li class="nav-linkedin"><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
-</ul>
 
-            </div>
+<main id="main">
+    <section class="post">
+
+        <header class="major">
+            <h1>About the Author</h1>
+        </header>
+
+
+        <div class="content">
+            <p>About the Author...</p>
         </div>
-    </div>
-    <div class="site-nav-right">
-            <div class="social-links">
-            </div>
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-</a>
 
-    </div>
-</nav>
-        </div>
-    </div>
-</header>
-
-
-<main id="site-main" class="site-main outer">
-    <div class="inner">
-
-        <article class="post-full post no-image page no-image">
-
-            <header class="post-full-header">
-                <h1 class="post-full-title">About the Author</h1>
-            </header>
-
-
-            <section class="post-full-content">
-                <div class="post-content">
-                    <p>About the Author...</p>
-                </div>
-            </section>
-
-        </article>
-
-    </div>
+    </section>
 </main>
 
 
 
-
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a> &copy; 2021</section>
-                <nav class="site-footer-nav">
-                    <a href="http://sscchan.github.io/blog">Latest Posts</a>
-                    
-                    
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </nav>
-            </div>
-        </footer>
+        <div id="copyright">
+            <ul>
+                <li>&copy; Stephen Chan&#x27;s Blog</li>
+                <li>Design by <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>Published with <a href="https://ghost.org">Ghost</a></li>
+            </ul>
+        </div>
 
     </div>
 
 
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-    <script src="./../assets/built/casper.js?v=80e7a78399"></script>
-
-    <script>
-        // Parse the URL parameter
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-
-        // Give the parameter a variable name
-        var action = getParameterByName('action');
-        var success = getParameterByName('success');
-
-        $(document).ready(function () {
-            if (action == 'subscribe' && (success === null || success === 'true')) {
-                $('body').addClass('subscribe-success');
-            }
-
-            if (action == 'subscribe' && success === 'false') {
-                $('body').addClass('subscribe-failure');
-            }
-
-            $('.subscribe-notification .subscribe-close-button').click(function () {
-                $('.subscribe-notification').addClass('close');
-            });
-
-            // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
-                $('.subscribe-overlay form').removeClass();
-                $('.subscribe-email').val('');
-            });
-        });
-    </script>
-
-    <script>
-    $(function() {
-        var $postContent = $(".post-full-content");
-        $postContent.fitVids();
-    });
-</script>
-
+    <script src="./../assets/main/js/jquery.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrollex.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrolly.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/browser.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/breakpoints.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/util.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/main.js?v=c6f281c255"></script>
 
     
 

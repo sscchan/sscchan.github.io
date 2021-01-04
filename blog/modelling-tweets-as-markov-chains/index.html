@@ -9,7 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="./../assets/built/screen.css?v=80e7a78399" />
+    <link rel="stylesheet" type="text/css" href="./../assets/main/css/main.css?v=c6f281c255" />
+    <noscript><link rel="stylesheet" href="./../assets/main/css/noscript.css?v=c6f281c255" /></noscript>
 
     <link rel="canonical" href="http://sscchan.github.io/blog/modelling-tweets-as-markov-chains/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -83,109 +84,44 @@
     <meta name="generator" content="Ghost 3.40" />
     <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog/rss/" />
 
-</head>
-<body class="post-template tag-markov-chains tag-javascript tag-twitter tag-stochastic-modelling">
+    <style>#wrapper>.bg {background-image: url(./../assets/images/overlay.png?v=c6f281c255),linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("/content/images/2020/12/FrontPageBackground.png") }</style>
 
-    <div class="site-wrapper">
+</head>
+<body class="is-preload post-template tag-markov-chains tag-javascript tag-twitter tag-stochastic-modelling">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="http://sscchan.github.io/blog" class="logo">Stephen Chan&#x27;s Blog</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="http://sscchan.github.io/blog/">Home</a></li>
+        <li class="nav-linkedin "><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
+    </ul>
+    <ul class="icons">
+        <li><a href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
+    </ul>
+</nav>
+
 
         
 
-<header class="site-header">
-    <div class="outer site-nav-main">
-    <div class="inner">
-        <nav class="site-nav">
-    <div class="site-nav-left-wrapper">
-        <div class="site-nav-left">
-                <a class="site-nav-logo" href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a>
-            <div class="site-nav-content">
-                    <ul class="nav">
-    <li class="nav-home"><a href="http://sscchan.github.io/blog/">Home</a></li>
-    <li class="nav-linkedin"><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
-</ul>
+<main id="main">
 
-                    <span class="nav-post-title dash">Modelling Tweets as Markov Chains</span>
-            </div>
-        </div>
-    </div>
-    <div class="site-nav-right">
-            <div class="social-links">
-            </div>
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-</a>
+    <section class="post">
 
-    </div>
-</nav>
-    </div>
-</div></header>
+        <header class="major">
+            <span class="date">January 1, 2017</span>
+            <h1>Modelling Tweets as Markov Chains</h1>
+        </header>
 
+        <div class="image main"><img src="./../content/images/2020/12/TwitterGeneratorBanner.png" alt="Modelling Tweets as Markov Chains" /></div>
 
-<main id="site-main" class="site-main outer">
-    <div class="inner">
-
-        <article class="post-full post tag-markov-chains tag-javascript tag-twitter tag-stochastic-modelling ">
-
-            <header class="post-full-header">
-
-                <section class="post-full-tags">
-                    <a href="./../tag/markov-chains/">Markov Chains</a>
-                </section>
-
-                <h1 class="post-full-title">Modelling Tweets as Markov Chains</h1>
-
-
-                <div class="post-full-byline">
-
-                    <section class="post-full-byline-content">
-
-                        <ul class="author-list">
-                            <li class="author-list-item">
-
-                                <div class="author-card">
-                                    <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</div>
-                                    <div class="author-info">
-                                        <h2>Stephen Chan</h2>
-                                        <p>Read <a href="./../author/stephen/">more posts</a> by this author.</p>
-                                    </div>
-                                </div>
-
-                                <a href="./../author/stephen/" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-
-                            </li>
-                        </ul>
-
-                        <section class="post-full-byline-meta">
-                            <h4 class="author-name"><a href="./../author/stephen/">Stephen Chan</a></h4>
-                            <div class="byline-meta-content">
-                                <time class="byline-meta-date" datetime="2017-01-01">1 Jan 2017</time>
-                                <span class="byline-reading-time"><span class="bull">&bull;</span> 2 min read</span>
-                            </div>
-                        </section>
-
-                    </section>
-
-
-                </div>
-            </header>
-
-            <figure class="post-full-image">
-                <img
-                    srcset="./../content/images/size/w300/2020/12/TwitterGeneratorBanner.png 300w,
-                            ./../content/images/size/w600/2020/12/TwitterGeneratorBanner.png 600w,
-                            ./../content/images/size/w1000/2020/12/TwitterGeneratorBanner.png 1000w,
-                            ./../content/images/size/w2000/2020/12/TwitterGeneratorBanner.png 2000w"
-                    sizes="(max-width: 800px) 400px,
-                        (max-width: 1170px) 1170px,
-                            2000px"
-                    src="./../content/images/size/w2000/2020/12/TwitterGeneratorBanner.png"
-                    alt="Modelling Tweets as Markov Chains"
-                />
-            </figure>
-
-            <section class="post-full-content">
-                <div class="post-content">
-                    <p><em>To celebrate the end of the 2016, let's model president-elect Trump's 2016 tweets as a Markov Chain!</em></p><hr><p>Project Code on: <a href="https://github.com/sscchan/tweet-markov-chain">GitHub</a> | <a href="http://sscchan.github.io/portfolio/projects/TweeterMarkov/">Live Demo</a></p><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/MarkovTweetBootScreenshot.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/MarkovTweetBootScreenshot.png 600w, http://sscchan.github.io/blog/content/images/2020/12/MarkovTweetBootScreenshot.png 712w"></figure><h4 id="what-is-a-markov-chain">What is a Markov Chain?</h4><p><a href="https://en.wikipedia.org/wiki/Markov_chain">Markov Chains</a> are stochastic processes that satisfy the <a href="https://en.wikipedia.org/wiki/Markov_property">Markov Property</a>. Markov Chains are described "memoryless", where the probability of the future state is entirely and only dependent on the current state and not the previous states.</p><h4 id="how-are-tweets-and-markov-chain-related">How are Tweets and Markov Chain related?</h4><p>Are the words contained within a tweet generated via a stochastic process that satisfies the Markov property? <strong><strong><em>absolutely not</em></strong></strong></p><p>So why do you want to model tweets as a Markov Chain? <strong><strong>because it's</strong></strong> <strong><strong><em>hilarious</em></strong></strong></p><h4 id="getting-the-tweet-data">Getting the Tweet Data</h4><p>Twitter provides an API for reading and writing tweet data. It's also useless for our purpose because Twitter only returns tweets from the last three weeks. Very sad.</p><p>But it looks like <a href="http://www.trumptwitterarchive.com/">trumptwitterarchive.com</a> have a database of historical tweets from the president-elect. So I've copied all of the tweets from 2016 to a local text file.</p><h4 id="tweet-data-preprocessing">Tweet Data Preprocessing</h4><p>We'll need to pre-process our data so we can produce a sensible looking transition matrix. String elements such as links to articles, quotes and urls are removed using Regex.</p><h4 id="modelling-tweets-as-a-markov-chain">Modelling Tweets as a Markov Chain</h4><p>Strictly speaking, we are modelling the <strong><strong>process</strong></strong> of writing out a tweet as a Markov Chain. Each word of the tweet is represented by a system state. With the knowledge of the present system state (current word) we can obtain the future system state (next word) using the transition matrix.</p><h5 id="a-tweet-s-first-word-">A Tweet's First Word:</h5><p>We will need to set an initial condition for our system before the Markov process of writing out the subsequent word can begin. From our dataset, we can determine the probability distribution of the first word (initial condition) of the tweet:</p><pre><code>function calculateFirstWordsProbabilities(tweets)
+        <div class="content">
+            <p><em>To celebrate the end of the 2016, let's model president-elect Trump's 2016 tweets as a Markov Chain!</em></p><hr><p>Project Code on: <a href="https://github.com/sscchan/tweet-markov-chain">GitHub</a> | <a href="http://sscchan.github.io/portfolio/projects/TweeterMarkov/">Live Demo</a></p><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/MarkovTweetBootScreenshot.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/MarkovTweetBootScreenshot.png 600w, http://sscchan.github.io/blog/content/images/2020/12/MarkovTweetBootScreenshot.png 712w"></figure><h4 id="what-is-a-markov-chain">What is a Markov Chain?</h4><p><a href="https://en.wikipedia.org/wiki/Markov_chain">Markov Chains</a> are stochastic processes that satisfy the <a href="https://en.wikipedia.org/wiki/Markov_property">Markov Property</a>. Markov Chains are described "memoryless", where the probability of the future state is entirely and only dependent on the current state and not the previous states.</p><h4 id="how-are-tweets-and-markov-chain-related">How are Tweets and Markov Chain related?</h4><p>Are the words contained within a tweet generated via a stochastic process that satisfies the Markov property? <strong><strong><em>absolutely not</em></strong></strong></p><p>So why do you want to model tweets as a Markov Chain? <strong><strong>because it's</strong></strong> <strong><strong><em>hilarious</em></strong></strong></p><h4 id="getting-the-tweet-data">Getting the Tweet Data</h4><p>Twitter provides an API for reading and writing tweet data. It's also useless for our purpose because Twitter only returns tweets from the last three weeks. Very sad.</p><p>But it looks like <a href="http://www.trumptwitterarchive.com/">trumptwitterarchive.com</a> have a database of historical tweets from the president-elect. So I've copied all of the tweets from 2016 to a local text file.</p><h4 id="tweet-data-preprocessing">Tweet Data Preprocessing</h4><p>We'll need to pre-process our data so we can produce a sensible looking transition matrix. String elements such as links to articles, quotes and urls are removed using Regex.</p><h4 id="modelling-tweets-as-a-markov-chain">Modelling Tweets as a Markov Chain</h4><p>Strictly speaking, we are modelling the <strong><strong>process</strong></strong> of writing out a tweet as a Markov Chain. Each word of the tweet is represented by a system state. With the knowledge of the present system state (current word) we can obtain the future system state (next word) using the transition matrix.</p><h5 id="a-tweet-s-first-word-">A Tweet's First Word:</h5><p>We will need to set an initial condition for our system before the Markov process of writing out the subsequent word can begin. From our dataset, we can determine the probability distribution of the first word (initial condition) of the tweet:</p><pre><code>function calculateFirstWordsProbabilities(tweets)
 {
   let tweetFirstWords = [];
   tweets.forEach(extractFirstWordofTweet);
@@ -221,224 +157,58 @@ function processMarkovTransition() {
   }
 }
 </code></pre><h5 id="done-">Done!</h5><p>All we need to do now is to use the transition matrix to generate our own tweet!</p>
-                </div>
-            </section>
+        </div>
 
 
+        <footer class="post-footer">
 
-        </article>
+            <div class="authors">
+                <a class="author-box" href="./../author/stephen/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Stephen Chan</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
 
-    </div>
+        </footer>
+
+    </section>
+
 </main>
 
-<aside class="read-next outer">
-    <div class="inner">
-        <div class="read-next-feed">
 
-                <article class="post-card post tag-gis tag-water-quality tag-stormwater tag-nodejs tag-express tag-angular tag-bootstrap tag-google-map-api ">
-
-    <a class="post-card-image-link" href="./../retrieving-areal-evapotranspiration-data-for-water-quality-modeling/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2020/12/APETDataInterrogatorBanner.jpg 300w,
-                    ./../content/images/size/w600/2020/12/APETDataInterrogatorBanner.jpg 600w,
-                    ./../content/images/size/w1000/2020/12/APETDataInterrogatorBanner.jpg 1000w,
-                    ./../content/images/size/w2000/2020/12/APETDataInterrogatorBanner.jpg 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="./../content/images/size/w600/2020/12/APETDataInterrogatorBanner.jpg"
-            alt="Retrieving Areal Evapotranspiration Data for Water Quality Modeling"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../retrieving-areal-evapotranspiration-data-for-water-quality-modeling/">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">GIS</div>
-                <h2 class="post-card-title">Retrieving Areal Evapotranspiration Data for Water Quality Modeling</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling. Project Code on: GitHub MotivationMUSIC is the de-facto software for modeling performance of</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Stephen Chan
-                    </div>
-            
-                    <a href="./../author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/stephen/">Stephen Chan</a></span>
-                <span class="post-card-byline-date"><time datetime="2017-01-10">10 Jan 2017</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-
-                <article class="post-card post tag-c-c tag-water tag-epanet tag-water-supply tag-optimization tag-multi-objective tag-genetic-algorithm tag-water-resources ">
-
-    <a class="post-card-image-link" href="./../optimizing-water-supply-networks-with-genetic-algorithm-part-ii/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2020/12/MOGABanner-1.jpg 300w,
-                    ./../content/images/size/w600/2020/12/MOGABanner-1.jpg 600w,
-                    ./../content/images/size/w1000/2020/12/MOGABanner-1.jpg 1000w,
-                    ./../content/images/size/w2000/2020/12/MOGABanner-1.jpg 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="./../content/images/size/w600/2020/12/MOGABanner-1.jpg"
-            alt="Optimizing Water Supply Networks with Genetic Algorithm (Part II)"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../optimizing-water-supply-networks-with-genetic-algorithm-part-ii/">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">C/C++</div>
-                <h2 class="post-card-title">Optimizing Water Supply Networks with Genetic Algorithm (Part II)</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>This Part II of my blogpost on the application that helps with optimizing water supply networks using genetic algorithm.  The application is written in C/C++. Project Code on: GitHub</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Stephen Chan
-                    </div>
-            
-                    <a href="./../author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/stephen/">Stephen Chan</a></span>
-                <span class="post-card-byline-date"><time datetime="2016-05-17">17 May 2016</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-        </div>
-    </div>
-</aside>
-
-
-
-
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a> &copy; 2021</section>
-                <nav class="site-footer-nav">
-                    <a href="http://sscchan.github.io/blog">Latest Posts</a>
-                    
-                    
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </nav>
-            </div>
-        </footer>
-
-    </div>
-
-
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-    <script src="./../assets/built/casper.js?v=80e7a78399"></script>
-
-    <script>
-        // Parse the URL parameter
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-
-        // Give the parameter a variable name
-        var action = getParameterByName('action');
-        var success = getParameterByName('success');
-
-        $(document).ready(function () {
-            if (action == 'subscribe' && (success === null || success === 'true')) {
-                $('body').addClass('subscribe-success');
-            }
-
-            if (action == 'subscribe' && success === 'false') {
-                $('body').addClass('subscribe-failure');
-            }
-
-            $('.subscribe-notification .subscribe-close-button').click(function () {
-                $('.subscribe-notification').addClass('close');
-            });
-
-            // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
-                $('.subscribe-overlay form').removeClass();
-                $('.subscribe-email').val('');
-            });
-        });
-    </script>
-
-    <script>
-    $(document).ready(function () {
-        // FitVids - start
-        var $postContent = $(".post-full-content");
-        $postContent.fitVids();
-        // FitVids - end
-
-        // Replace nav with title on scroll - start
-        Casper.stickyNavTitle({
-            navSelector: '.site-nav-main',
-            titleSelector: '.post-full-title',
-            activeClass: 'nav-post-title-active'
-        });
-        // Replace nav with title on scroll - end
-
-        // Hover on avatar
-        var hoverTimeout;
-        $('.author-list-item').hover(function () {
-            var $this = $(this);
-
-            clearTimeout(hoverTimeout);
-
-            $('.author-card').removeClass('hovered');
-            $(this).children('.author-card').addClass('hovered');
-
-        }, function () {
-            var $this = $(this);
-
-            hoverTimeout = setTimeout(function () {
-                $this.children('.author-card').removeClass('hovered');
-            }, 800);
-        });
-    });
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
 </script>
 
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; Stephen Chan&#x27;s Blog</li>
+                <li>Design by <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>Published with <a href="https://ghost.org">Ghost</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="./../assets/main/js/jquery.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrollex.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrolly.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/browser.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/breakpoints.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/util.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/main.js?v=c6f281c255"></script>
 
     
 

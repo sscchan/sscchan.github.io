@@ -9,7 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="./../assets/built/screen.css?v=80e7a78399" />
+    <link rel="stylesheet" type="text/css" href="./../assets/main/css/main.css?v=c6f281c255" />
+    <noscript><link rel="stylesheet" href="./../assets/main/css/noscript.css?v=c6f281c255" /></noscript>
 
     <link rel="canonical" href="http://sscchan.github.io/blog/retrieving-areal-evapotranspiration-data-for-water-quality-modeling/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -87,361 +88,96 @@
     <meta name="generator" content="Ghost 3.40" />
     <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog/rss/" />
 
-</head>
-<body class="post-template tag-gis tag-water-quality tag-stormwater tag-nodejs tag-express tag-angular tag-bootstrap tag-google-map-api">
+    <style>#wrapper>.bg {background-image: url(./../assets/images/overlay.png?v=c6f281c255),linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("/content/images/2020/12/FrontPageBackground.png") }</style>
 
-    <div class="site-wrapper">
+</head>
+<body class="is-preload post-template tag-gis tag-water-quality tag-stormwater tag-nodejs tag-express tag-angular tag-bootstrap tag-google-map-api">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="http://sscchan.github.io/blog" class="logo">Stephen Chan&#x27;s Blog</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="http://sscchan.github.io/blog/">Home</a></li>
+        <li class="nav-linkedin "><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
+    </ul>
+    <ul class="icons">
+        <li><a href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
+    </ul>
+</nav>
+
 
         
 
-<header class="site-header">
-    <div class="outer site-nav-main">
-    <div class="inner">
-        <nav class="site-nav">
-    <div class="site-nav-left-wrapper">
-        <div class="site-nav-left">
-                <a class="site-nav-logo" href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a>
-            <div class="site-nav-content">
-                    <ul class="nav">
-    <li class="nav-home"><a href="http://sscchan.github.io/blog/">Home</a></li>
-    <li class="nav-linkedin"><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
-</ul>
+<main id="main">
 
-                    <span class="nav-post-title dash">Retrieving Areal Evapotranspiration Data for Water Quality Modeling</span>
-            </div>
+    <section class="post">
+
+        <header class="major">
+            <span class="date">January 10, 2017</span>
+            <h1>Retrieving Areal Evapotranspiration Data for Water Quality Modeling</h1>
+        </header>
+
+        <div class="image main"><img src="./../content/images/2020/12/APETDataInterrogatorBanner.jpg" alt="Retrieving Areal Evapotranspiration Data for Water Quality Modeling" /></div>
+
+        <div class="content">
+            <p>Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.</p><p>Project Code on: <a href="https://github.com/sscchan/Interrogator-for-Australian-Monthly-APET">GitHub</a></p><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/APETDataInterrogatorScreenshot.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/APETDataInterrogatorScreenshot.png 600w, http://sscchan.github.io/blog/content/images/size/w1000/2020/12/APETDataInterrogatorScreenshot.png 1000w, http://sscchan.github.io/blog/content/images/2020/12/APETDataInterrogatorScreenshot.png 1060w" sizes="(min-width: 720px) 720px"></figure><h4 id="motivation">Motivation</h4><p><a href="http://ewater.org.au/products/music/">MUSIC</a> is the de-facto software for modeling performance of stormwater quality management systems.</p><p>One of the critical input to the model is the monthly evapotranspiration data, which is dependent upon the location of the project site in question. The evapotranspiration GIS data is available publicly from state agencies, but non-GIS savvy engineers often are unable to access it easily.</p><p>So I've built a tool to make it easier and faster for engineers to retrieve the evaporation data for their projects.</p><h4 id="architecture">Architecture</h4><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/APETDataInterrogatorSystemDiagram.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/APETDataInterrogatorSystemDiagram.png 600w, http://sscchan.github.io/blog/content/images/2020/12/APETDataInterrogatorSystemDiagram.png 802w" sizes="(min-width: 720px) 720px"></figure><h5 id="frontend">Frontend</h5><p>The frontend consists of a map based UI that is built with Angular &amp; Bootstrap framework. It utilizes the Google Maps API for location search and coordinate retrieval. The coordinates are sent as input arguments to the backend to retrieve the evaporation data for a particular project location.</p><h5 id="backend">Backend</h5><p>The backend consists of a nodeJS + Express server acting as both API &amp; Web Server hosted on Heroku Cloud Platform. The server parses evaporation ArcGrid GIS data on startup and expose the data query service with a RESTful API.</p><h4 id="what-s-next">What's next?</h4><p>As part of the quality assurance process all of the modeling (as well as inputs) must be checked. Right now there's no easy way to do that other than going to compare the values to evaporation contours charts from BOM. The next feature will include positions overlay on these chart so that a PDF report can be generated for QA and filing purposes.</p>
         </div>
-    </div>
-    <div class="site-nav-right">
-            <div class="social-links">
-            </div>
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-</a>
-
-    </div>
-</nav>
-    </div>
-</div></header>
 
 
-<main id="site-main" class="site-main outer">
-    <div class="inner">
+        <footer class="post-footer">
 
-        <article class="post-full post tag-gis tag-water-quality tag-stormwater tag-nodejs tag-express tag-angular tag-bootstrap tag-google-map-api ">
-
-            <header class="post-full-header">
-
-                <section class="post-full-tags">
-                    <a href="./../tag/gis/">GIS</a>
-                </section>
-
-                <h1 class="post-full-title">Retrieving Areal Evapotranspiration Data for Water Quality Modeling</h1>
-
-
-                <div class="post-full-byline">
-
-                    <section class="post-full-byline-content">
-
-                        <ul class="author-list">
-                            <li class="author-list-item">
-
-                                <div class="author-card">
-                                    <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</div>
-                                    <div class="author-info">
-                                        <h2>Stephen Chan</h2>
-                                        <p>Read <a href="./../author/stephen/">more posts</a> by this author.</p>
-                                    </div>
-                                </div>
-
-                                <a href="./../author/stephen/" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-
-                            </li>
-                        </ul>
-
-                        <section class="post-full-byline-meta">
-                            <h4 class="author-name"><a href="./../author/stephen/">Stephen Chan</a></h4>
-                            <div class="byline-meta-content">
-                                <time class="byline-meta-date" datetime="2017-01-10">10 Jan 2017</time>
-                                <span class="byline-reading-time"><span class="bull">&bull;</span> 2 min read</span>
-                            </div>
-                        </section>
-
+            <div class="authors">
+                <a class="author-box" href="./../author/stephen/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Stephen Chan</h5>
+                        <p>Read more posts by this author.</p>
                     </section>
+                </a>
+            </div>
 
+        </footer>
 
-                </div>
-            </header>
+    </section>
 
-            <figure class="post-full-image">
-                <img
-                    srcset="./../content/images/size/w300/2020/12/APETDataInterrogatorBanner.jpg 300w,
-                            ./../content/images/size/w600/2020/12/APETDataInterrogatorBanner.jpg 600w,
-                            ./../content/images/size/w1000/2020/12/APETDataInterrogatorBanner.jpg 1000w,
-                            ./../content/images/size/w2000/2020/12/APETDataInterrogatorBanner.jpg 2000w"
-                    sizes="(max-width: 800px) 400px,
-                        (max-width: 1170px) 1170px,
-                            2000px"
-                    src="./../content/images/size/w2000/2020/12/APETDataInterrogatorBanner.jpg"
-                    alt="Retrieving Areal Evapotranspiration Data for Water Quality Modeling"
-                />
-            </figure>
-
-            <section class="post-full-content">
-                <div class="post-content">
-                    <p>Making it easy for non-GIS savvy engineers to access the data they need for water quality modelling.</p><p>Project Code on: <a href="https://github.com/sscchan/Interrogator-for-Australian-Monthly-APET">GitHub</a></p><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/APETDataInterrogatorScreenshot.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/APETDataInterrogatorScreenshot.png 600w, http://sscchan.github.io/blog/content/images/size/w1000/2020/12/APETDataInterrogatorScreenshot.png 1000w, http://sscchan.github.io/blog/content/images/2020/12/APETDataInterrogatorScreenshot.png 1060w" sizes="(min-width: 720px) 720px"></figure><h4 id="motivation">Motivation</h4><p><a href="http://ewater.org.au/products/music/">MUSIC</a> is the de-facto software for modeling performance of stormwater quality management systems.</p><p>One of the critical input to the model is the monthly evapotranspiration data, which is dependent upon the location of the project site in question. The evapotranspiration GIS data is available publicly from state agencies, but non-GIS savvy engineers often are unable to access it easily.</p><p>So I've built a tool to make it easier and faster for engineers to retrieve the evaporation data for their projects.</p><h4 id="architecture">Architecture</h4><figure class="kg-card kg-image-card"><img src="./..//content/images/2020/12/APETDataInterrogatorSystemDiagram.png" class="kg-image" alt srcset="http://sscchan.github.io/blog/content/images/size/w600/2020/12/APETDataInterrogatorSystemDiagram.png 600w, http://sscchan.github.io/blog/content/images/2020/12/APETDataInterrogatorSystemDiagram.png 802w" sizes="(min-width: 720px) 720px"></figure><h5 id="frontend">Frontend</h5><p>The frontend consists of a map based UI that is built with Angular &amp; Bootstrap framework. It utilizes the Google Maps API for location search and coordinate retrieval. The coordinates are sent as input arguments to the backend to retrieve the evaporation data for a particular project location.</p><h5 id="backend">Backend</h5><p>The backend consists of a nodeJS + Express server acting as both API &amp; Web Server hosted on Heroku Cloud Platform. The server parses evaporation ArcGrid GIS data on startup and expose the data query service with a RESTful API.</p><h4 id="what-s-next">What's next?</h4><p>As part of the quality assurance process all of the modeling (as well as inputs) must be checked. Right now there's no easy way to do that other than going to compare the values to evaporation contours charts from BOM. The next feature will include positions overlay on these chart so that a PDF report can be generated for QA and filing purposes.</p>
-                </div>
-            </section>
-
-
-
-        </article>
-
-    </div>
 </main>
 
-<aside class="read-next outer">
-    <div class="inner">
-        <div class="read-next-feed">
-                <article class="read-next-card">
-                    <header class="read-next-card-header">
-                        <h3><span>More in</span> <a href="./../tag/gis/">GIS</a></h3>
-                    </header>
-                    <div class="read-next-card-content">
-                        <ul>
-                            <li>
-                                <h4><a href="./../scraping-and-geocoding-real-estate-for-gis-analysis/">Scraping and Geocoding Real Estate Properties for GIS Analysis</a></h4>
-                                <div class="read-next-card-meta">
-                                    <p><time datetime="2021-01-04">4 Jan 2021</time> –
-                                        1 min read</p>
-                                </div>
-                            </li>
-                            <li>
-                                <h4><a href="./../digitized-penang-jica-drainage-study-floodmap/">Digitized Penang JICA Drainage Study Floodmap</a></h4>
-                                <div class="read-next-card-meta">
-                                    <p><time datetime="2017-11-06">6 Nov 2017</time> –
-                                        2 min read</p>
-                                </div>
-                            </li>
-                            <li>
-                                <h4><a href="./../modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery-processing/">Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)</a></h4>
-                                <div class="read-next-card-meta">
-                                    <p><time datetime="2017-04-09">9 Apr 2017</time> –
-                                        2 min read</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <footer class="read-next-card-footer">
-                        <a href="./../tag/gis/">See all 4 posts
-                            →</a>
-                    </footer>
-                </article>
 
-                <article class="post-card post tag-javascript tag-bootstrap tag-legislation tag-congress tag-react-native tag-responsive tag-html tag-css ">
-
-    <a class="post-card-image-link" href="./../tracking-monitoring-and-alert-sy/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2020/12/LegislationWatchBanner.jpg 300w,
-                    ./../content/images/size/w600/2020/12/LegislationWatchBanner.jpg 600w,
-                    ./../content/images/size/w1000/2020/12/LegislationWatchBanner.jpg 1000w,
-                    ./../content/images/size/w2000/2020/12/LegislationWatchBanner.jpg 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="./../content/images/size/w600/2020/12/LegislationWatchBanner.jpg"
-            alt="Tracking, Monitoring and Alert System for Incoming Congress Legislations"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../tracking-monitoring-and-alert-sy/">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">Javascript</div>
-                <h2 class="post-card-title">Tracking, Monitoring and Alert System for Incoming Congress Legislations</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>With thousands of Bills being introduced to congress each year, how do informed citizens keep track of legislations that are important to them? We created an application to keep monitor</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Stephen Chan
-                    </div>
-            
-                    <a href="./../author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/stephen/">Stephen Chan</a></span>
-                <span class="post-card-byline-date"><time datetime="2017-02-11">11 Feb 2017</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-
-                <article class="post-card post tag-markov-chains tag-javascript tag-twitter tag-stochastic-modelling ">
-
-    <a class="post-card-image-link" href="./../modelling-tweets-as-markov-chains/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2020/12/TwitterGeneratorBanner.png 300w,
-                    ./../content/images/size/w600/2020/12/TwitterGeneratorBanner.png 600w,
-                    ./../content/images/size/w1000/2020/12/TwitterGeneratorBanner.png 1000w,
-                    ./../content/images/size/w2000/2020/12/TwitterGeneratorBanner.png 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="./../content/images/size/w600/2020/12/TwitterGeneratorBanner.png"
-            alt="Modelling Tweets as Markov Chains"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../modelling-tweets-as-markov-chains/">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">Markov Chains</div>
-                <h2 class="post-card-title">Modelling Tweets as Markov Chains</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>To celebrate the end of the 2016, let's model president-elect Trump's 2016 tweets as a Markov Chain! Project Code on: GitHub | Live Demo What is a Markov Chain?Markov Chains</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Stephen Chan
-                    </div>
-            
-                    <a href="./../author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/stephen/">Stephen Chan</a></span>
-                <span class="post-card-byline-date"><time datetime="2017-01-01">1 Jan 2017</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-        </div>
-    </div>
-</aside>
-
-
-
-
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a> &copy; 2021</section>
-                <nav class="site-footer-nav">
-                    <a href="http://sscchan.github.io/blog">Latest Posts</a>
-                    
-                    
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </nav>
-            </div>
-        </footer>
-
-    </div>
-
-
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-    <script src="./../assets/built/casper.js?v=80e7a78399"></script>
-
-    <script>
-        // Parse the URL parameter
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-
-        // Give the parameter a variable name
-        var action = getParameterByName('action');
-        var success = getParameterByName('success');
-
-        $(document).ready(function () {
-            if (action == 'subscribe' && (success === null || success === 'true')) {
-                $('body').addClass('subscribe-success');
-            }
-
-            if (action == 'subscribe' && success === 'false') {
-                $('body').addClass('subscribe-failure');
-            }
-
-            $('.subscribe-notification .subscribe-close-button').click(function () {
-                $('.subscribe-notification').addClass('close');
-            });
-
-            // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
-                $('.subscribe-overlay form').removeClass();
-                $('.subscribe-email').val('');
-            });
-        });
-    </script>
-
-    <script>
-    $(document).ready(function () {
-        // FitVids - start
-        var $postContent = $(".post-full-content");
-        $postContent.fitVids();
-        // FitVids - end
-
-        // Replace nav with title on scroll - start
-        Casper.stickyNavTitle({
-            navSelector: '.site-nav-main',
-            titleSelector: '.post-full-title',
-            activeClass: 'nav-post-title-active'
-        });
-        // Replace nav with title on scroll - end
-
-        // Hover on avatar
-        var hoverTimeout;
-        $('.author-list-item').hover(function () {
-            var $this = $(this);
-
-            clearTimeout(hoverTimeout);
-
-            $('.author-card').removeClass('hovered');
-            $(this).children('.author-card').addClass('hovered');
-
-        }, function () {
-            var $this = $(this);
-
-            hoverTimeout = setTimeout(function () {
-                $this.children('.author-card').removeClass('hovered');
-            }, 800);
-        });
-    });
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
 </script>
 
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; Stephen Chan&#x27;s Blog</li>
+                <li>Design by <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>Published with <a href="https://ghost.org">Ghost</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="./../assets/main/js/jquery.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrollex.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrolly.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/browser.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/breakpoints.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/util.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/main.js?v=c6f281c255"></script>
 
     
 

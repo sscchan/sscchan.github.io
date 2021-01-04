@@ -9,7 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="./../assets/built/screen.css?v=80e7a78399" />
+    <link rel="stylesheet" type="text/css" href="./../assets/main/css/main.css?v=c6f281c255" />
+    <noscript><link rel="stylesheet" href="./../assets/main/css/noscript.css?v=c6f281c255" /></noscript>
 
     <link rel="canonical" href="http://sscchan.github.io/blog/dynamic-optimum-furniture-height-diagram/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -84,109 +85,44 @@
     <meta name="generator" content="Ghost 3.40" />
     <link rel="alternate" type="application/rss+xml" title="Stephen Chan&#x27;s Blog" href="http://sscchan.github.io/blog/rss/" />
 
-</head>
-<body class="post-template tag-javascript tag-css tag-dependency-injection tag-model-view-presenter tag-responsive">
+    <style>#wrapper>.bg {background-image: url(./../assets/images/overlay.png?v=c6f281c255),linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("/content/images/2020/12/FrontPageBackground.png") }</style>
 
-    <div class="site-wrapper">
+</head>
+<body class="is-preload post-template tag-javascript tag-css tag-dependency-injection tag-model-view-presenter tag-responsive">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="http://sscchan.github.io/blog" class="logo">Stephen Chan&#x27;s Blog</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="http://sscchan.github.io/blog/">Home</a></li>
+        <li class="nav-linkedin "><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
+    </ul>
+    <ul class="icons">
+        <li><a href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
+    </ul>
+</nav>
+
 
         
 
-<header class="site-header">
-    <div class="outer site-nav-main">
-    <div class="inner">
-        <nav class="site-nav">
-    <div class="site-nav-left-wrapper">
-        <div class="site-nav-left">
-                <a class="site-nav-logo" href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a>
-            <div class="site-nav-content">
-                    <ul class="nav">
-    <li class="nav-home"><a href="http://sscchan.github.io/blog/">Home</a></li>
-    <li class="nav-linkedin"><a href="https://www.linkedin.com/in/stephenscchan/">LinkedIn</a></li>
-</ul>
+<main id="main">
 
-                    <span class="nav-post-title dash">Dynamic Optimum Furniture Height Diagram</span>
-            </div>
-        </div>
-    </div>
-    <div class="site-nav-right">
-            <div class="social-links">
-            </div>
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://sscchan.github.io/blog/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-</a>
+    <section class="post">
 
-    </div>
-</nav>
-    </div>
-</div></header>
+        <header class="major">
+            <span class="date">October 21, 2017</span>
+            <h1>Dynamic Optimum Furniture Height Diagram</h1>
+        </header>
 
+        <div class="image main"><img src="./../content/images/2020/12/dynamicoptimumfurnitureheightdiagram.jpeg" alt="Dynamic Optimum Furniture Height Diagram" /></div>
 
-<main id="site-main" class="site-main outer">
-    <div class="inner">
-
-        <article class="post-full post tag-javascript tag-css tag-dependency-injection tag-model-view-presenter tag-responsive ">
-
-            <header class="post-full-header">
-
-                <section class="post-full-tags">
-                    <a href="./../tag/javascript/">Javascript</a>
-                </section>
-
-                <h1 class="post-full-title">Dynamic Optimum Furniture Height Diagram</h1>
-
-
-                <div class="post-full-byline">
-
-                    <section class="post-full-byline-content">
-
-                        <ul class="author-list">
-                            <li class="author-list-item">
-
-                                <div class="author-card">
-                                    <div class="author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</div>
-                                    <div class="author-info">
-                                        <h2>Stephen Chan</h2>
-                                        <p>Read <a href="./../author/stephen/">more posts</a> by this author.</p>
-                                    </div>
-                                </div>
-
-                                <a href="./../author/stephen/" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-
-                            </li>
-                        </ul>
-
-                        <section class="post-full-byline-meta">
-                            <h4 class="author-name"><a href="./../author/stephen/">Stephen Chan</a></h4>
-                            <div class="byline-meta-content">
-                                <time class="byline-meta-date" datetime="2017-10-21">21 Oct 2017</time>
-                                <span class="byline-reading-time"><span class="bull">&bull;</span> 1 min read</span>
-                            </div>
-                        </section>
-
-                    </section>
-
-
-                </div>
-            </header>
-
-            <figure class="post-full-image">
-                <img
-                    srcset="./../content/images/size/w300/2020/12/dynamicoptimumfurnitureheightdiagram.jpeg 300w,
-                            ./../content/images/size/w600/2020/12/dynamicoptimumfurnitureheightdiagram.jpeg 600w,
-                            ./../content/images/size/w1000/2020/12/dynamicoptimumfurnitureheightdiagram.jpeg 1000w,
-                            ./../content/images/size/w2000/2020/12/dynamicoptimumfurnitureheightdiagram.jpeg 2000w"
-                    sizes="(max-width: 800px) 400px,
-                        (max-width: 1170px) 1170px,
-                            2000px"
-                    src="./../content/images/size/w2000/2020/12/dynamicoptimumfurnitureheightdiagram.jpeg"
-                    alt="Dynamic Optimum Furniture Height Diagram"
-                />
-            </figure>
-
-            <section class="post-full-content">
-                <div class="post-content">
-                    <p>I stumbled across an interesting diagram from the 1950s showing the optimal dimension of various furniture items along side a 5'9" tall person.</p><p>Wouldn't it be useful to be able to determine the optimum furniture height for people with heights other than 5'9"?</p><p>So I went ahead a made a client-side app to dynamically generate the optimal furniture heights based on the proportions of the original drawing.</p><hr><p>Project Code on: <a href="https://github.com/sscchan/sscchan.github.io/tree/master/portfolio/projects/DynamicOptimumFurnitureHeightApp">GitHub</a> | <a href="http://sscchan.github.io/portfolio/projects/DynamicOptimumFurnitureHeightApp/index.html">Live Demo</a></p><p>Checkout the the embedded version:</p><!--kg-card-begin: html--><div id="iframe-container" style="  
+        <div class="content">
+            <p>I stumbled across an interesting diagram from the 1950s showing the optimal dimension of various furniture items along side a 5'9" tall person.</p><p>Wouldn't it be useful to be able to determine the optimum furniture height for people with heights other than 5'9"?</p><p>So I went ahead a made a client-side app to dynamically generate the optimal furniture heights based on the proportions of the original drawing.</p><hr><p>Project Code on: <a href="https://github.com/sscchan/sscchan.github.io/tree/master/portfolio/projects/DynamicOptimumFurnitureHeightApp">GitHub</a> | <a href="http://sscchan.github.io/portfolio/projects/DynamicOptimumFurnitureHeightApp/index.html">Live Demo</a></p><p>Checkout the the embedded version:</p><!--kg-card-begin: html--><div id="iframe-container" style="  
   position: relative;
   width: 100%;
   height: 0;
@@ -204,258 +140,58 @@
   border: solid 2px;
 "></iframe>
 </div><!--kg-card-end: html--><h6 id="design-features">Design &amp; Features</h6><p>The plan was to create a simple application consist of simple input field and calculated dimensions overlaid on the diagram. However, self-impose feature creep set in. The feature set now includes:</p><ul><li>Metric &amp; US Customary Unit Modes</li><li>Automatic User Height Input Unit Conversion</li><li>Saves User Height between Sessions</li><li>Print-Friendly CSS &amp; JS Scaling</li><li>Responsive Design</li><li>Model-View-Presenter Architecture</li><li>Inversion of Control Pattern with Dependency Injection</li></ul><h6 id="lessons-learnt">Lessons Learnt</h6><p>Two notable techniques were used to achieve precision overlay with diagram scaling and enabling print-friendliness. These techniques will be subjects of near-future posts.</p>
-                </div>
-            </section>
+        </div>
 
 
+        <footer class="post-footer">
 
-        </article>
+            <div class="authors">
+                <a class="author-box" href="./../author/stephen/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Stephen Chan</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
 
-    </div>
+        </footer>
+
+    </section>
+
 </main>
 
-<aside class="read-next outer">
-    <div class="inner">
-        <div class="read-next-feed">
-                <article class="read-next-card">
-                    <header class="read-next-card-header">
-                        <h3><span>More in</span> <a href="./../tag/javascript/">Javascript</a></h3>
-                    </header>
-                    <div class="read-next-card-content">
-                        <ul>
-                            <li>
-                                <h4><a href="./../scraping-and-geocoding-real-estate-for-gis-analysis/">Scraping and Geocoding Real Estate Properties for GIS Analysis</a></h4>
-                                <div class="read-next-card-meta">
-                                    <p><time datetime="2021-01-04">4 Jan 2021</time> –
-                                        1 min read</p>
-                                </div>
-                            </li>
-                            <li>
-                                <h4><a href="./../mapping-electrification-potential-using-remote-sensing-data/">Mapping Electrification Potential using Remote Sensing Data</a></h4>
-                                <div class="read-next-card-meta">
-                                    <p><time datetime="2017-04-03">3 Apr 2017</time> –
-                                        2 min read</p>
-                                </div>
-                            </li>
-                            <li>
-                                <h4><a href="./../a-fitness-app-that-motivates-by-making-it-a-competition/">A Fitness App that Motivates by Making it A Competition</a></h4>
-                                <div class="read-next-card-meta">
-                                    <p><time datetime="2017-03-09">9 Mar 2017</time> –
-                                        2 min read</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <footer class="read-next-card-footer">
-                        <a href="./../tag/javascript/">See all 5 posts
-                            →</a>
-                    </footer>
-                </article>
 
-                <article class="post-card post tag-gis tag-stormwater tag-drainage tag-google-map-api tag-flooding ">
-
-    <a class="post-card-image-link" href="./../digitized-penang-jica-drainage-study-floodmap/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2020/12/penang_flood_map_blog_banner.jpg 300w,
-                    ./../content/images/size/w600/2020/12/penang_flood_map_blog_banner.jpg 600w,
-                    ./../content/images/size/w1000/2020/12/penang_flood_map_blog_banner.jpg 1000w,
-                    ./../content/images/size/w2000/2020/12/penang_flood_map_blog_banner.jpg 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="./../content/images/size/w600/2020/12/penang_flood_map_blog_banner.jpg"
-            alt="Digitized Penang JICA Drainage Study Floodmap"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../digitized-penang-jica-drainage-study-floodmap/">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">GIS</div>
-                <h2 class="post-card-title">Digitized Penang JICA Drainage Study Floodmap</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>The state of Penang, Malaysia is currently suffering from widespread flooding (5th November, 2017). The current flood comes on the heels of an earlier flood just one and a half</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Stephen Chan
-                    </div>
-            
-                    <a href="./../author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/stephen/">Stephen Chan</a></span>
-                <span class="post-card-byline-date"><time datetime="2017-11-06">6 Nov 2017</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-
-                <article class="post-card post tag-solar tag-geospatial-data tag-gis tag-visualzation tag-suncode-hackathon tag-predictive-model ">
-
-    <a class="post-card-image-link" href="./../modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery-processing/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2020/12/SolarAdoptionDataSystemBanner.jpg 300w,
-                    ./../content/images/size/w600/2020/12/SolarAdoptionDataSystemBanner.jpg 600w,
-                    ./../content/images/size/w1000/2020/12/SolarAdoptionDataSystemBanner.jpg 1000w,
-                    ./../content/images/size/w2000/2020/12/SolarAdoptionDataSystemBanner.jpg 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="./../content/images/size/w600/2020/12/SolarAdoptionDataSystemBanner.jpg"
-            alt="Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../modeling-oregon-solar-uptake-with-infectious-disease-model-part-1-data-discovery-processing/">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">Solar</div>
-                <h2 class="post-card-title">Modeling Oregon Solar Uptake with Infectious Disease Model Part 1 (Data Discovery &amp; Processing)</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>In the US Solar Industry, customer acquisition cost are very high (49 cents per Watt, equivalent to $3,000 for the typical 6-kilowatt residential rooftop). This project is born out</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Stephen Chan
-                    </div>
-            
-                    <a href="./../author/stephen/" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-</a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/stephen/">Stephen Chan</a></span>
-                <span class="post-card-byline-date"><time datetime="2017-04-09">9 Apr 2017</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-        </div>
-    </div>
-</aside>
-
-
-
-
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://sscchan.github.io/blog">Stephen Chan&#x27;s Blog</a> &copy; 2021</section>
-                <nav class="site-footer-nav">
-                    <a href="http://sscchan.github.io/blog">Latest Posts</a>
-                    
-                    
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </nav>
-            </div>
-        </footer>
-
-    </div>
-
-
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-    <script src="./../assets/built/casper.js?v=80e7a78399"></script>
-
-    <script>
-        // Parse the URL parameter
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-
-        // Give the parameter a variable name
-        var action = getParameterByName('action');
-        var success = getParameterByName('success');
-
-        $(document).ready(function () {
-            if (action == 'subscribe' && (success === null || success === 'true')) {
-                $('body').addClass('subscribe-success');
-            }
-
-            if (action == 'subscribe' && success === 'false') {
-                $('body').addClass('subscribe-failure');
-            }
-
-            $('.subscribe-notification .subscribe-close-button').click(function () {
-                $('.subscribe-notification').addClass('close');
-            });
-
-            // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
-                $('.subscribe-overlay form').removeClass();
-                $('.subscribe-email').val('');
-            });
-        });
-    </script>
-
-    <script>
-    $(document).ready(function () {
-        // FitVids - start
-        var $postContent = $(".post-full-content");
-        $postContent.fitVids();
-        // FitVids - end
-
-        // Replace nav with title on scroll - start
-        Casper.stickyNavTitle({
-            navSelector: '.site-nav-main',
-            titleSelector: '.post-full-title',
-            activeClass: 'nav-post-title-active'
-        });
-        // Replace nav with title on scroll - end
-
-        // Hover on avatar
-        var hoverTimeout;
-        $('.author-list-item').hover(function () {
-            var $this = $(this);
-
-            clearTimeout(hoverTimeout);
-
-            $('.author-card').removeClass('hovered');
-            $(this).children('.author-card').addClass('hovered');
-
-        }, function () {
-            var $this = $(this);
-
-            hoverTimeout = setTimeout(function () {
-                $this.children('.author-card').removeClass('hovered');
-            }, 800);
-        });
-    });
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
 </script>
 
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; Stephen Chan&#x27;s Blog</li>
+                <li>Design by <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>Published with <a href="https://ghost.org">Ghost</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="./../assets/main/js/jquery.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrollex.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/jquery.scrolly.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/browser.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/breakpoints.min.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/util.js?v=c6f281c255"></script>
+    <script src="./../assets/main/js/main.js?v=c6f281c255"></script>
 
     
 
